@@ -1,0 +1,90 @@
+radio-group {
+    display: flex;
+    align-items: center;
+}
+
+radio-group .radio {
+    margin-left: 20rpx;
+}
+
+radio-group radio {
+    margin-left: 10rpx;
+}
+
+.xf {
+    bottom: 75%!important;
+}
+
+.mask {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.closeMask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90rpx;
+    font-size: 20px;
+    color: red;
+    border-top: 1px solid #D9D9D9;
+}
+
+button::after {
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+}
+
+.info {
+    display: flex;
+    font-size: 14px;
+    color: grey;
+    width: 55%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.btn_setColor {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: 8%;
+    width: 38%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px 40px 40px 40px;
+    color: white;
+    background-color: #FF9800;
+    box-shadow: 5px 5px 2px #D9D9D9;
+}
+
+.btn_gen {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 5%;
+    width: 35%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px 40px 40px 40px;
+    color: white;
+    background-color: #E91E63;
+    box-shadow: 5px 5px 2px #D9D9D9;
+}
+
+.sel_color {
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5rpx;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid dimgray;
+}

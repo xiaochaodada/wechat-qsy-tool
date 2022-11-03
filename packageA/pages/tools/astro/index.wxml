@@ -1,0 +1,132 @@
+<view class="container">
+    <scroll-view bindscroll="topViewScrollEvent" class="top_scroll" scrollTop="{{topScrollNum}}" scrollY="true">
+        <view class="astro_wrapper">
+            <view bind:tap="toggleAstro" class="astro_header">
+                <view class="astro_header_middle">
+                    <image class="astro_bg_img {{astroDetailInfo.name}}" src="{{astroDetailInfo.backImage}}"></image>
+                    <view class="header_top">
+                        <image class="astro_img" mode="aspectFill" src="{{astroDetailInfo.img}}"></image>
+                        <view class="astro_name">{{astroDetailInfo.cName}}</view>
+                        <image class="astro_select_icon" src="astro-icon/xzxq-select-arrow-icon@3x.png"></image>
+                    </view>
+                    <view class="astro_en_name">{{astroDetailInfo.eName}}</view>
+                    <view class="astro_date">{{astroDetailInfo.cDate}} {{astroDetailInfo.astroType}}</view>
+                </view>
+            </view>
+            <view class="astro_detail_wrapper">
+                <view class="tab_list">
+                    <block wx:for="{{tabActiveList}}">
+                        <view bindtap="tabItemTap" class="tab_item {{item.active?'active':''}}" data-index="{{index}}">
+                            <view class="tab_item_inner">{{item.day}}</view>
+                        </view>
+                    </block>
+                </view>
+                <view class="astro_detail">
+                    <view class="astro_infos {{astroDetailData.stzs===undefined&&astroDetailData.xyys===undefined&&(astroDetailData.xysz===undefined||astroDetailData.xysz===0)&&astroDetailData.spxz===undefined?'nonum':''}}">
+                        <view class="today_date">{{astroDetailData.dateString}}</view>
+                        <view class="astro_num" hidden="{{astroDetailData.stzs===undefined&&astroDetailData.xyys===undefined&&(astroDetailData.xysz===undefined||astroDetailData.xysz===0)&&astroDetailData.spxz===undefined}}">
+                            <block>
+                                <block wx:if="{{tabIndex<3}}">
+                                    <view class="astro_num_item" hidden="{{astroDetailData.stzs===undefined}}">
+                                        <view class="astro_num_tip">商谈指数</view>
+                                        <view class="astro_num_txt">{{astroDetailData.stzs*20}}%</view>
+                                    </view>
+                                    <view class="astro_num_item" hidden="{{astroDetailData.xyys===undefined}}">
+                                        <view class="astro_num_tip">幸运颜色</view>
+                                        <view class="astro_num_txt">{{astroDetailData.xyys}}</view>
+                                    </view>
+                                    <view class="astro_num_item" hidden="{{astroDetailData.xysz===undefined}}">
+                                        <view class="astro_num_tip">幸运数字</view>
+                                        <view class="astro_num_txt">{{astroDetailData.xysz}}</view>
+                                    </view>
+                                    <view class="astro_num_item" hidden="{{astroDetailData.spxz===undefined}}">
+                                        <view class="astro_num_tip">速配星座</view>
+                                        <view class="astro_num_txt">{{astroDetailData.spxz}}</view>
+                                    </view>
+                                </block>
+                            </block>
+                            <block>
+                                <block wx:if="{{tabIndex===3}}">
+                                    <view class="astro_num_item" hidden="{{astroDetailData.xyys===undefined}}">
+                                        <view class="astro_num_tip">幸运颜色</view>
+                                        <view class="astro_num_txt">{{astroDetailData.xyys}}</view>
+                                    </view>
+                                    <view class="astro_num_item" hidden="{{astroDetailData.luck===undefined||tabIndex!==3}}">
+                                        <view class="astro_num_tip">幸运星座</view>
+                                        <view class="astro_num_txt">{{astroDetailData.luck}}</view>
+                                    </view>
+                                    <view class="astro_num_item" hidden="{{astroDetailData.beware===undefined||tabIndex!==3}}">
+                                        <view class="astro_num_tip">提防星座</view>
+                                        <view class="astro_num_txt">{{astroDetailData.beware}}</view>
+                                    </view>
+                                </block>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="astro_info_list">
+                        <view class="astro_info_item">
+                            <view class="astro_info_tip">
+                                <view class="astro_item_tip">综合运势</view>
+                                <view class="astro_star_list flex_row">
+                                    <block wx:for="{{5}}">
+                                        <view class="astr_star star_first {{index<astroDetailData.zhys?'active':''}}"></view>
+                                    </block>
+                                </view>
+                            </view>
+                            <view class="astro_info_txt">{{astroDetailData.xzys}}</view>
+                        </view>
+                        <view class="astro_info_item">
+                            <view class="astro_info_tip clear_float">
+                                <view class="astro_item_tip">爱情运势</view>
+                                <view class="astro_star_list flex_row">
+                                    <block wx:for="{{5}}">
+                                        <view class="astr_star star_second {{index<astroDetailData.aqys?'active':''}}"></view>
+                                    </block>
+                                </view>
+                            </view>
+                            <view class="astro_info_txt">{{astroDetailData.aqysd}}</view>
+                        </view>
+                        <view class="astro_info_item">
+                            <view class="astro_info_tip clear_float">
+                                <view class="astro_item_tip">事业学业</view>
+                                <view class="astro_star_list flex_row">
+                                    <block wx:for="{{5}}">
+                                        <view class="astr_star star_third {{index<astroDetailData.gzzt?'active':''}}"></view>
+                                    </block>
+                                </view>
+                            </view>
+                            <view class="astro_info_txt">{{astroDetailData.syysd}}</view>
+                        </view>
+                        <view class="astro_info_item">
+                            <view class="astro_info_tip clear_float">
+                                <view class="astro_item_tip">财富运势</view>
+                                <view class="astro_star_list flex_row">
+                                    <block wx:for="{{5}}">
+                                        <view class="astr_star star_fourth {{index<astroDetailData.lctz?'active':''}}"></view>
+                                    </block>
+                                </view>
+                            </view>
+                            <view class="astro_info_txt">{{astroDetailData.cfysd}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <ad wx:if="{{mode != 0 && config.advertisements.box_ad && config.user_information.vip !='1'}}" adTheme="white" adType="grid" gridCount="5" gridOpacity="0.8" unitId="{{config.advertisements.box_ad}}"></ad>
+    </scroll-view>
+    <view bind:tap="toggleAstro" catch:touchmove="catchmove" class="astro_list {{showAstroList?'show':''}}">
+        <view catch:tap="catchmove" class="astro_list_inner">
+            <view class="astro_tip">请选择星座</view>
+            <view class="astro_temp_list">
+                <block wx:for="{{comAstro}}" wx:key="{{index}}">
+                    <view catch:tap="switchAstro" class="astro_temp {{item[4]?'active':''}}" data-index="{{index}}" data-name="{{item[0]}}">
+                        <view class="temp_name">{{item[1]}}</view>
+                        <view class="temp_date">{{item[2]}}</view>
+                    </view>
+                </block>
+            </view>
+            <image catch:tap="toggleAstro" class="astro_close_icon" src="astro-icon/xzxq-pop-close-icon@3x.png"></image>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,183 @@
+page {
+    background: #dfdfdf;
+}
+
+.xss_input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    margin-bottom: 3mm;
+    height: 10mm;
+    font-size: 5mm;
+    border: green;
+    border-width: 1px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    text-align: center;
+    background: #ffffff;
+}
+
+.xss_tosend {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 5mm;
+    margin-bottom: 3mm;
+    height: 10mm;
+    width: 20mm;
+    font-size: 4mm;
+    text-align: bottom;
+}
+
+.xss_preview {
+    position: fixed;
+    left: -4mm;
+    bottom: 0;
+    margin-bottom: 15mm;
+    margin-left: 50%;
+    height: 15mm;
+    width: 8mm;
+    font-size: 4mm;
+    background-color: #3cc51f;
+    text-align: center;
+}
+
+.xss_preview_arrow {
+    position: fixed;
+    left: -7mm;
+    bottom: 0;
+    margin-bottom: 30mm;
+    margin-left: 50%;
+    height: 0;
+    width: 0;
+    border: 7mm solid transparent;
+    border-bottom-color: #3cc51f;
+}
+
+.xss_scroll {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 62px;
+    bottom: 38mm;
+    background-color: #dfdfdf;
+}
+
+.xss_scroll_header {
+    height: 8mm;
+}
+
+.xss_scroll_footer {
+    height: 8mm;
+}
+
+.xss_preview_wrapper {
+    margin-left: 12mm;
+    margin-right: 12mm;
+    border-radius: 2mm;
+    padding: 4mm;
+    background-color: #91E648;
+}
+
+.xss_preview_content {
+    font-size: 3.5mm;
+    line-height: 4.2mm;
+    white-space: pre;
+}
+
+.xss_preview_headphoto {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 2mm;
+    margin-top: 8mm;
+    width: 8mm;
+    height: 8mm;
+}
+
+.xss_preview_wrapper_decor {
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 0;
+    top: 0;
+    margin-right: 8.8mm;
+    margin-top: 10.4mm;
+    border: 1.6mm solid transparent;
+    border-left-color: #91E648;
+}
+
+.xss_helper_canvas {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    margin-top: 1px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.xss_element_char_text {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 15mm;
+    margin-left: 5mm;
+    margin-bottom: 15mm;
+    font-size: 4mm;
+}
+
+.xss_element_char_input {
+    width: 12mm;
+    margin: 1mm auto 13mm;
+    text-align: center;
+    font-size: 5mm;
+    border: green;
+    border-width: 1px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+}
+
+.xss_measure_help {
+    font-size: 3.5mm;
+    line-height: 4.2mm;
+    white-space: pre;
+    margin-left: 70px;
+}
+
+.xss_notify {
+    margin-top: 5mm;
+    font-size: 3.4mm;
+    line-height: 4.2mm;
+    color: #999;
+    text-align: center;
+}
+
+.bots {
+    width: 80%;
+    background: #ffffff;
+    position: fixed;
+    bottom: 2%;
+    margin: 0 10%;
+    border-radius: 30rpx;
+}
+
+.chuo {
+    text-align: center;
+    font-size: 28rpx;
+    color: #3788d4;
+    position: fixed;
+    bottom: 25mm;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

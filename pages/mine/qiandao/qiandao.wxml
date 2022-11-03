@@ -1,0 +1,183 @@
+<view class="container">
+    <view class="panelbgc"></view>
+    <!-- <view class="header">当前总积分：{{recording.integral}}</view> -->
+    <view class="top-div">
+        <view class="header" wx:if="{{mode == 3}}">当前{{config_base_list.user_information.unit}}：{{config_base_list.user_information.Account}}</view>
+        <view class="header" wx:elif="{{mode == 2}}">当前解析次数：{{config_base_list.user_information.frequency}}</view>
+           <view class="header" wx:elif="{{mode == 1}}">记得每天来签到哟</view>
+        <view class="top-tip">签到提醒</view>
+        <form bindsubmit="onSubmitRemind" reportSubmit="true">
+            <button class="top-switch-btn" formType="submit" id="daily-sign-remind">
+                <image class="top-switch" src="../images/{{Subscription_check == 1?'switch-off.png':'switch-on.png'}}"></image>
+            </button>
+        </form>
+    </view>
+    <view class="core-panel">
+        <view class="panel-title">累计签到得奖励</view>
+        <view class="checkline">
+            <view class="day {{frequency>=it?'active':''}}" wx:for="{{[1,2,3,4,5,6,7]}}" wx:for-item="it" wx:key="{{it}}">{{it}}天</view>
+        </view>
+        <view class="tips" wx:if="{{frequency}}">
+            <view>今日已签到，已累计
+                <text class="star">{{frequency}}</text>天</view>
+            <text wx:if="{{frequencys>0 && frequencys<8}}">再签到<text class="star">{{frequencys}}</text>天，将获得额外奖励</text>
+            <text wx:elif="{{frequencys>7}}">保持连续签到，将获得额外奖励</text>
+            <text wx:else>累计天数已达<text class="star">7</text>天，额外奖励已发放至账户</text>
+        </view>
+        <button bindtap="checkin" class="checkin" wx:else>立即签到</button>
+    </view>
+</view>
+<!-- 小游戏广告 -->
+       <!-- <view>
+        <ad unit-id="adunit-c60f78b15cf31a4e" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+    </view>  -->
+
+<view class="mine" wx:if="{{mode != 0 && config_base_list.task[0] != 0 && config_base_list.task[0] != null}}">
+
+    <view class="info-card">
+        <view class="card-header">
+            <view class="card-title">每日任务</view>
+        </view>
+        <view class="card-body">
+            <!-- <view class="mine-header need-hover">
+                <view class="task-avatar">
+                    <image class="default-avatar show" src="../images/task-1.png"></image>
+                </view>
+                <view class="header-content">
+                    <view class="task-title text-overflow">每日签到({{qiandao}}/1)</view>
+                    <view class="task-desc text-overflow">可获得
+                        <span class="task-score">20</span>金币</view>
+                    <view class="task-desc-2 text-overflow">每日登录签到获得</view>
+                </view>
+                <view class="item-desc">
+                    <block wx:if="{{qiandao>0}}">
+                        <image class="finish-avatar" src="../images/verify-succeed.png"></image>
+                        <span class="finish-span">已签到</span>
+                    </block>
+                    <button bindtap="qiandao" class="task-btn" size="mini" style="font-size: 30rpx !important;" wx:else>
+                        <image class="task-do-avatar" src="../images/score.png"></image>
+                        <text class="task-do-span" decode="true">签到&nbsp;</text>
+                    </button>
+                </view>
+            </view> -->
+            <view class="mine-header need-hover" wx:if="{{config_base_list.task[1] != 0 && config_base_list.task[1] != '' && config_base_list.task[1] != null}}">
+                <view class="task-avatar">
+                    <image class="default-avatar show" src="../images/task-2.png"></image>
+                </view>
+                <view class="header-content">
+                    <view class="task-title text-overflow">召唤老用户上线({{utils.task_1(task_data['task_1'])}}/{{utils.num_array(config_base_list.task[1],0)}})</view>
+                    <view class="task-desc text-overflow">可获得
+                        <span class="task-score">{{utils.num_array(config_base_list.task[1],1)}}</span>{{mode == 1?'天VIP':''}}{{mode == 2?'次解析次数':''}}{{mode == 3?config_base_list.user_information.unit:''}}</view>
+                    <view class="task-desc-2 text-overflow">成召唤老用户使用后自动发放</view>
+                </view>
+                <view class="item-desc">
+                    <block wx:if="{{utils.task_1(task_data['task_1'])>= utils.num_array(config_base_list.task[1],0)}}">
+                        <image class="finish-avatar" src="../images/verify-succeed.png"></image>
+                        <span class="finish-span">今日已上限</span>
+                    </block>
+                    <button class="task-btn" openType="share" size="mini" style="font-size: 30rpx !important;" wx:else>
+                        <image class="task-do-avatar" src="../images/score.png"></image>
+                        <text class="task-do-span" decode="true">分享&nbsp;</text>
+                    </button>
+                </view>
+            </view>
+
+            <view class="mine-header need-hover" wx:if="{{config_base_list.task[2] != 0 && config_base_list.task[2] != '' && config_base_list.task[2] != null}}">
+                <view class="task-avatar">
+                    <image class="default-avatar show" src="../images/task-3.png"></image>
+                </view>
+                <view class="header-content">
+                    <view class="task-title text-overflow">看福利视频赚{{mode == 1?'天VIP':''}}{{mode == 2?'次解析次数':''}}{{mode == 3?config_base_list.unit:''}}({{task_data['task_2']}}/{{utils.num_array(config_base_list.task[2],0)}})</view>
+                    <view class="task-desc text-overflow">可获得
+                        <span class="task-score">{{utils.num_array(config_base_list.task[2],1)}}</span>{{mode == 1?'天VIP':''}}{{mode == 2?'次解析次数':''}}{{mode == 3?config_base_list.user_information.unit:''}}</view>
+                    <view class="task-desc-2 text-overflow">完整观看广告即可</view>
+                </view>
+                <view class="item-desc">
+                    <block wx:if="{{task_data['task_2']>= utils.num_array(config_base_list.task[2],0)}}">
+                        <image class="finish-avatar" src="../images/verify-succeed.png"></image>
+                        <span class="finish-span">今日已上限</span>
+                    </block>
+                    <button bindtap="task" data-id="2" data-task="2" class="task-btn" size="mini" style="font-size: 30rpx !important;" wx:else>
+                        <image class="task-do-avatar" src="../images/score.png"></image>
+                        <text class="task-do-span" decode="true">观看&nbsp;</text>
+                    </button>
+                </view>
+            </view>
+
+
+
+            <view class="mine-header need-hover" wx:if="{{config_base_list.task[3] != 0 && config_base_list.task[3] != '' && config_base_list.task[3] != null}}">
+                <view class="task-avatar">
+                    <image class="default-avatar show" src="../images/task-4.png"></image>
+                </view>
+                <view class="header-content">
+                    <view class="task-title text-overflow">定时使用小程序({{task_data['task_3']}}/1)</view>
+                    <view class="task-desc text-overflow">可获得
+                        <span class="task-score">{{utils.num_array(config_base_list.task[3],1)}}</span>{{mode == 1?'天VIP':''}}{{mode == 2?'次解析次数':''}}{{mode == 3?config_base_list.user_information.unit:''}}</view>
+                    <view class="task-desc-2 text-overflow">{{utils.num_array(config_base_list.task[3],0)}}使用可领取</view>
+                </view>
+                <view class="item-desc">
+                    <block wx:if="{{task_data['task_3']>= 1}}">
+                        <image class="finish-avatar" src="../images/verify-succeed.png"></image>
+                        <span class="finish-span">今日已上限</span>
+                    </block>
+                    <button bindtap="task" data-id="3" class="task-btn" size="mini" style="font-size: 30rpx !important;" wx:else>
+                        <image class="task-do-avatar" src="../images/score.png"></image>
+                        <text class="task-do-span" decode="true">领取&nbsp;</text>
+                    </button>
+                </view>
+            </view>
+
+
+            <view class="mine-header need-hover" wx:if="{{config_base_list.task[4] != 0 && config_base_list.task[4] != '' && config_base_list.task[4] != null}}">
+                <view class="task-avatar">
+                    <image class="default-avatar show" src="../images/task-5.png"></image>
+                </view>
+                <view class="header-content">
+                    <view class="task-title text-overflow">每下载一次视频({{task_data['task_4']}}/{{utils.num_array(config_base_list.task[4],0)}})</view>
+                    <view class="task-desc text-overflow">可获得
+                        <span class="task-score">{{utils.num_array(config_base_list.task[4],1)}}</span>{{mode == 1?'天VIP':''}}{{mode == 2?'次解析次数':''}}{{mode == 3?config_base_list.user_information.unit:''}}</view>
+                    <view class="task-desc-2 text-overflow">使用小程序下载一次视频</view>
+                </view>
+                <view class="item-desc">
+                    <block wx:if="{{task_data['task_4']>= utils.num_array(config_base_list.task[4],0)}}">
+                        <image class="finish-avatar" src="../images/verify-succeed.png"></image>
+                        <span class="finish-span">今日已上限</span>
+                    </block>
+                    <button bindtap="task" data-id="4" class="task-btn" size="mini" style="font-size: 30rpx !important;" wx:else>
+                        <image class="task-do-avatar" src="../images/score.png"></image>
+                        <text class="task-do-span" decode="true">领取&nbsp;</text>
+                    </button>
+                </view>
+            </view>
+
+
+        </view>
+    </view>
+</view>
+<view class="task" wx:else>
+    <view class="cata-title">更多好玩</view>
+    <button bindtap="showVideoAd" class="sharetips" hoverClass="hovered">
+        <view class="vii">
+            <text>看励志视频！！！</text>
+            <text>一起来看励志视频！！！</text>
+        </view>
+        <text class="slink">立即观看<text class="iconfont icon-right"></text>
+        </text>
+    </button>
+       <view>
+        <!-- <ad unit-id="adunit-c60f78b15cf31a4e" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad> -->
+    </view> 
+
+    <!-- <view class="ad" wx:if="{{mode != 0 && config_base_list.advertisements.index_video_ad && vip !='1'}}">
+        <ad unit-id="{{config_base_list.advertisements.index_video_ad}}" ad-type="video" ad-theme="white"></ad>
+    </view> -->
+    <button class="stview" openType="share">
+        <image mode="aspectFit" src="/resources/watermark-white.svg"></image>
+        分享本应用
+    </button>
+    <view>
+    </view>
+</view>
+
+<wxs src="../../../utils/utils.wxs" module="utils" />

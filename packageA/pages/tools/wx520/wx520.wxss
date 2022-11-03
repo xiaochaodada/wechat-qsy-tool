@@ -1,0 +1,174 @@
+page {
+    height: 100%;
+}
+
+.menu-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+}
+
+.menu-wrap .link {
+    width: 30%;
+}
+
+.menu-wrap .link .txt {
+    border-bottom: 1px solid #1aad19;
+    font-size: 12px;
+    color: #333;
+}
+
+.menu-wrap button {
+    background: transparent;
+    padding: 0;
+}
+
+.menu-wrap button::after {
+    border: 0;
+}
+
+.word-setting {
+    margin: 15px 0 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+}
+
+.word-setting text {
+    background: #ddd;
+    margin-left: 10px;
+    padding: 2px 8px;
+    font-size: 12px;
+}
+
+.active {
+    background: #ff7f50!important;
+    color: #fff;
+}
+
+.more-mina-wrap {
+    position: absolute;
+    bottom: 160rpx;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.more-mina-wrap button {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #1aac19;
+    min-width: 430rpx;
+}
+
+.more-mina-wrap navigator {
+    margin-left: 4px;
+    font-size: 12px;
+    border-bottom: 1px solid #1aad19;
+}
+
+.more-mina-wrap .link {
+    border-bottom: 1px solid #1aad19;
+    font-size: 12px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.m-hide {
+    color: #eee;
+}
+
+.chartboard {
+    background-color: #ededed;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.inputArea {
+    padding: 6px 10px;
+    width: 96%;
+    vertical-align: middle;
+    margin: 0 2%;
+    border: 1px solid #ededed;
+}
+
+.buttons-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    margin-top: 10px;
+}
+
+.buttons-wrap .submit {
+    width: 160rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    background: #1aad19;
+    color: #fff;
+}
+
+.activeTab {
+    color: #f15b28;
+}
+
+.swiperView {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.showA {
+    position: relative;
+}
+
+.hideA {
+    position: absolute;
+    left: -1000rpx;
+}
+
+.bigBtn {
+    background-color: #1aad19;
+    color: #fff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    position: absolute;
+    font-size: 12px;
+}
+
+.choose {
+    left: 15px;
+    top: -1px;
+}
+
+.done {
+    right: 15px;
+    top: -1px;
+}
+
+.copy {
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+}
+
+.xf {
+    bottom: 40%;
+}

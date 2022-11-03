@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "sliders": "/components/sliders/sliders"
+    },
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00C8FD",
+    "navigationBarTitleText": "视频转GIF",
+    "navigationBarTextStyle": "black",
+    "disableScroll": true
+}

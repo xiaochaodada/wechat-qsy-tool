@@ -1,0 +1,28 @@
+<template name="input-view">
+    <view class="container_input">
+        <view class="mList">
+            <view class="inputCell">
+                <text class="inputQuestions">你的名字？</text>
+                <input bindinput="inputName" class="inputAnswers" type="text" value="{{mName}}"></input>
+                <view class="inputLine"></view>
+            </view>
+            <view class="inputCell">
+                <text class="inputQuestions">你的生日？</text>
+                <picker bindchange="bindDateChange" mode="date" start="1970-01-01" value="{{date}}">
+                    <view class="inputDate">{{date}}</view>
+                </picker>
+        {{mDate}}
+        <view class="inputLine"></view>
+            </view>
+            <view class="inputCell">
+                <text class="inputQuestions">寿命预期？</text>
+                <input bindinput="inputExpect" class="inputAnswers" placeholder="人的平均寿命约80岁" placeholderStyle="color: rgba(255,255,255,0.32)" type="number" value="{{mAge}}"></input>
+                <view class="inputLine"></view>
+            </view>
+        </view>
+        <view bindtap="startCalculate" class="calculateBtn">
+            <text class="calculateTxt">开始测算</text>
+            <image class="calculateArrow" src="../life/images/res/img/arrow.png"></image>
+        </view>
+    </view>
+</template>

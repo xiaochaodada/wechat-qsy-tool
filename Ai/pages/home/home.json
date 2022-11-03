@@ -1,0 +1,9 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00C8FD",
+    "navigationBarTitleText": "人工智能",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "module": "../../components/module/module"
+    }
+}

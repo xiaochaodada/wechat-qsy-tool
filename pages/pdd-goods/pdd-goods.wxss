@@ -1,0 +1,161 @@
+@import "templates/pdd-goods-list.wxss";
+@import "tools/gongju.wxss";
+.pdd-goods-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60rpx;
+}
+
+page {
+    font-family: -apple-system-font,"Helvetica Neue",sans-serif;
+    font-size: 30rpx;
+    line-height: 1.2;
+    background-color: #fff;
+    height: 100%;
+    color: #333;
+}
+
+.loading-text {
+    width: 100%;
+    height: 100%;
+    color: #8e9fb3;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-justify-end {
+    justify-content: flex-end;
+}
+
+.flex-justify-spacearound {
+    justify-content: space-around;
+}
+
+.flex-justify-spacebetween {
+    justify-content: space-between;
+}
+
+.flex-justify-start {
+    justify-content: flex-start;
+}
+
+.flex-alignitem-center {
+    align-items: center;
+}
+
+.flex-alignitem-start {
+    align-items: flex-start;
+}
+
+.flex-alignitem-end {
+    align-items: flex-end;
+}
+
+.loading {
+    height: 100%;
+}
+
+.object {
+    width: 16rpx;
+    height: 16rpx;
+    background-color: #8e9fb3;
+    margin: 0 10rpx;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.loadingtext-object {
+    margin-bottom: 48rpx;
+}
+
+.detail-nav-loading .object {
+    background-color: #fff;
+}
+
+.detail-loading .object,.page-loading .object {
+    background-color: #ffb755;
+}
+
+#object_one {
+    animation: object_one 1.5s infinite;
+}
+
+#object_two {
+    animation: object_two 1.5s infinite;
+    animation-delay: 0.25s;
+}
+
+#object_three {
+    animation: object_three 1.5s infinite;
+    animation-delay: 0.5s;
+}
+
+@-webkit-keyframes object_one {
+    75% {
+        transform: scale(0);
+    }
+}
+
+@keyframes object_one {
+    75% {
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes object_two {
+    75% {
+        transform: scale(0);
+    }
+}
+
+@keyframes object_two {
+    75% {
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes object_three {
+    75% {
+        transform: scale(0);
+    }
+}
+
+@keyframes object_three {
+    75% {
+        transform: scale(0);
+    }
+}
+
+.square-page-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+
+
+/* 工具类 */

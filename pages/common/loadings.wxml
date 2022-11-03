@@ -1,0 +1,9 @@
+
+<template name="loading">
+  <view class="tui-modal-mask tui-mask-show" bindtap="handleClickCancel">
+  	<view class='cu-load load-modal'>
+  		<image src='../../images/icon.png' class='png' mode='aspectFit'></image>
+  		<view class='gray-text'>加载中...</view>
+  	</view>
+  </view>
+</template>

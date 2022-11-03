@@ -1,0 +1,180 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/qsy/qsy",
+    "pages/question/question",
+    "pages/mine/mine",
+    "pages/md5/md5",
+    "pages/mine/setting/setting",
+    "pages/history/history",
+    "pages/jiaocheng/jiaocheng",
+    "pages/xiugai/xiugai",
+    "pages/pdd-goods/pdd-goods",
+    "pages/pdd-goods/details/details",
+    "pages/batch/batch",
+    "pages/mine/qiandao/qiandao",
+    "pages/mine/invite/invite",
+    "pages/mine/invite/rule/rule",
+    "pages/mine/invite/withdraws/withdraws",
+    "pages/mine/exchange/exchange",
+    "pages/mine/invite/invite_list/invite_list",
+    "pages/mine/points_history/points_history",
+    "pages/leader/leader",
+    "pages/moreApp/moreApp"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/tools/danmu/danmu",
+        "pages/tools/danmu/show_danmu",
+        "pages/tools/networkSpeed/networkSpeed",
+        "pages/tools/newsaizi/newsaizi",
+        "pages/tools/wordcloud/wordcloud",
+        "pages/tools/wxsave/wxsave",
+        "pages/tools/wx520/wx520",
+        "pages/tools/nickname/nickname",
+        "pages/tools/textshow/textshow",
+        "pages/tools/qqch/index",
+        "pages/tools/sjzw/index",
+        "pages/tools/eglfq/index",
+        "pages/tools/charge/main",
+        "pages/tools/charge/ad",
+        "pages/tools/star/star",
+        "pages/tools/chatz/moments",
+        "pages/tools/chatz/main",
+        "pages/tools/fontToVoice/fontToVoice",
+        "pages/tools/astro/index",
+        "pages/tools/life/shenminsz",
+        "pages/tools/mobile/mobile",
+        "pages/tools/qqtest/qqtest",
+        "pages/tools/blood/blood",
+        "pages/tools/almanac/almanac",
+        "pages/tools/tyfy/tyfy",
+        "pages/tools/zgjm/zgjm"
+      ]
+    },
+    {
+      "root": "packageB",
+      "pages": [
+        "pages/movevideo/movevideo",
+        "pages/watermark/watermark",
+        "pages/watermark/source/source",
+        "pages/cutvideo/cutvideo",
+        "pages/merging/merging",
+        "pages/cuttimer/cuttimer",
+        "pages/gif/gif",
+        "pages/speed/speed",
+        "pages/currency/currency",
+        "pages/preview-download/preview-download"
+      ]
+    },
+    {
+      "root": "Game",
+      "pages": [
+        "pages/tools/twentyfour/index",
+        "pages/tools/twentyfour/success",
+        "pages/tools/huarong/index",
+        "pages/tools/blind/blind",
+        "pages/tools/chess/chess",
+        "pages/tools/soeasy/soeasy",
+        "pages/tools/zxhdmx/zxhdmx",
+        "pages/tools/zhuanpan/zhuanpan",
+        "pages/tools/juhui/juhui"
+      ]
+    },
+    {
+      "root": "chart",
+      "pages": [
+        "pages/tools/axjgg/axjgg",
+        "pages/tools/jiuword/jiuword",
+        "pages/tools/tuzhuanwenzi/tuzhuanwenzi",
+        "pages/tools/tuzhuanwenzi/editText",
+        "pages/tools/createQrcode/createQrcode",
+        "pages/tools/scanQrcode/scanQrcode"
+      ]
+    },
+    {
+      "root": "Fortune",
+      "pages": [
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/sx/sxpair_info/sxpair_info",
+        "pages/sx/index/index"
+      ]
+    },
+    {
+      "root": "Ai",
+      "pages": [
+        "pages/home/home",
+        "pages/detail/detail"
+      ]
+    },
+    {
+      "root": "course",
+      "pages": [
+        "pages/course/course"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/pdd-goods/pdd-goods": {
+      "network": "all",
+      "packages": [
+        "packageA"
+      ]
+    },
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "packageB"
+      ]
+    },
+    "pages/xiugai/xiugai": {
+      "network": "all",
+      "packages": [
+        "packageB"
+      ]
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#dbdbdb",
+    "selectedColor": "#00C8FD",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_active.png"
+      },
+      {
+        "pagePath": "pages/pdd-goods/pdd-goods",
+        "text": "更多工具",
+        "iconPath": "images/tool.png",
+        "selectedIconPath": "images/tool_active.png"
+      },
+      {
+        "pagePath": "pages/moreApp/moreApp",
+        "text": "更多好玩",
+        "iconPath": "images/moreapp.png",
+        "selectedIconPath": "images/moreapp_active.png"
+      },
+   
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine-selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

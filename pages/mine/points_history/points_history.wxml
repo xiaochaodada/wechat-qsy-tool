@@ -1,0 +1,21 @@
+<!-- <view class="bg text-center">
+    <view class="padding-top">
+        <view class="text-white padding-top-xl text-sm">我的积分余额    </view>
+    </view>
+    <view bindtap="goPoints" class="text-white text-xsl">{{points}}</view>
+    <view bindtap="goPoints" class="text-white text-sm">获取更多积分</view>
+</view> -->
+<view wx:for="{{points_history_list}}" wx:key="points_history_list">
+    <view class="flex bg-white padding-sm solid-bottom" style="border-bottom: solid 1rpx #e6e6e5;">
+        <view class="basis-xl">
+            <view class="text-black margin-bottom-xs">{{item.content}}</view>
+            <view class="text-sm text-grey">{{item.time}}</view>
+        </view>
+        <view class="basis-xs text-right margin-xs text-orange" style="color: {{item.changes == '已完成' ? '#28FF28' : '#ff2679'}};">{{item.changes}}</view>
+</view>
+    </view>  
+            <view class="weui-footer">
+            <view style="margin-top:20rpx;">
+                <text>暂时只显示最新30条{{query == 1 ? '提现' : '消费'}}记录</text>
+            </view>
+        </view>  

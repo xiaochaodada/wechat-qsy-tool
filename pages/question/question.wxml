@@ -1,0 +1,53 @@
+<scroll-view class="content" scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true">
+    <view class="cell-view" id="question-copy">
+        <view class="faq-q">如何去水印？</view>
+        <view class="faq-a">
+            <text class="text">1、打开需要去水印的APP，找到分享按钮点击分享选择“复制链接”。\r\n2、打开本程序会自动获取到复制的链接，按提示操作即可。</text>
+        </view>
+        <image class="jiao" mode="widthFix" src="/images/help-1.jpg"></image>
+        <image class="jiao2" mode="widthFix" src="/images/help-2.jpg"></image>
+    </view>
+    <!-- <view class="cell-view" id="question-support">
+    <view class="faq-q">支持哪些APP呢？</view>
+    <view class="faq-a">
+      <view class="platform-list">
+        <view class="platform-item" wx:for="{{config_data_list.qsy}}" wx:for-index="index2" wx:for-item="item2" wx:key="index2">
+          <image lazy-load="true" class="platform-pic" src="{{item2.icon}}"></image>
+          <text class="platform-name">{{item2.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view> -->
+    <block wx:for="{{config_base_list.faq}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="cell-view" id="{{item.dir}}">
+            <view class="faq-q">{{item.q}}</view>
+            <view class="faq-a">
+                <text class="text">{{item.a}}</text>
+            </view>
+        </view>
+    </block>
+    <view class="cell-view" id="question-md5">
+        <view class="faq-q">短视频MD5是什么？</view>
+        <view class="faq-a">
+            <text class="text">MD5值类似于人类的身份证，每一个MD5值对于小视频本身都是独一无二的，平台自有系统通过判断MD5值是验证视频是否重复的手段之一</text>
+        </view>
+        <view class="content_top">
+            修改MD5前,上传视频原创是别人的(如下图)
+        </view>
+        <view class="content_img">
+            <image src="/images/xiugaiqian.jpg"></image>
+        </view>
+        <view class="content_top">
+            修改MD5后,上传视频原创是自己的(如下图)
+        </view>
+        <view class="content_img">
+            <image src="/images/xiugaihou.jpg"></image>
+        </view>
+    </view>
+    <view class="ad" wx:if="{{mode != 0 && config_base_list.advertisements.index_video_ad && config_base_list.user_information.vip != '1'}}">
+        <ad unit-id="{{config_base_list.advertisements.index_video_ad}}" ad-type="video" ad-theme="white"></ad>
+    </view>
+    <view class="button-view foot-button-view">
+        <button class="btn" openType="contact" type="primary">仍有问题？联系客服</button>
+    </view>
+</scroll-view>

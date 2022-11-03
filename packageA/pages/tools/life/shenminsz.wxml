@@ -1,0 +1,21 @@
+<import src="index/index.wxml"></import>
+<import src="input/input.wxml"></import>
+<import src="result/result.wxml"></import>
+<view class="container">
+    <image class="img_bg" src="./images/res/img/bg.jpg"></image>
+    <block>
+        <block wx:if="{{currentMode=='index'}}">
+            <template is="index-view" data="{{...indexData}}"></template>
+        </block>
+    </block>
+    <block>
+        <block wx:if="{{currentMode=='input'}}">
+            <template is="input-view" data="{{...inputdata}}"></template>
+        </block>
+    </block>
+    <block>
+        <block wx:if="{{currentMode=='result'}}">
+            <template is="result-view" data="{{...resultData}}"></template>
+        </block>
+    </block>
+</view>

@@ -1,0 +1,101 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+page {
+    overflow-y: hidden;
+}
+
+.bottom-bar-box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-sizing: content-box;
+    width: 100%;
+    height: 90rpx;
+    text-align: center;
+    background-color: #fcfcfc;
+}
+
+.bottom-bar-box button {
+    display: block;
+    color: #1cb584;
+    background-color: #fcfcfc;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    border: none;
+}
+
+.btn-hover {
+    background-color: #f7f7f7;
+    color: #1cb584;
+}
+
+.edit-text-container {
+    border-top: 1rpx solid #e8e8e8;
+    padding: 0 30rpx;
+}
+
+.edit-text-box {
+}
+
+.edit-text-box textarea {
+    width: 100%;
+    height: 100%;
+    font-size: 32rpx;
+    color: #222222;
+    line-height: 60rpx;
+    caret-color: #1CB584;
+}
+
+.bottom-bar-box {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-top: 1rpx solid #e1e1e1;
+    background-color: #FCFCFC;
+}
+
+.bottom-bar-box button {
+    display: inline-block;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+}
+
+.bottom-bar-box .btn-active {
+    background-color: #f7f7f7;
+}
+
+.bottom-bar-box .line {
+    display: inline-block;
+    height: 40rpx;
+    border-right: 1rpx solid #e1e1e1;
+}
+
+.bottom-bar-box button:first-child {
+    color: #777777;
+}
+
+.bottom-bar-box button:last-child {
+    color: #1CB584;
+}
+
+.fix-iphonex-button {
+    bottom: 68rpx!important;
+}
+
+.fix-iphonex-button::after {
+    content: ' ';
+    position: fixed;
+    bottom: 0!important;
+    height: 68rpx!important;
+    width: 100%;
+    background-color: #FCFCFC;
+}

@@ -1,0 +1,19 @@
+<template name="2163f9ae">
+    <view class="_div data-v-0809359e">
+        <view class="_div data-v-0809359e return"></view>
+        <image class="lq" src="lq.png"></image>
+        <view class="_p data-v-0809359e" style="font-size:0.8rem;">我的零钱</view>
+        <view class="_div data-v-0809359e" style="font-size:2rem;font-weight:bold">¥ {{money}}</view>
+        <view class="_p data-v-0809359e lqt" style="font-size:0.8rem;color:#fa9d3b">转入零钱通赚收益 七日年化 5.3%</view>
+        <view class="_div data-v-0809359e" style="width:50%;margin:45% auto;text-align:center;">
+            <button class="_button data-v-0809359e btn" openType="share">充值</button>
+            <button bindtap="handleProxy" class="_button data-v-0809359e btn2" data-comkey="{{$k}}" data-eventid="{{'0'}}">提现</button>
+        </view>
+        <view class="_div data-v-0809359e foot">
+            <view class="_p data-v-0809359e" data-comkey="{{$k}}" data-eventid="{{'1'}}" style="font-size:0.7em;color:#576B95">常见问题</view>
+            <view class="_p data-v-0809359e" style="font-size:0.6em;color:gray">本服务由财寸通提供</view>
+        </view>
+        <van-notify class="_van-notify data-v-0809359e" id="van-notify"></van-notify>
+        <van-dialog class="_van-dialog data-v-0809359e" id="van-dialog"></van-dialog>
+    </view>
+</template>

@@ -1,0 +1,39 @@
+<view class="pop-mask" wx:if="{{bgShow}}" ></view>
+<view class="sur-red-pack-pop" wx:if="{{bgShow}}">
+    <view class="sur-red-pack-pop-content" style=" background: url(https://api.85xn.cn/img/16-19-49.png);background-size: 100%;">
+        <view class="txt1">送您一个</view>
+        <image class="txt2" src="../../images/txt2.png"></image>
+        <form bindsubmit="red_envelopes" data-index="1" reportSubmit="true">
+            <button class="sur-red-pack-pop-btn" formType="submit">
+                马上领取
+              </button>
+        </form>
+        <view bindtap="onFirstBagCloseClick" class="sur-close-btn">
+            <form bindsubmit="pushFormSubmit" reportSubmit="true">
+                <button formType="submit" plain="true" style="-webkit-transform: scale(0.5);transform:scale(1);content:\"\";height:90rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0"></button>
+                <view>点击关闭</view>
+            </form>
+        </view>
+    </view>
+</view>
+<view class="pop-mask"wx:if="{{isBag}}"></view>
+<view class="sur-red-pack-pop" wx:if="{{isBag}}">
+    <view class="sur-red-pack-pop-content" style=" background: url(https://api.85xn.cn/img/16-19-49.png);background-size: 100%;">
+        <view class="txt1">本次共获得</view>
+        <view class="txt3">
+            <!-- <span class="txt4">1000</span>
+              元 -->
+                <span class="txt1">{{title}}</span>
+              
+            </view>
+        <button bindtap="receive" class="sur-red-pack-pop-btn" data-type="100">
+                点击领取
+              </button>
+        <view bindtap="onFirstBagCloseClick" class="sur-close-btn">
+            <form bindsubmit="pushFormSubmit" reportSubmit="true">
+                <button formType="submit" plain="true" style="-webkit-transform: scale(0.5);transform:scale(1);content:\"\";height:90rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0"></button>
+                <view>点击关闭</view>
+            </form>
+        </view>
+    </view>
+</view>

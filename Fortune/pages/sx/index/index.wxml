@@ -1,0 +1,65 @@
+<view class="pair">
+    <view class="pair_title">
+        <image class="pair_timg" src="../image/sx_title.png"></image>
+    </view>
+    <view class="pair_ul clear">
+        <view bindtap="showModal" class="pair_li pair1">
+            <view class="pair_bg">
+                <image class="pair_img" src="../image/sx/sx_{{male+1}}.png"></image>
+            </view>
+            <view class="pair_text">
+                <view class="ico_arrow"></view>{{list[male].name}}</view>
+        </view>
+        <view bindtap="showModal" class="pair_li pair2">
+            <view class="pair_bg">
+                <image class="pair_img" src="../image/sx/sx_{{female+1}}.png"></image>
+            </view>
+            <view class="pair_text">
+                <view class="ico_arrow"></view>{{list[female].name}}</view>
+        </view>
+    </view>
+    <button bindtap="pair" class="pair_btn" hoverClass="none">开始配对</button>
+    <view bindtap="cancel" class="layer" wx:if="{{mengshow}}"></view>
+    <view class="float_box {{showModalStatus?'slideup':'slidedown'}}" style="bottom:{{bottom}}" wx:if="{{modalHidden}}">
+        <view class="f_title">
+            <image class="f_titleimg" src="../image/p_sx.png"></image>
+        </view>
+        <view class="f_main clear">
+            <view bindtap="cancel" class="ico_no ico">
+                <image class="ico_img" src="../image/ico_no.png"></image>
+            </view>
+            <view bindtap="setIcon" class="ico_yes ico" data-type="yes">
+                <image class="ico_img" src="../image/ico_yes.png"></image>
+            </view>
+            <view class="pair_female">女生</view>
+            <view class="pair_male">男生</view>
+            <view class="pair_con male_con">
+                <scroll-view bindscroll="scrollFun" class="swiper-wrapper" data-name="malecheck" scrollIntoView="num{{maleclickid}}" scrollY="true" style="height: 600rpx;">
+                    <view class="swiper-slide scroll-view-item" id="num0"></view>
+                    <view bindtap="clickIcon" class="swiper-slide scroll-view-item {{malecheck==tabindex?'swiper-slide-active':''}}" data-index="{{tabindex}}" data-name="male" id="num{{tabindex+1}}" wx:for="{{list}}" wx:for-index="tabindex" wx:key="index">
+                        <view class="pair_conbg">
+                            <image class="pair_conimg" src="../image/sx/sx_{{tabindex+1}}.png"></image>
+                            <view class="pair_context">{{item.name}}</view>
+                        </view>
+                    </view>
+                    <view class="swiper-slide scroll-view-item" id="num13"></view>
+                </scroll-view>
+            </view>
+            <view class="pair_line">
+                <image class="pair_lineimg" src="../image/pair_line.png"></image>
+            </view>
+            <view class="pair_con female_con">
+                <scroll-view bindscroll="scrollFun" class="swiper-wrapper" data-name="femalecheck" scrollIntoView="num{{femaleclickid}}" scrollY="true" style="height: 600rpx;">
+                    <view class="swiper-slide scroll-view-item" id="num0"></view>
+                    <view bindtap="clickIcon" class="swiper-slide scroll-view-item {{femalecheck==tabindex?'swiper-slide-active':''}}" data-index="{{tabindex}}" data-name="female" id="num{{tabindex+1}}" wx:for="{{list}}" wx:for-index="tabindex" wx:key="index">
+                        <view class="pair_conbg">
+                            <image class="pair_conimg" src="../image/sx/sx_{{tabindex+1}}.png"></image>
+                            <view class="pair_context">{{item.name}}</view>
+                        </view>
+                    </view>
+                    <view class="swiper-slide scroll-view-item" id="num13"></view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+</view>

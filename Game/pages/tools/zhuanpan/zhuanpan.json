@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "dialog": "dialog/dialog"
+    },
+    "navigationBarTitleText": "随机大转盘",
+    "navigationBarBackgroundColor": "#1D2031",
+    "navigationBarTextStyle": "white"
+}

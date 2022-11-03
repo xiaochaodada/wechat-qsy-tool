@@ -1,0 +1,132 @@
+<view wx:if="{{pinduoduo_show == 0}}">
+        <view>
+        <view class="weui-cells__title">人工智能工具类</view>
+    </view>
+    <view>
+        <view class="weui-grids">
+            <navigator class="weui-grid" hoverClass="weui-grid_active" url="../{{item.path}}" wx:for="{{ai_class}}" wx:key="path">
+                <image class="weui-grid__icon" src="./tools/images/{{item.icon}}"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </view>
+    </view>
+
+
+</view>
+<view wx:elif="{{pinduoduo_show == 1}}">
+
+    <scroll-view enableBackToTop="{{true}}" scrollX="true" style=" white-space: nowrap; display: flex; position: fixed; top:0rpx; background:#FFF; z-index: 10; " wx:if="{{category.length}}">
+        <view bindtap="tap_pddcate" data-index="{{index}}" data-pdd-item="{{item}}" style="margin-left:25rpx;text-align:center; display: inline-block; " wx:for="{{category}}" wx:key="this">
+            <text style="{{index==sel_index?'color:#bd4149;border-bottom:2px solid #bd4149;':'color:#565656;'}};font-size:28rpx; line-height:80rpx; height:80rpx; padding-bottom:17rpx;">{{item.opt_name}}</text>
+
+        </view>
+    </scroll-view>
+    <import src="./templates/pdd-goods-list.wxml"></import>
+    <view class="page-loading square-page-loading" wx:if="{{showPageLoading}}">
+        <template is="loading" data="{{loadingtext:true}}"></template>
+    </view>
+    <view class="pdd-goods-container" wx:else>
+        <template is="pdd-goods-list" data="{{goods_details:goods_details,qieone:qieone,thiseven:thiseven,qietwo:qietwo,qiethree:qiethree,keyword:keyword}}"></template>
+    </view>
+
+<button bindtap='returns' wx:if="{{chushihuapinduoduo == 1}}">
+      <image class="returnadd-wrap" src="/images/returns.png"></image>
+  </button>
+
+    <view class="qusian" hidden="{{loding}}">
+        <image src="../../images/login.gif"></image>
+        <text>加载中...</text>
+    </view>
+
+</view>
+
+
+
+<view wx:else class="gongjupage">
+    <image class="china70th" src="https://api.wuxitoto.com/api/WeChat/user/assets/img/tools_background.png"></image>
+
+        <view>
+        <view class="weui-cells__title">人工智能工具类</view>
+    </view>
+    <view>
+        <view class="weui-grids">
+         <navigator wx:if="{{pinduoduo_show == 2 && system}}" bindtap="pinduoduo_shows" class="weui-grid" hoverClass="weui-grid_active">
+                <image class="weui-grid__icon" src="./tools/images/gouwu.png"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">低价购物</view>
+            </navigator>
+            <navigator class="weui-grid" hoverClass="weui-grid_active" url="../{{item.path}}" wx:for="{{ai_class}}" wx:key="path">
+                <image class="weui-grid__icon" src="./tools/images/{{item.icon}}"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </view>
+    </view>
+
+    <view>
+        <view class="weui-cells__title">图片处理工具类</view>
+    </view>
+    <view>
+        <view class="weui-grids">
+            <navigator class="weui-grid" hoverClass="weui-grid_active" url="../{{item.path}}" wx:for="{{chart_class}}" wx:key="path">
+                <image class="weui-grid__icon" src="./tools/images/{{item.icon}}"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </view>
+    </view>
+
+        <view>
+        <view class="weui-cells__title">解惑必备类</view>
+    </view>
+    <view>
+        <view class="weui-grids">
+            <navigator class="weui-grid" hoverClass="weui-grid_active" url="../{{item.path}}" wx:for="{{puzzled_class}}" wx:key="path">
+                <image class="weui-grid__icon" src="./tools/images/{{item.icon}}"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </view>
+    </view>
+
+    <view>
+        <view class="weui-cells__title">实用小工具类</view>
+    </view>
+    <view>
+        <view class="weui-grids">
+            <navigator class="weui-grid" hoverClass="weui-grid_active" url="../{{item.path}}" wx:for="{{practical_class}}" wx:key="path">
+                <image class="weui-grid__icon" src="./tools/images/{{item.icon}}"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view>
+        <view class="weui-cells__title">智力游戏类</view>
+    </view>
+    <view>
+        <view class="weui-grids">
+            <navigator class="weui-grid" hoverClass="weui-grid_active" url="../{{item.path}}" wx:for="{{youxi_class}}" wx:key="path">
+                <image class="weui-grid__icon" src="./tools/images/{{item.icon}}"></image>
+                <view wx:if="{{item.tip}}">
+                    <view class="tip"></view>
+                </view>
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </view>
+
+    </view>
+</view>

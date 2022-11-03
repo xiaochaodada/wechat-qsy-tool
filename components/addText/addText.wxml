@@ -1,0 +1,31 @@
+<view hidden="{{!isShow}}">
+    <view catchtap="hideDialog" class="wx-mask"></view>
+    <view style="width:90%;position:absolute;top:15%;left:5%;height:70vh;background:white;z-index:1001">
+        <textarea bindinput="inputSave" maxlength="-1" placeholder="请输入文字" style="width:94%;height:55%;background:#ddd;margin:5rpx auto;padding:10rpx;color:{{textConfig.fontColor}};" type="text" value="{{text}}"></textarea>
+        <view style="width:90%;margin:20rpx auto;font-size:30rpx;">
+            <view>字体颜色(左右滑动)</view>
+            <view class="color_class">
+                <scroll-view scrollX class="scroll-view_x" style="display: flex;align-items: center;width: auto;overflow:hidden;">
+                    <view bindtap="fontColorChange" class="{{show==index?'color_items':'color_item'}}" data-selected="{{index}}" style="background-color:{{item}};border:{{item=='#ffffff'?'1rpx solid red':'none'}}" wx:for="{{allColor}}" wx:key="index"></view>
+                </scroll-view>
+            </view>
+        </view>
+        <view style="width:90%;margin:20rpx auto;font-size:30rpx;">
+            <view>字体风格</view>
+            <radio-group bindchange="setTextStyle">
+                <label class="radio">
+                    <radio checked color="#08e037" value="normal"></radio>正常
+        </label>
+                <label class="radio">
+                    <radio color="#08e037" value="bold"></radio>粗体
+        </label>
+                <label class="radio">
+                    <radio color="#08e037" value="italic"></radio>斜体
+        </label>
+            </radio-group>
+        </view>
+        <button bindtap="checktext" class="create_img" type="primary">完成</button>
+    </view>
+</view>
+<canvas canvasId="canvas" hidden="{{isHiddenCanvas}}" style="width:{{width}}px;height:{{height}}px;position:absolute;left:-99999999px;"></canvas>
+<canvas canvasId="testCaanvas" hidden="{{isHiddenTestCanvas}}" style="position:absolute;left:-99999999px;width:{{testWidth}}px;height:{{testHeight}}px"></canvas>

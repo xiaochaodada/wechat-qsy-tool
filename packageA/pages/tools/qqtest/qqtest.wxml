@@ -1,0 +1,30 @@
+
+<view class="after-navber">
+    <view class="container">
+        <view class="itemTitle">QQ号测吉凶</view>
+        <form bindsubmit="formSubmit">
+            <input class="seachInput" name="date" placeholder="请输入要测试的QQ号"></input>
+            <view class="itemButtom">
+                <button class="seachButtom" formType="submit">查询</button>
+                <button class="resetButtom" formType="reset">清空</button>
+            </view>
+        </form>
+        <block>
+            <block wx:if="{{flag==1}}">
+                <view class="paragraphs">
+                    <view class="paragraph">测试结论：</view>
+                    <view class="paragraph">{{dateInfo.conclusion}}</view>
+                    <view class="paragraph">结论分析：</view>
+                    <view class="paragraph">{{dateInfo.analysis}}</view>
+                </view>
+            </block>
+        </block>
+        <view class="tool-info">
+            <text class="title">相关知识</text>
+            <text class="info">
+        气有旺衰之气，数亦有吉凶之数。号码，数也；故举凡号码，均与周易数理具有吉凶关联，就像风水、姓名会影响运势命运的意义是一样的。
+
+        与您生活密不可分的各种生活号码，也有吉凶之分！号码的数理吉凶就像风水一样会影响主人的运势命理，与您的生活息息相关，也是您与很多人沟通的桥梁，以五行数理分析号码吉凶，并通过号码分析主人的性格和运势吉凶。</text>
+        </view>
+    </view>
+</view>

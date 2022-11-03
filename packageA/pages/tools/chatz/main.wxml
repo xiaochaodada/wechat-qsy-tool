@@ -1,0 +1,30 @@
+<view class="bots">
+    <input bindinput="onElementCharChanged" class="xss_element_char_input" maxlength="2" value="{{firstElementChar}}"></input>
+    <input bindinput="onRawStrChanged" class="xss_input" maxlength="18" placeholder="请输入 我爱你 试试!"></input>
+</view>
+<block>
+    <block wx:if="{{previewedStr}}">
+        <view bindtap="toSendClicked" class="chuo">点击复制</view>
+    </block>
+</block>
+<scroll-view class="xss_scroll" scrollY="true">
+    <view class="xss_scroll_header"></view>
+    <view class="xss_preview_headphoto">
+        <open-data class="userinfo" mode="cover" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="xss_preview_wrapper_decor"></view>
+    <view bindtap="toSendClicked" class="xss_preview_wrapper">
+        <view class="xss_preview_content">{{previewedStr}}</view>
+    </view>
+    <view class="xss_scroll_footer"></view>
+</scroll-view>
+<canvas canvasId="id_helper_canvas" class="xss_helper_canvas"></canvas>
+<block>
+    <block wx:if="{{measure_help_showed}}">
+        <text class="xss_measure_help" id="id_measure_help">{{measure_help_content}}</text>
+    </block>
+</block>
+<view class="xss_notify">Tips:少量手机预览变形,请发送后查看!</view>
+<button open-type='share'>
+    <image class="add-wrap1" src="/images/shares.jpg"></image>
+</button>

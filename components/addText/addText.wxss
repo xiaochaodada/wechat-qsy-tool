@@ -1,0 +1,61 @@
+.wx-mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.radio {
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    float: left;
+}
+
+.color_class {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 10rpx 10rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color_item {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 100%;
+    margin-right: 23rpx;
+    display: inline-block;
+}
+
+.color_items {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 100%;
+    margin-right: 23rpx;
+    display: inline-block;
+    font-style: italic;
+}
+
+.create_img {
+    font-size: 30rpx;
+    padding: 0;
+    position: absolute;
+    bottom: 10rpx;
+    right: 20rpx;
+    height: 60rpx;
+    width: 120rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border-radius: 20rpx;
+    color: white;
+}

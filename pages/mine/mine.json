@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#00C8FD",
+  "navigationBarTextStyle": "white",
+  "component": true,
+  "usingComponents": {
+    "icon": "../../dist/icon/index",
+    "mp-dialog": "/dist/dialog/dialog"
+  }
+}

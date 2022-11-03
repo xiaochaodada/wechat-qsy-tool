@@ -1,0 +1,82 @@
+page {
+    background: #F06060;
+}
+
+.box {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 710rpx;
+    height: 710rpx;
+}
+
+button {
+    box-sizing: border-box!important;
+    text-align: center!important;
+}
+
+.xf {
+    bottom: 12%!important;
+}
+
+.xf2 {
+    box-sizing: inherit!important;
+}
+
+.inbox {
+    display: block;
+    float: left;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 5rpx solid #ddd;
+    box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: rgba(120,120,120,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.content {
+    position: relative;
+    background: white;
+    width: 80%;
+    height: 500rpx;
+    border-radius: 10rpx;
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-result {
+    font-size: 80px;
+    color: rgb(216,192,13);
+    font-weight: bold;
+}
+
+.modal-btn {
+    position: relative;
+    bottom: -146rpx;
+}
+
+.modal-btn {
+    position: relative;
+    bottom: -146rpx;
+    width: 100%;
+    color: white;
+}

@@ -1,0 +1,144 @@
+.picker {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28rpx;
+    line-height: 28rpx;
+}
+
+.bottom {
+    height: 120rpx;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1rpx solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom button {
+    height: 100%;
+    padding: 0;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 28rpx;
+    font-size: 28rpx;
+}
+
+.bottom button image {
+    width: 70rpx;
+    height: 70rpx;
+    margin: 10rpx;
+}
+
+.bottom button::after {
+    border: none;
+}
+
+.bottom_list {
+    float: left;
+    height: 115rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.bottom_list image {
+    width: 60rpx;
+    height: 60rpx;
+    float: left;
+}
+
+.bottom_list view {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.o {
+    color: greenyellow;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    z-index: 99;
+    right: -9px;
+    bottom: -9px;
+}
+
+.x {
+    color: greenyellow;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    z-index: 99;
+    left: -9px;
+    top: -9px;
+}
+
+.kuoda {
+    z-index: 100;
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    bottom: -13rpx;
+    right: -13rpx;
+    border-radius: 100%;
+    background: rgba(255,255,255,0.4);
+    border: 2rpx solid red;
+}
+
+.btn {
+    padding: 0;
+    height: 90rpx;
+    font-size: 28rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40rpx;
+    width: 150rpx;
+    background: none;
+    border: 1rpx solid rgb(207,211,212);
+    box-shadow: 1px 1px 2px 1px rgb(204,202,202);
+    border-radius: 10rpx;
+}
+
+.btn image {
+    float: left;
+    width: 60rpx;
+    height: 60rpx;
+    margin: auto 10rpx;
+}
+
+.zy-slider {
+    width: 600rpx;
+    margin: 20rpx auto;
+    height: 60rpx;
+}
+
+.select-but {
+    width: 100%;
+    text-align:center;
+    margin: 25rpx auto 0 0;
+    height: 80rpx;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-but button {
+    padding: 0;
+    height: 80rpx;
+    width: 151rpx;
+    background: none;
+}
+
+.select-but button::after {
+    border: 0;
+}

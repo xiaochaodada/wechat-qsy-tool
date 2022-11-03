@@ -1,0 +1,10 @@
+<view class="i-class i-noticebar" style="color: {{color}}; background-color: {{backgroundcolor}}" wx:if="{{isShow}}">
+  <i-icon class="i-noticebar-icon" color="{{iconColor}} == null ?'#6A5ACD':{{iconColor}}" size="32" type="{{icon}}" wx:if="{{icon}}"></i-icon>
+
+  <view class="i-noticebar-content-wrap">
+    <view animation="{{animationData}}" class="i-noticebar-content {{loop?'i-noticebar-content-loop':''}}">
+      <slot></slot>
+    </view>
+  </view>
+  <i-icon bindtap="onDismissNotice" class="i-noticebar-operation" color="{{iconColor}} == null ?'#6A5ACD':{{iconColor}}" size="32" type="guanbi"></i-icon>
+</view>

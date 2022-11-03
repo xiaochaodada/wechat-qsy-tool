@@ -1,0 +1,74 @@
+<view class="top">
+    <view class="top-info">
+        <text>经鉴定，您的设备为</text>
+        <text class="equipment-name">{{model}}</text>
+    </view>
+</view>
+<view class="container">
+    <view class="tip">系统检测到你的设备信息</view>
+    <view class="rowCon">
+        <text class="rowCon_l">手机品牌：</text>
+        <text>{{brand}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">手机型号：</text>
+        <text>{{model}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">客户端平台：</text>
+        <text>{{platform}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">操作系统版本：</text>
+        <text>{{system}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">微信版本号：</text>
+        <text>{{version}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">设备像素比：</text>
+        <text>{{pixelRatio}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">屏幕宽度：</text>
+        <text>{{screenWidth}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">屏幕高度：</text>
+        <text>{{screenHeight}}</text>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">当前网络状态：</text>
+        <text>{{networkType}}</text>
+    </view>
+    <view hidden="{{!SSID}}">
+        <view class="rowCon">
+            <text class="rowCon_l">WiFi名字：</text>
+            <text>{{SSID}}</text>
+        </view>
+        <view class="rowCon">
+            <text class="rowCon_l">WiFi地址：</text>
+            <text>{{BSSID}}</text>
+        </view>
+        <view class="rowCon">
+            <text class="rowCon_l">WiFi安全：</text>
+            <text>{{secure}}</text>
+        </view>
+        <view class="rowCon">
+            <text class="rowCon_l">WiFi信号：</text>
+            <text>{{signalStrength}}</text>
+        </view>
+    </view>
+    <view class="rowCon">
+        <text class="rowCon_l">是否支持NFC：</text>
+        <text>{{nfc}}</text>
+    </view>
+</view>
+<ad wx:if="{{mode != 0 && config.advertisements.box_ad && config.user_information.vip !='1'}}" adTheme="white" adType="grid" gridCount="5" gridOpacity="0.8" unitId="{{config.advertisements.box_ad}}"></ad>
+
+<view class="btn">
+    <button bindtap="setClip" class="bt1" style="margin-top:20rpx;">复制设备信息</button>
+    <button class="bt1" openType="share" style="margin-top:20rpx;">分享给朋友，看大家的手机真伪</button>
+</view>
+

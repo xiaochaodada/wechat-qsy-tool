@@ -1,0 +1,35 @@
+<view style="width:96%;position:fixed;top:20rpx;left:15rpx;font-size:30rpx;">
+上面框为主视频，下面为片头（左）片尾（右），点击加号可分别添加视频片头片尾
+</view>
+<view class="videobox">
+    <view class="{{save?'save_video':'main_video'}}">
+        <video autoplay bindtap="{{save?'':'chooseV'}}" customCache="{{false}}" src="{{video}}" style="width:100%;height:100%;" wx:if="{{video}}"></video>
+        <image bindtap="chooseV" src="../images/jia.png" style="width:50%;height:80%;" wx:if="{{!video&&!save}}"></image>
+    </view>
+    <view class="video1" wx:if="{{!save}}">
+        <video autoplay bindtap="chooseVideo1" customCache="{{false}}" src="{{video1}}" style="width:100%;height:100%;" wx:if="{{video1}}">></video>
+        <image bindtap="chooseVideo1" src="../images/jia.png" style="width:50%;height:50%;" wx:if="{{!video1}}"></image>
+    </view>
+    <view class="video2" wx:if="{{!save}}">
+        <video autoplay bindtap="chooseVideo2" customCache="{{false}}" src="{{video2}}" style="width:100%;height:100%;" wx:if="{{video2}}">></video>
+        <image bindtap="chooseVideo2" src="../images/jia.png" style="width:50%;height:50%;" wx:if="{{!video2}}"></image>
+    </view>
+</view>
+<view class="bottom">
+    <button bindtap="toBack" data-start="start" wx:if="{{save}}">
+        <image src="../images/back.png"></image>
+    返回
+  </button>
+    <button bindtap="chooseV" data-type="main">
+        <image src="../images/video.png"></image>
+    主视频
+  </button>
+    <button bindtap="uploadBefore" wx:if="{{!save}}">
+        <image src="../images/comfirm.png"></image>
+    确定
+  </button>
+    <button bindtap="saveBefore" wx:if="{{save}}">
+        <image src="/images/save.png"></image>
+    保存
+  </button>
+</view>

@@ -1,0 +1,31 @@
+<view style="width:100vw;height:88vh;margin:0 auto;">
+    <view class="remind">
+        <text space="nbsp">操作提示：
+    	1.选择视频，点击裁剪按钮，选择裁剪的区域进行裁剪
+     	2.选择视频时选择小一点的视频，不能超过50M
+         视频下载方式:在首页"剪辑记录下载"</text>
+    </view>
+    <video autoplay="{{true}}" enableProgressGesture="{{false}}" src="{{video}}" style="width:100vw;height:88vh;" wx:if="{{video}}"></video>
+</view>
+<view style="position:absolute;top:{{cutT}}px;left:{{cutL}}px;width:{{cutW}}px;height:{{cutH}}px; border:1px solid rgb(231, 34, 50)" wx:if="{{cut}}">
+    <view bindtouchmove="croperMove" bindtouchstart="croperStart" style="position:absolute;width:{{cutW}}px;height:{{cutH}}px;box-shadow: 0 0 0 9999px rgba(255, 255, 255,0.5);"></view>
+    <image bindtap="clikImge" catchtouchmove="dragPointMove" catchtouchstart="dragPointStart" class="kuoda" src="../images/you2.png"></image>
+</view>
+<view class="remark_bottom">
+    <button bindtap="chooseVideo">
+        <image src="../images/video.png"></image>
+  视频
+</button>
+    <button bindtap="cut" wx:if="{{!cut&&!save}}">
+        <image src="../images/cut.png"></image>
+  裁剪
+</button>
+    <button bindtap="saveVideo" wx:if="{{save}}">
+        <image src="../images/save.png"></image>
+  保存
+</button>
+    <button bindtap="login" data-video="video_1" wx:if="{{cut}}">
+        <image src="../images/comfirm.png"></image>
+  确定
+</button>
+</view>

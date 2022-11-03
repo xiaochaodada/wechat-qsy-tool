@@ -1,0 +1,4 @@
+<view bindtap="onTap" class="outter">
+    <image class="img" src="{{category.img}}" wx:if="{{category}}"></image>
+    <text class="title" wx:if="{{category}}">{{category.title}}</text>
+</view>

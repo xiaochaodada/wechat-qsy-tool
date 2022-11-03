@@ -1,0 +1,14 @@
+<template name="index-view">
+    <div bindtap="toInputViewAction" class="template_index">
+        <image class="clock" src="../life/images/res/img/clock.png">
+            <image class="clock_hour" src="../life/images/res/img/clock_hour.png"></image>
+            <image class="clock_minute" src="../life/images/res/img/clock_minute.png"></image>
+        </image>
+        <image class="lifeclock" src="../life/images/res/img/lifeclock.png"></image>
+        <view class="bottom">
+            <text class="tips">人生只有一次</text>
+            <text class="tips">去做自己喜欢的事</text>
+            <text class="btn_test">测测你正处于一天中的几点</text>
+        </view>
+    </div>
+</template>

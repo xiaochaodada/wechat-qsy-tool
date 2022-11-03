@@ -1,0 +1,163 @@
+<block wx:if="{{isdata}}">
+    <navigator class="nav-back" hoverClass="nav-back-hover" openType="navigateBack" style="top:{{statusBarHeight+6}}px">
+        <icon color="#707070" hoverClass="hover" size="48" type="rightarrow1"></icon>
+    </navigator>
+    <view class="container" style="padding-top:{{statusBarHeight}}px" wx:if="{{data}}">
+        <view class="row">
+            <!-- <image class="mix-cover" src="{{data.next_info.cover_url}}"></image> -->
+            <view class="mix-info-base">
+                <!-- <view class="mix-info-name">
+                    <icon color="color:rgba(255, 255, 255, 0.9)" size="36" style="margin-right:15rpx;" type="collection"></icon>
+                    <text>{{data.next_info.mix_name}}</text>
+                </view>
+                <view class="font-small">
+                    <text style="margin-right:15rpx;color:#face15;">@{{data.author.nickname}}</text>
+                    <text>创建的合集</text>
+                </view> -->
+                <!-- <view class="font-small" style="margin-top:20rpx;">
+          更新至第{{data.statis.updated_to_episode}}集
+        </view> -->
+
+                <view class="ad-container">
+            <ad adTheme="black" adType="video" binderror="errVideoAd" bindload="loadAdVideo" unitId="{{config_base_list.advertisements.index_video_ad}}"wx:if="{{config_base_list.advertisements.index_video_ad}}" ></ad>
+        </view>
+            </view>
+        </view>
+        <view class="mix-desc font-small">
+      {{data.next_info.desc}}
+    </view>
+        <view class="font-small">
+
+      <text class="text-pad">总计({{list.length}})个视频</text>
+            <text class="dot">·</text>
+      <text class="text-pad">下拉最底部即可一键下载全部哦</text>
+        </view>
+
+        <view bindtap="goplay" class="video" data-index="{{item}}" wx:for="{{list}}" wx:key="index">
+            <image class="video-img-wrap" src="{{item.cover}}"></image>
+            <view>
+                <view class="vide-info-name font-small">
+                    <text class="video-title">第{{index+1}}个视频</text>
+                    <text class="video-line">|</text>
+                    <text class="video-desc">{{item.desc}}</text>
+                </view>
+                <view class="video-data font-small">
+                    <text style="padding-right:20rpx;"></text> 
+            <text class="text-pad">点击播放(单个保存)|下拉最底部即可一键下载哦</text>
+                </view>
+            </view>
+        </view>
+        <view bindtap="DownloadAll" class="save-btn" wx:if="{{!has_more}}">
+      批量下载全部
+    </view>
+    </view>
+</block>
+<block wx:else>
+    <view class="topbg"></view>
+    <navigator class="nav-back" hoverClass="nav-back-hover" openType="navigateBack" style="top:{{statusBarHeight+6}}px">
+        <icon color="#707070" hoverClass="hover" size="48" type="rightarrow1"></icon>
+    </navigator>
+    <view class="container1" style="padding-top:{{statusBarHeight}}px">
+        <view class="header">短视频批量解析(输入主页链接)</view>
+        <input bindinput="pageUrlInput" class="input" maxlength="-1" placeholder="请输入短视频主页链接" value="{{pageUrl}}"></input>
+        <!-- <text class="note">示例：https://v.douyin.com/gyJTf3/</text> -->
+        <view class="step-container">
+            <view class="title">TIPS：</view>
+            <view class="steps">
+                <view class="step">
+                    <icon color="#707070" size="48" style="line-height: 48rpx;font-size: 48rpx;border-radius: 50%;margin-bottom: 10rpx;" type="lianjie"></icon>
+                    <text>输入主页链接</text>
+                </view>
+                <view class="step">
+                    <icon color="#707070" size="48" style="line-height: 48rpx;font-size: 48rpx;border-radius: 50%;margin-bottom: 10rpx;" type="yingyongheji"></icon>
+                    <text>获取视频</text>
+                </view>
+                <view class="step">
+                    <icon color="#707070" size="48" style="line-height: 48rpx;font-size: 48rpx;border-radius: 50%;margin-bottom: 10rpx;" type="chakan"></icon>
+                    <text>查看结果</text>
+                </view>
+            </view>
+        </view>
+        <button bindtap="detail" class="submit-btn" hoverClass="submit-btn-hover">获取视频</button>
+    </view>
+</block>
+<mp-halfScreenDialog bindbuttontap="halfScreenTap" extClass="halfScreen-dialog" show="{{halfScreenShow}}">
+    <view slot="title">
+        <view bindlongpress="Copy_video_info" bindtap="Copy_video_info" class="weui-half-screen-dialog__title" data-content="{{videoInfo.desc}}" data-tip="标题已复制">{{videoInfo.desc}}</view>
+    </view>
+    <view slot="desc">
+        <view class="card">
+            <view class="card-body">
+                <view style="padding-bottom:30rpx;">
+                    <video bindlongpress="Copy_video_info" data-content="{{videoInfo.cover}}" data-tip="图片链接已复制" poster="{{videoInfo.cover}}" src="{{videoInfo.playAddr}}" style="width: 100%;height:295rpx;" title="{{desc}}"></video>
+                    <block wx:if="{{videoInfo.playAddr}}">
+                        <view bindlongpress="Copy_video_info" bindtap="Download" class="down-video bg-pink" data-content="{{videoInfo.playAddr}}" data-link="{{videoInfo.playAddr}}" data-tip="视频链接已复制" data-type="video">保存到相册</view>
+                        <navigator appId="wx18a2ac992306a5a4" class="down-video bg-green" openType="navigate" path="{{config_base_list.praise}}" target="miniProgram">赞赏一下，下载提个速</navigator>
+                    </block>
+                    <block wx:if="{{videoInfo.bigFile===true}}">
+                        <view class="bigFile-tips">由于该视频文件大小超出小程序下载限制，请复制视频地址后，用浏览器打开并下载：</view>
+                        <view style="padding-bottom:20rpx;padding-top:20rpx;">
+                            <text class="frame">安卓手机</text> 用户，建议您使用
+              <text class="frame_filling">QQ浏览器 </text> 或者
+              <text class="frame_filling">夸克浏览器</text> 下载视频
+            </view>
+                        <view style="padding-bottom:20rpx;padding-top:20rpx;">
+                            <text class="frame">苹果手机</text> 用户，建议您使用
+              <text class="frame_filling">Documents</text> 或者
+              <text class="frame_filling">文件全能王</text> 下载视频
+            </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</mp-halfScreenDialog>
+<view class="Pop-ups {{modalName=='MessageModal'?'show':''}} ">
+    <view class="dialog">
+        <view class="bar">
+            <view class="action">
+                <view class="content">提示信息</view>
+            </view>
+        </view>
+        <view style="padding:50rpx;">
+      {{message}}
+    </view>
+        <view class="bar">
+            <view class="action">
+                <button bindtap="hideModal" class="Pop-btn" style="background-color:#0081FF;color:#fff;">朕知道了</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="Pop-ups {{modalName=='downloadProcessModal'?'show':''}}">
+    <view class="dialog">
+        <view class="bar">
+            <view class="content">下载进度：{{downloadProcess}}%</view>
+        </view>
+        <view style="background-color:#fff;color:#666;padding-left:30rpx;padding-right:30rpx;">
+            <view class="progress round striped active" style="margin-top:30rpx;margin-bottom:30rpx;">
+                <view style="width:{{downloadProcess}}%;background-color:#39b54a"></view>
+            </view>
+        </view>
+        <view class="bar">
+            <view class="action">
+                <button bindtap="hideModal" class="Pop-btn" style="background-color:#0081FF;color:#fff;">隐藏下载进度</button>
+          
+            </view>
+        </view>
+    </view>
+</view>
+<view class="Pop-ups {{modalName=='clipboardUrlDetected'?'show':''}} ">
+    <view class="dialog">
+        <view class="bar">
+            <view class="content">检测到视频分享链接</view>
+        </view>
+        <view style="padding:50rpx;">
+      {{tempClipboardData}}
+    </view>
+        <view class="bar">
+            <view bindtap="hideModal" class="action" style="color:#39b54a;">我不</view>
+            <view bindtap="clipboard_qsy" class="action" style="color:#0081ff;">解析</view>
+        </view>
+    </view>
+</view>

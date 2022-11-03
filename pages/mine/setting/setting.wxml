@@ -1,0 +1,39 @@
+<!--pages/more/setting/setting.wxml-->
+<view class="group"></view>
+<view class="group">
+  <button bindtap="clearCache" class="item one-px-b pure-btn">
+    <text class="content">清理缓存</text>
+    <text class="right_icon"></text>
+  </button>
+</view>
+<view class="item-extend-desc">若遇到使用问题，请清除缓存并重新进入小程序</view>
+<block wx:if="{{isAndroid}}">
+  <view class="group">
+    <button bindtap="addDesktop" class="item one-px-b pure-btn">
+      <text class="content">添加到桌面</text>
+      <text class="right_icon"></text>
+    </button>
+  </view>
+  <view class="item-extend-desc">若无法添加成功，请设置系统或安全软件权限</view>
+</block>
+<view class="group">
+  <view bindtap="openSettingClicked" class="item one-px-b">
+    <text class="content">权限管理</text>
+    <text class="right_icon"></text>
+  </view>
+</view>
+<view class="group">
+  <button openType="contact" class="item one-px-b">
+    <text class="content">联系客服</text>
+    <text class="right_icon"></text>
+  </button>
+  <button openType="feedback" class="item one-px-b">
+    <text class="content">意见反馈</text>
+    <text class="right_icon"></text>
+  </button>
+</view>
+
+<view bindtap="hideMask" class="mask" wx:if="{{isShowMask}}">
+  <view class="mask-cover"></view>
+  <view class="mask-content">点击这里，添加快捷入口到桌面</view>
+</view>

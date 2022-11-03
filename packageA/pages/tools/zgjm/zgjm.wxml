@@ -1,0 +1,43 @@
+<view class="after-navber">
+    <view class="container">
+        <view class="itemTitle">周公解梦查询</view>
+        <form bindsubmit="formSubmit">
+            <picker class="seachInput" bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}" range-key="name">
+                <view class="picker">
+                    选择解梦类型: {{casArray[casIndex].name}}
+                </view>
+            </picker>
+            <view class="itemButtom"></view>
+            <input class="seachInput" name="date" placeholder="请输入查询的梦境关键字"></input>
+            <view class="itemButtom">
+                <button class="seachButtom" formType="submit">查询</button>
+                <button class="resetButtom" formType="reset">清空</button>
+
+            </view>
+        </form>
+        <block>
+            <block wx:if="{{flag==1}}">
+                <view class="paragraphs" wx:if="{{dateInfo != null}}">
+                    <text class="paragraph-center" selectable="true" wx:if="{{dateInfo.des != title}}">{{dateInfo.title}}
+</text>
+   <text class="paragraph-zhishi" selectable="true" wx:if="{{dateInfo.des != null}}">指示:{{dateInfo.des}}
+</text>
+                    <text wx:if="{{dateInfo.list != null}}" class="paragraph" selectable="true" wx:for="{{dateInfo.list}}" wx:for-index="index" wx:key="item">{{index + 1}}：{{item}}
+</text>
+  <button class="seachButtom-y" bindtap="submit_y" wx:if="{{result.length > 1}}">下一条</button>
+                </view>
+                <view class="paragraphs" wx:else>
+                    <text class="paragraph" selectable="true"> 此梦境关键字在数据库暂无,请更换个梦境关键字再进行查询。
+</text>
+                </view>
+            </block>
+        </block>
+        <view class="tool-info">
+            <text class="title">相关知识</text>
+            <text class="info">
+     《周公解梦》是靠人的梦来卜吉凶的一本于民间流传的解梦书籍，共有七类梦境的解述。
+
+书中的周公就是周公旦，孔子梦的“吾不复梦见周公矣”在儒家经常会出现。 周公是一个在孔子梦中频频出现的人物，在儒教长期主导文化的中国，周公也就不可避免的直接与梦联系起来。</text>
+        </view>
+    </view>
+</view>

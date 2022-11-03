@@ -1,0 +1,56 @@
+<template name="result-view">
+    <view class="container_result">
+        <text bindtap="backAction" class="mBack">重测</text>
+        <view class="mView">
+            <view class="mClock">
+                <image class="mClockResult" src="../life/images/res/img/clock.png">
+                    <image animation="{{animation_hour}}" class="mClockHour" src="../life/images/res/img/clock_hour.png"></image>
+                    <image animation="{{animation_minute}}" class="mClockMinute" src="../life/images/res/img/clock_minute.png"></image>
+                </image>
+            </view>
+            <text class="mTxt">我处于生命之钟的</text>
+            <view class="mTime">
+                <image class="mDoubleQuotations" src="../life/images/res/img/dq_up.png"></image>
+                <text class="mNowTime">{{nowTime}}</text>
+                <image class="mDoubleQuotations" src="../life/images/res/img/dq_down.png"></image>
+            </view>
+            <view class="mExist">
+                <view class="mExistLeftLine"></view>
+                <text class="mTxt">在这个世界上，我已经存在了</text>
+                <view class="mExistRightLine"></view>
+            </view>
+            <view class="mExistDetail">
+                <block wx:for="{{existTime}}">
+                    <view class="mExistDetailCell">
+                        <text class="mExistDetailNumb">{{item.mNumb}}</text>
+                        <text class="mExistDetailType">{{item.mType}}</text>
+                    </view>
+                </block>
+            </view>
+            <view class="mSurplus">
+                <view class="mSurplusLeftLine"></view>
+                <text class="mTxt">我的后半生还有</text>
+                <view class="mSurplusRightLine"></view>
+            </view>
+            <view class="mSurplusDetail">
+                <block wx:for="{{surplusTime}}">
+                    <view class="mSurplusDetailView">
+                        <view class="mSurplusDetailCell">
+                            <text class="mExistDetailNumb">{{item.mNumb}}</text>
+                            <text class="mExistDetailType">{{item.mType}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="mShare">
+                <image class="mbg" src="../life/images/res/img/border.png"></image>
+                <view class="mShareDetail">
+                    <image class="mSentenceTxt" src="{{img_url}}"></image>
+                    <view class="mShareBtns">
+                        <button class="mShareToFr" openType="share">转发给好友</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

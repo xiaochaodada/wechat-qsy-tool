@@ -1,0 +1,456 @@
+.rootClass {
+    display: block;
+    padding-top: 40rpx;
+    background: white;
+}
+
+.red-backgroud-class {
+    background: #fe5442;
+    width: 100%;
+    height: 415rpx;
+    position: absolute;
+    left: 0rpx;
+    top: 0rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.cash_unit {
+    display: block;
+    position: relative;
+}
+
+.placeBg {
+    position: absolute;
+    width: 100%;
+    height: 70rpx;
+    top: 415rpx;
+}
+
+.money-div {
+    margin-left: 20rpx;
+    width: 200rpx;
+}
+
+.money-unit {
+    margin-left: 10rpx;
+    font: 38rpx / 60rpx PingFangSC-Semibold;
+    color: #E8E8AB;
+}
+
+.box {
+    position: relative;
+    margin-top: 30rpx;
+    margin-left: 38rpx;
+    margin-right: 38rpx;
+    height: 455rpx;
+    background: #fff;
+    box-shadow: 0 2px 5px 5px rgba(0,0,0,0.07);
+    border-radius: 28rpx;
+    padding-top: 20rpx;
+    padding-bottom: 10rpx;
+    padding-left: 45rpx;
+    padding-right: 45rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-input-row {
+    position: relative;
+    margin-top: 100rpx;
+    display: flex;
+    border-bottom: 1px solid;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border-bottom-color: rgba(0,0,0,0.1);
+}
+
+.box-label {
+    display: block;
+    opacity: 0.8;
+    margin-top: 0rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.box-input {
+    background: none;
+    border-radius: 0;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 40rpx;
+    color: #333;
+}
+
+.box-symbol {
+    font-size: 60rpx;
+    color: #333;
+}
+
+.box-btn-all {
+    margin: 0;
+    background: none;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-top: 5rpx;
+    line-height: normal;
+    font-size: 30rpx;
+    color: #666;
+    white-space: nowrap;
+}
+
+.witchdraw_select_arrow {
+    width: 78rpx;
+    height: 38rpx;
+}
+
+.box-input-placeholder {
+    font-size: 40rpx;
+    color: rgba(0,0,0,0.2);
+}
+
+.btn-div {
+    margin: 40rpx 0 10rpx 0;
+    height: 210rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-animation {
+    animation-name: box-scale;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes box-scale {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes box-scale {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.box-button {
+    margin-top:30rpx;
+    position: relative;
+    width: 510rpx;
+    background: #ffa800;
+    border-radius: 63rpx;
+    font-size: 36rpx;
+    height: 90rpx;
+    color: #fff;
+    box-shadow: inset 0 1rpx 3rpx 0 rgba(255,255,255,0.69);
+}
+
+.box-invite-friend {
+    margin-top:25rpx;
+    position: relative;
+    height: 90rpx;
+    width: 510rpx;
+    background: #fe5442;
+    box-shadow: inset 0 1rpx 3rpx 0 rgba(255,255,255,0.69);
+    border-radius: 63rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.explansion {
+    padding-left: 52rpx;
+    position: relative;
+    margin-top: 20rpx;
+}
+
+.explansion .title {
+    text-align: start;
+    display: block;
+    font-size: 30rpx;
+    color: #333;
+    margin-top: 40rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.explansion .content {
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.explansion .content .div1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.explansion .content .div1 .text1 {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.explansion .content .div1 .text2 {
+    font-size: 28rpx;
+    color: #666;
+    margin-left: 22rpx;
+    margin-top: 5rpx;
+}
+
+.ad-class {
+    position: relative;
+    width: 100%;
+}
+
+.ad-class-div {
+    margin-top: 10rpx;
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ad-class-div-clip {
+    margin-top: 10rpx;
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0rpx;
+    overflow: hidden;
+}
+
+.qa-div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #fe5442;
+    width: 110rpx;
+    height: 44rpx;
+    border-radius: 10px;
+    border: 2rpx solid #FFFFFF;
+    position: absolute;
+    right: 30rpx;
+    padding: 0rpx;
+    margin: 0rpx;
+    line-height: 100%;
+    top: 15rpx;
+}
+
+.fan_kui {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid;
+    border-color: rgb(255,216,65);
+    background: rgb(255,216,65);
+    width: 120rpx;
+    height: 44rpx;
+    border-top-right-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    position: absolute;
+    left: 0rpx;
+    padding: 0rpx;
+    margin: 0rpx;
+    line-height: 100%;
+    top: 15rpx;
+}
+
+.fan_kui_button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+
+.fan_kui_button::after {
+    border: none;
+    background: none;
+}
+
+.qa-text {
+    font-size: 22rpx;
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.20);
+    width: 100%;
+}
+
+.withdraw-num-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 50rpx;
+    height: 160rpx;
+}
+
+.withdraw-num-horz-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.withdraw-num {
+    font-size: 80rpx;
+    color: #E8E8AB;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.withdraw-num-unit {
+    font-size: 38rpx;
+    color: #E8E8AB;
+    text-align: center;
+    margin-left: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.withdraw-num-desc {
+    font-size: 28rpx;
+    color: #FFFFFF;
+    margin-top: 18rpx;
+}
+/* 兑换弹出 */
+
+.bgf {
+    background-color: #fff;
+}
+.dislog {
+    width: 560rpx;
+    position: fixed;
+    top: 120rpx;
+    left: 95rpx;
+    border-radius: 20rpx;
+    z-index: 2;
+    text-align: center;
+}
+.distop {
+    padding: 30rpx;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.distitle {
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+    margin-top: 10rpx;
+}
+
+.input {
+    line-height: 88rpx;
+    background: rgba(242,243,244,1);
+    border-radius: 12rpx;
+    height: 88rpx;
+    padding: 0 12rpx;
+    margin-top: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.c9 {
+    color: #999;
+}
+
+.font24 {
+    font-size: 24rpx;
+}
+.fx-list {
+    display: flex;
+    align-items: center;
+}
+.disfun {
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+}
+.fx-bd {
+    flex: 1;
+    -webkit-box-flex: 1;
+}
+.disbtn {
+    color: #FE433F;
+    border-left: 1px solid #e8e8e8;
+}
+
+/*下拉框 */
+.select-box {
+  position: relative;
+  width: 100%;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.select-current {
+  position: relative;
+  width: 100%;
+  padding: 0 10rpx;
+  line-height: 70rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+}
+
+.select-current::after {
+  position: absolute;
+  display: block;
+  right: 16rpx;
+  top: 30rpx;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10rpx solid transparent;
+  border-top: 10rpx solid #999;
+}
+
+.current-name {
+  display: block;
+  width: 85%;
+  height: 100%;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+.option-list {
+  position: absolute;
+  left: 0;
+  top: 76rpx;
+  width: 100%;
+  padding: 12rpx 20rpx 10rpx 20rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  z-index: 99;
+  box-shadow: 0rpx 0rpx 1rpx 1rpx rgba(0, 0, 0, 0.2) inset;
+  background-color: #fff;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.option:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+

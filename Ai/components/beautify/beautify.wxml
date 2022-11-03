@@ -1,0 +1,11 @@
+<view class="outter">
+    <image bindtap="preImg" class="img" mode="aspectFit" src="data:image/jpeg;base64,{{img_file}}"></image>
+    <view class="inner" wx:for="{{setting}}" wx:key="id">
+        <text class="title">{{item.name}}</text>
+        <slider bindchange="onChange" class="slider" id="{{index}}" showValue="{{true}}" step="5" value="{{item.value}}"></slider>
+    </view>
+    <view class="inner">
+        <text class="title">{{filter_type.name}}</text>
+        <picker bindchange="onFilterChange" class="picker" mode="selector" range="{{filter_type.filterList}}" rangeKey="{{'label'}}" value="{{index}}">{{filter_type.filterList[filter_type.index].label}}</picker>
+    </view>
+</view>

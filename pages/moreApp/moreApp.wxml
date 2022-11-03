@@ -1,0 +1,21 @@
+<view class="main">
+    <view class="more_game">
+        <view class="games">
+            <view class="item" wx:for="{{moreApps}}" wx:key="id">
+                <view class="logo">
+                    <image src="{{item.img}}"></image>
+                </view>
+                <view class="desc">
+                    <view class="first">{{item.name}}</view>
+                    <view class="third">{{item.des}}</view>
+                </view>
+                <navigator appId="{{item.appid}}" bindfail="bindfail" class="button" path="{{item.path}}" target="miniProgram">
+                    <view class="b" hoverClass="click_hover">{{item.buttonName}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view style=" border-radius: 20rpx; overflow: hidden;width: 690rpx;margin: 56rpx auto;padding-bottom: 20rpx;" wx:if="{{config.advertisements.index_video_ad}}">
+    <ad adTheme="white" adType="video" unitId="{{config.advertisements.index_video_ad}}" wxss="width: 690rpx;"></ad>
+</view>

@@ -1,0 +1,13 @@
+<!--dist/Menu/menu.wxml-->
+<view class="float">
+  <navigator target="miniProgram" app-id="wx18a2ac992306a5a4" path="pages/apps/largess/detail?id=y%2B3uTRxfnu%2BgPc1CLmE7uw%3D%3D" open-type="navigate" class="main1" animation="{{anim_gift}}" bindtap="gift">
+    <icon color="#fff" size="45" type="gift"></icon>
+  </navigator>
+  <button class="main1" animation="{{anim_kefu}}" bindtap="kefu" openType="contact">
+    <icon color="#fff" size="45" type="zaixiankefu"></icon>
+  </button>
+  <button class="main1" animation="{{anim_share}}" bindtap="share" openType="share">
+    <icon color="#fff" size="45" type="share"></icon>
+  </button>
+  <icon bindtap="showOrHide" animation="{{anim_Main}}" class="main" color="#fff" size="45" type="{{isShow?'yduixingxingshixin':'yduixingxingkongxin'}}"></icon>
+</view>

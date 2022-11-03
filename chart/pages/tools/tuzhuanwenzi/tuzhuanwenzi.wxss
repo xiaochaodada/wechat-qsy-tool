@@ -1,0 +1,137 @@
+.container {
+    height: 100%;
+    margin-top: -50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+page {
+    overflow-y: hidden;
+}
+
+.bottom-bar-box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-sizing: content-box;
+    width: 100%;
+    height: 90rpx;
+    text-align: center;
+    background-color: #fcfcfc;
+}
+
+.bottom-bar-box button {
+    display: block;
+    color: #1cb584;
+    background-color: #fcfcfc;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    border: none;
+}
+
+.btn-hover {
+    background-color: #f7f7f7;
+    color: #1cb584;
+}
+
+.guide-box {
+    height: 544rpx;
+    width: 100%;
+    padding-top: 100rpx;
+    margin: 0 auto;
+    background-color: #1cb584;
+}
+
+.guide-box image {
+    display: block;
+    width: 414rpx;
+    height: 350rpx;
+    margin: 0 auto;
+}
+
+.guide-box text {
+    display: block;
+    margin-top: 60rpx;
+    color: rgba(255,255,255,0.8);
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.guide-box text::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 20rpx;
+    margin-top: -6rpx;
+    margin-right: 10rpx;
+    border-top: 1rpx solid rgba(255,255,255,0.3);
+}
+
+.guide-box text::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 20rpx;
+    margin-top: -6rpx;
+    margin-left: 10rpx;
+    border-top: 1rpx solid rgba(255,255,255,0.3);
+}
+
+.entrance-box {
+    width: 100%;
+    text-align: center;
+    margin: 140rpx auto 0;
+}
+
+.entrance-inner-box {
+    display: inline-block;
+}
+
+.entrance-box text {
+    display: block;
+    text-align: center;
+    font-size: 32rpx;
+    color: #000;
+}
+
+.entrance-box image {
+    display: inline-block;
+    width: 188rpx;
+    height: 188rpx;
+    margin-bottom: -10rpx;
+}
+
+.entrance-box .entrance-inner-box:first-child {
+    margin-right: 166rpx;
+}
+
+text.bottom-text {
+    margin-top: 100rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+text.bottom-text-x {
+    margin-top: 150rpx;
+}
+
+.toast-box {
+    position: fixed;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    width: 350rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+    background-color: rgba(0,0,0,0.6);
+    line-height: 100rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+}

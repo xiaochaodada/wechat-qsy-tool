@@ -1,0 +1,18 @@
+<view class="">
+
+    <ad wx:if="{{mode != 0 && config.advertisements.index_video_ad && config.user_information !='1'}}" adTheme="white" adType="video" unitId="{{config.advertisements.index_video_ad}}"></ad>
+    <view style="margin-top:60px;">
+        <input bindinput="wordartInput" maxlength="4" placeholder="请输入汉字，默认值：我爱你" placeholderStyle="font-size:12px;" style="width:340rpx;text-align: center;font-size:12px;border-bottom:1px solid #ddd;margin:10px auto;"></input>
+    </view>
+    <view>
+        <input bindinput="numInput" maxlength="4" placeholder="请输入数字，默认值：520" placeholderStyle="font-size:12px;" style="width:340rpx;text-align: center;font-size:12px;border-bottom:1px solid #ddd;margin:10px auto;" type="number"></input>
+    </view>
+    <view style="margin-top:20px;position:relative;">
+        <view catchtap="tapCopy" style="min-height:50px;margin:0 10px;padding:30px 10px;text-align: center;border-radius: 20rpx;white-space: pre-wrap;background:#9EEA6A;line-height: 100%">{{text}}</view>
+    </view>
+    <view catchtap="tapCopy" class="copy">点击复制，然后发送到聊天/朋友圈吧！</view>
+    <view style="margin-top:40px;"></view>
+</view>
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>

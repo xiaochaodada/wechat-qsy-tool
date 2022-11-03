@@ -1,0 +1,20 @@
+<view class="content">
+    <view class="chart-title">
+        <text>词云图(透明背景,保存后可自由应用)</text>
+    </view>
+    <view class="chart-container">
+        <canvas canvasId="wordCloud" class="chart" id="wordCloud"></canvas>
+    </view>
+    <button bindtap="__e" class="save-btn" data-event-opts="{{[ [ 'tap',[ ['saveChart'] ] ] ]}}" hoverClass="btn-hover">保存词云图</button>
+    <view class="chart-title">
+        <text>词云数据,使用英文逗号隔开</text>
+    </view>
+    <view class="source-area">
+        <textarea bindinput="__e" class="source-inputbox" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','sourceData','$event',[] ] ] ] ] ]}}" maxlength="-1" value="{{sourceData}}"></textarea>
+    </view>
+    <button bindtap="__e" class="generate-btn" data-event-opts="{{[ [ 'tap',[ ['generateChart'] ] ] ]}}" hoverClass="btn-hover">更新词云图</button>
+</view>
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>
+

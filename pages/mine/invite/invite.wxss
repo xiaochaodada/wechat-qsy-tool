@@ -1,0 +1,382 @@
+@import "../../mine/icon/icon.wxss";
+/* 邀请二维码 */
+.canvas_mask {
+    background: rgba(0,0,0,.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 99998;
+}
+
+.canvas_box {
+    position: fixed;
+    top: 50%;
+    margin-top: -550rpx;
+    left: 81.5rpx;
+    z-index: 99999;
+}
+
+.canvas_box .q_canva {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+.canvas_box canvas {
+    width: 600rpx;
+    height: 980rpx;
+}
+
+.canvas_box .q_text {
+    width: 100%;
+    padding-top: 10rpx;
+    height: 70rpx;
+    background: #f79d71;
+    color: #fff;
+}
+
+.canvas_box .q_text text {
+    display: block;
+    text-align: center;
+    font-size: 22rpx;
+}
+
+.canvas_box .q_text text:last-of-type {
+    font-size: 23rpx;
+}
+
+.canvas_box button.q_text {
+    border-radius: 0;
+}
+
+.canvas_box image {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 10rpx auto;
+    display: block;
+}
+
+
+.iconfont {
+    color: #fff;
+    font-size: 50rpx;
+    line-height: 50rpx;
+    margin-bottom: 4rpx;
+}
+
+.banner {
+    width: 750rpx;
+    height: 200rpx;
+    position: relative;
+}
+
+.scroll-view-class {
+    width: 100%;
+    height: 100%;
+}
+
+.box_icon {
+    width: 36rpx;
+    height: 36rpx;
+}
+.float_class0 {
+    position: absolute;
+    width: 162rpx;
+    height: 50rpx;
+    background: #ed5b2c;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 50rpx;
+    text-align: center;
+    top: 260rpx;
+    right: 0;
+    border-top-left-radius: 32rpx;
+    border-bottom-left-radius: 32rpx;
+    z-index: 10;
+}
+.float_class {
+    position: absolute;
+    width: 162rpx;
+    height: 50rpx;
+    background: #f1f1f1;
+    font-size: 24rpx;
+    color: #333;
+    line-height: 50rpx;
+    text-align: center;
+    top: 340rpx;
+    right: 0;
+    border-top-left-radius: 32rpx;
+    border-bottom-left-radius: 32rpx;
+    z-index: 10;
+}
+
+.top_notice_div_class {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: #f0652a;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
+    z-index: 200;
+    height: 50rpx;
+    overflow: hidden;
+}
+
+.top_notice_icon_class {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 24rpx;
+    margin-right: 15rpx;
+}
+
+.top_notice_text_class {
+    padding-left: 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+    line-height: 24px;
+}
+
+.friend_helped_coin_div_class {
+    position: relative;
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.total_coin_class {
+    font-size: 80rpx;
+    color: #333;
+    line-height: 80rpx;
+}
+
+.second_coin_class {
+    font-size: 60rpx;
+    color: #333;
+    text-align: center;
+}
+
+.second_coin_des_class {
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+}
+
+.second_coin_ren_class {
+    font-size: 38rpx;
+    color: #333;
+    text-align: center;
+    margin-left: 25rpx;
+}
+
+.total_coin_des_class {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 32rpx;
+    margin-top: 16rpx;
+}
+
+.friend_helped_invite_div_class {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20rpx;
+}
+
+.split_line {
+    width: 2rpx;
+    height: 120rpx;
+    background: #f2f2f2;
+    position: absolute;
+}
+
+.friend_helped_invite_text_div_class {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.friend_helped_invite_one_des_text_div_class {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.view_friends_tip {
+    position: absolute;
+    left: 410rpx;
+    top: 212rpx;
+    width: 100rpx;
+    height: 55rpx;
+}
+
+.invite_btn_root_class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 30rpx;
+    width: 518rpx;
+    height: 80rpx;
+    background: linear-gradient(180deg, rgba(244, 115, 39, 1) 0%, rgba(220, 31, 60, 1) 100%);
+    border-radius: 100rpx;
+}
+
+.invite_btn_root_class::after {
+    border: none;
+}
+
+.invite_btn_text_class {
+    font-size: 30rpx;
+    color: #fff;
+    line-height: 36rpx;
+    text-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.25);
+    margin-left: 15rpx;
+    white-space: nowrap;
+}
+
+.share_friend_circle_text_class {
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #d82f35;
+    border: 2rpx solid rgba(216, 47, 53, 1);
+    border-radius: 76rpx;
+    width: 514rpx;
+    height: 76rpx;
+    text-align: center;
+        align-items: center;
+    justify-content: center;
+    display: flex;
+    line-height: 76rpx;
+}
+
+.income_detail_list_div_class {
+    display: block;
+    position: relative;
+    width: 750rpx;
+    margin-top: 30rpx;
+}
+
+.friend_all_help_separate {
+    width: 100%;
+    height: 20rpx;
+    background-color: #f4f4f4;
+}
+
+.income_detail_list_item_div_class {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 78rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    line-height: 78rpx;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.class_icon_q_circle {
+    width: 26rpx;
+    height: 26rpx;
+    margin-left: 8rpx;
+}
+
+.friend_all_help_value {
+    font-size: 28rpx;
+    color: #d82f35;
+    line-height: 64rpx;
+    position: relative;
+    height: 64rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.min_hongbao_icon_class {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.income_detail_list_item_mony_value_text_class {
+    margin-left: 11rpx;
+    font-size: 28rpx;
+    color: #16d081;
+    line-height: 28rpx;
+    width: 75rpx;
+}
+
+.income_detail_list_item_user_name_text_class {
+    margin-left: 10rpx;
+    font-size: 28rpx;
+    color: #5d5d5d;
+    line-height: 28rpx;
+}
+
+.income_detail_list_item_desc_text_class {
+    margin-left: 24rpx;
+    font-size: 28rpx;
+    color: #5d5d5d;
+    line-height: 28rpx;
+}
+
+.limit_text_length {
+    max-width: 120rpx;
+    min-width: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.limit_des_text_length {
+    max-width: 300rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.income_detail_list_item_time_des_text_class {
+    position: absolute;
+    right: 24rpx;
+    font-size: 20rpx;
+    color: #c1c1c1;
+    line-height: 28rpx;
+    white-space: nowrap;
+}
+
+.canvas {
+    left: 10240px;
+    width: 720px;
+    height: 1280px;
+    background-color: #fff;
+    border: 1px solid;
+    margin: 30rpx auto;
+}
+
+.my-hd-icon {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 24rpx;
+    display: block;
+    overflow: hidden;
+}
+
+.page_ad_div {
+    position: relative;
+    width: 690rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -10rpx;
+}

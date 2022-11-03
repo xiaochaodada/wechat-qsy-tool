@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+        "addText": "/components/addText/addText"
+  },
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00C8FD",
+    "navigationBarTitleText": "视频加水印",
+    "navigationBarTextStyle": "black",
+    "disableScroll": true
+}

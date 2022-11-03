@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "speed_sliders": "/components/speed_sliders/speed_sliders"
+    },
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00C8FD",
+    "navigationBarTitleText": "视频变速",
+    "navigationBarTextStyle": "black",
+    "disableScroll": true
+}

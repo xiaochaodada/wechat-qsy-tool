@@ -1,0 +1,91 @@
+/* 惊喜红包 */
+
+.pop-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 102;
+}
+
+.sur-red-pack-pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.sur-red-pack-pop-content {
+    width: 711rpx;
+    height: 859rpx;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sur-red-pack-pop-btn {
+    margin-top: 151rpx;
+    margin-bottom: 78rpx;
+    font-family: AdobeHeitiStd-Regular;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    color: #724127;
+    text-align: center;
+        justify-content: center;
+    align-items: center;
+    width: 400rpx;
+    height: 100rpx;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left,#ffd553,#fa9d2a);
+    border-radius: 50rpx;
+}
+.sur-close-btn {
+    position: absolute;
+    padding: 12rpx;
+    top: 860rpx;
+    margin-left: 289rpx;
+    font-family: NotoSansHans-Regular;
+    font-size: 28rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rpx;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.txt1 {
+    margin-top: 337rpx;
+    font-family: NotoSansHans-Medium;
+    font-size: 42rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rpx;
+    color: #ffca64;
+}
+
+.txt2 {
+    margin-top: 19rpx;
+    width: 410rpx;
+    height: 95rpx;
+}
+.txt3 {
+    height: 80rpx;
+    font-family: NotoSansHans-Regular;
+    font-size: 32rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 5rpx;
+    color: #ffca64;
+}
+
+.txt4 {
+    font-size: 104rpx;
+}
+

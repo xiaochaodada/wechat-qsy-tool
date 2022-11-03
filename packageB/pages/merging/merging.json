@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+    },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#00C8FD",
+  "navigationBarTitleText": "添加片头片尾",
+  "navigationBarTextStyle": "black",
+  "disableScroll": true
+}

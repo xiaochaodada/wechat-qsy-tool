@@ -1,0 +1,239 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    background: #3abccc;
+    text-align: center;
+}
+
+.progress {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    padding-left: 22%;
+}
+
+.proitem {
+    width: 10%;
+    height: 10px;
+    margin: 2px;
+    background-repeat: no-repeat;
+    background-size: 90% 80%;
+}
+
+.replay {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 3%;
+}
+
+.replay .btn {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.btnplay {
+    background-image: url('https://www.xiaoxuestudy.com/kousuan_v1/image/24_play.jpg');
+    background-size: contain;
+}
+
+.btnreplay {
+    background-image: url('https://www.xiaoxuestudy.com/kousuan_v1/image/24_replay.jpg');
+    background-size: contain;
+}
+
+.numbers {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 3%;
+    flex-wrap: wrap;
+}
+
+.numbers .btn {
+    width: 48%;
+    margin-top: 20rpx;
+    color: #3abccc;
+}
+
+.numbers .btn {
+    background: #fff;
+    border-radius: 20rpx;
+    border: 2px solid #2a838f;
+    font-weight: 800;
+}
+
+.numbers .selected {
+    width: 49%;
+    margin-top: 20rpx;
+    font-size: 4rem;
+    color: white;
+    line-height: 80px;
+}
+
+.numbers .selected {
+    background: #3abccc;
+    border-radius: 20rpx;
+    border: 2px solid #2a838f;
+    width: 49%;
+    margin-top: 20rpx;
+    font-size: 4rem;
+    color: white;
+    line-height: 80px;
+}
+
+.btnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 3%;
+    flex-wrap: wrap;
+    margin-top: 30rpx;
+}
+
+.btnGroup .btn {
+    width: 48%;
+    margin-top: 10px;
+    background: #048291;
+    border-radius: 20rpx;
+    color: white;
+    font-weight: 800;
+    line-height: 45px;
+    border: 2px solid #fff;
+}
+
+.operators {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 3%;
+}
+
+.operators .btn {
+    width: 20%;
+    margin-top: 60rpx;
+}
+
+.operators .btn:nth-child(1) {
+    background: #fff;
+    font-size: 50px;
+    font-weight: 800;
+    color: #3abccc;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(2) {
+    background: #fff;
+    font-size: 50px;
+    font-weight: 800;
+    color: #3abccc;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(3) {
+    background: #fff;
+    font-size: 50px;
+    font-weight: 800;
+    color: #3abccc;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(4) {
+    background: #fff;
+    font-size: 50px;
+    font-weight: 800;
+    color: #3abccc;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(1).selected {
+    background: #3abccc;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(2).selected {
+    background: #3abccc;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(3).selected {
+    background: #3abccc;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.operators .btn:nth-child(4).selected {
+    background: #3abccc;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #2a838f;
+    border-radius: 20rpx;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.mask-nouse {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.9;
+}
+
+.videomask {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.videomask video {
+    width: 100%;
+    height: 100%;
+}
+
+button::after {
+    border: none;
+}
+
+button {
+    box-sizing: border-box!important;
+}

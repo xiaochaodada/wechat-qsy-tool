@@ -1,0 +1,22 @@
+<view class="flex fix_nav_wp">
+  <view bindtap="switchTab" class="nav_link" data-index="0" data-path="/pages/md5/md5">
+    <view class="defalut_btn {{selected=== 0 ? 'on_cor' : ''}}">
+      <icon sty="height: 60rpx;line-height:80rpx;" color="{{selected=== 0?'#00a2e9':'#c4c8cc'}}" size="48" type="suo"></icon>
+      <text class="txt">修改md5</text>
+    </view>
+  </view>
+  <view bindtap="switchTab" class="nav_link" data-index="1" data-path="/pages/index/index">
+    <view class="defalut_btn {{selected=== 1 ? 'on_cor' : ''}}">
+      <view class="plus_wp">
+        <image src='../images/logo.png' class="plus_ico" />
+      </view>
+      <text class="txt">首页</text>
+    </view>
+  </view>
+  <view bindtap="switchTab" class="nav_link" data-index="2" data-path="/pages/mine/mine">
+    <view class="defalut_btn {{selected=== 2 ? 'on_cor' : ''}}">
+      <icon sty="height: 60rpx;line-height:80rpx;" color="{{selected=== 2?'#00a2e9':'#c4c8cc'}}" size="48" type="user"></icon>
+      <text class="txt">我的</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class="pair" style="min-height:{{mhei-60}}px">
+    <view class="pair_title">配对结果</view>
+    <view class="box">
+        <view class="box_bgt"></view>
+        <view class="box_t clear">
+            <view class="box_li">
+                <view class="box_libg">
+                    <image class="box_liimg" src="../image/sx/sx_{{male+1}}.png"></image>
+                </view>
+                <view class="box_litext">{{list[male].name}}男</view>
+            </view>
+            <view class="box_line">
+                <image class="box_lineimg" src="../image/pair_line.png"></image>
+            </view>
+            <view class="box_li">
+                <view class="box_libg">
+                    <image class="box_liimg" src="../image/sx/sx_{{female+1}}.png"></image>
+                </view>
+                <view class="box_litext">{{list[female].name}}女</view>
+            </view>
+        </view>
+        <text class="content">{{infodata}}</text>
+        <view class="box_bgb"></view>
+    </view>
+    <view class="btns">
+        <view bindtap="goback" class="pair_btn" hoverClass="none">继续配对</view>
+        <button bindgetuserinfo="getUserInfo" bindtap="showModal" class="sharebtn" openType="getUserInfo">炫耀结果</button>
+    </view>
+</view>
+
+<view bindtap="hideModal" class="layer" wx:if="{{mengshow}}"></view>
+<view class="float_share {{showModalStatus?'slideup':'slidedown'}}" style="bottom:{{bottom}}" wx:if="{{modalHidden}}">
+    <button class="st qun" openType="share">
+        <view class="sbtn">
+            <image src="../image/timg.png"></image>
+        </view>转发到好友或群聊</button>
+    <!-- <view bindtap="share" class="st pyq"> -->
+        <!-- <view class="sbtn">
+            <image src="../image/share_circle.png"></image>
+        </view>生成朋友圈分享图</view> -->
+</view>
+<view bindtap="closeQcode" catchtouchmove="false" class="canvas_mask" hidden="{{hide_qcode}}"></view>
+<view catchtouchmove="false" class="canvas_box" hidden="{{hide_qcode}}">
+    <view class="q_canva">
+        <canvas canvasId="myCanvas"></canvas>
+        <view class="q_text" hidden="{{!openSettingBtnHidden}}">
+            <text>图片已保存到相册</text>
+            <text>可在相册中选取该图片分享到朋友圈</text>
+        </view>
+        <button bindopensetting="handleSetting" class="q_text" hidden="{{openSettingBtnHidden}}" openType="openSetting">
+            <text>点击授权相册读取权限</text>
+            <text>只有授权后才能保存到相册哦~</text>
+        </button>
+    </view>
+    <image bindtap="closeQcode" src="../image/icon_close.png"></image>
+</view>

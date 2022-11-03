@@ -1,0 +1,42 @@
+<view class="container">
+    <text class="question">{{text}}</text>
+    <view class="btn-list">
+        <view bindtap="click_btn" class="btn" data-num="1">
+            <view class="btn-inside" style="width:{{width}}%">
+                <text style="position:absolute;left:315rpx;">1</text>
+            </view>
+        </view>
+        <view bindtap="click_btn" class="btn" data-num="2">
+            <view class="btn-inside" style="width:{{width}}%">
+                <text style="position:absolute;left:315rpx;">2</text>
+            </view>
+        </view>
+        <view bindtap="click_btn" class="btn" data-num="3">
+            <view class="btn-inside" style="width:{{width}}%">
+                <text style="position:absolute;left:315rpx;">3</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="record" style="left:30rpx">
+    <view>历史记录</view>
+    <view class="score">{{youxi_history}}</view>
+</view>
+<view class="record" style="right:30rpx">
+    <view>本次得分</view>
+    <view class="score">{{score}}</view>
+</view>
+<view class="modal" hidden="{{isHidden}}">
+    <view class="content">
+        <text class="modal-result">{{score}}</text>
+        <text>最高分{{youxi_history}}</text>
+        <button bindtap="again" class="modal-btn">不服再来</button>
+    </view>
+</view>
+<view class="adgongju" wx:if="{{mode != 0 && config.advertisements.box_ad && config.user_information.vip !='1'}}" >
+    <ad adTheme="white" adType="grid" gridCount="5" gridOpacity="0.8" unitId="{{config.advertisements.box_ad}}"></ad>
+</view>
+
+<button open-type='share'>
+    <image class="add-wrap1" src="/images/shares.jpg"></image>
+</button>

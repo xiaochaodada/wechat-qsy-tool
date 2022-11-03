@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+    },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#00C8FD",
+  "navigationBarTitleText": "裁剪视频大小",
+  "navigationBarTextStyle": "black",
+  "disableScroll": true
+}

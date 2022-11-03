@@ -1,0 +1,8 @@
+<view class="container">
+    <view catchtouchmove="_minMove" class="slider-item min" style="left:{{leftValue}}rpx;background-color:{{blockColor}};"></view>
+    <view catchtouchmove="_maxMove" class="slider-item max" style="left:{{rightValue}}rpx;background-color:{{blockColor}};"></view>
+    <view class="slider-body left" style="left:{{sliderLength}}rpx; width:{{leftValue}}rpx;background-color:{{backgroundColor}};"></view>
+    <view class="slider-body body" style="left:{{leftValue}}rpx; width:{{rightValue-leftValue}}rpx;background-color:{{selectedColor}};"></view>
+    <view class="slider-body right" style="left:{{rightValue}}rpx; width:{{totalLength-rightValue}}rpx;background-color:{{backgroundColor}};"></view>
+    <slot></slot>
+</view>

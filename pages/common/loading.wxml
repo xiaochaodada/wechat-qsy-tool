@@ -1,0 +1,13 @@
+<template name="index-loading">
+  <view class="container">
+    <image class="zyloading" src="/images/loading.png"></image>
+    <text>加载中,请稍后</text>
+  </view>
+</template>
+<template name="qsy-loading">
+  <view class="loader loader-3">
+    <view class="dot dot1"></view>
+    <view class="dot dot2"></view>
+    <view class="dot dot3"></view>
+  </view>
+</template>

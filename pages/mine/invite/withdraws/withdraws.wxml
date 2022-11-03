@@ -1,0 +1,69 @@
+<view wx:if="{{config_base_list.Other_switches.switch_function != 1}}">
+    <view class="rootClass page_content">
+        <view class="red-backgroud-class"></view>
+        <navigator class="qa-div" hoverClass="clickStateClass" url="/pages/mine/points_history/points_history?query=1">
+            <text class="qa-text">提现记录</text>
+        </navigator>
+        <view class="fan_kui" hoverClass="clickStateClass">
+            <text class="qa-text">联系客服</text>
+            <button class="fan_kui_button" openType="contact"></button>
+        </view>
+        <view class="withdraw-num-container">
+            <view class="withdraw-num-horz-container">
+                <text class="withdraw-num">{{config_base_list.user_information.Account}}</text>
+                <text class="withdraw-num-unit">{{config_base_list.user_information.unit}}</text>
+            </view>
+            <text class="withdraw-num-desc">我的{{config_base_list.user_information.unit}}</text>
+        </view>
+        <view class="box">
+            <view class="box-label">
+                <text>提现金额(预计到账时间:{{withdraw.arrive}})</text>
+            </view>
+            <view class="box-input-row">
+                <text class="box-symbol">￥</text>
+                <input bindinput="onInputChanged" class="box-input" placeholder="最少提现{{withdraw.amount}}{{config_base_list.user_information.unit}}" placeholderClass="box-input-placeholder" type="digit" value="{{currentMoney}}"></input>
+            </view>
+            <!-- <view class="btn-div">
+           </view> -->
+            <!-- <button bindgetuserinfo="onWithDraw" class="box-button" hoverClass="clickStateClass" openType="getUserInfo" style="margin-top: 30rpx;">提现到支付宝</button> -->
+            <view class="btn-div">
+                <button bindtap="onWithDraw" class="box-button box-animation" hoverClass="clickStateClass" style="margin-top: -30rpx;">提现{{config_base_list.user_information.unit}}</button>
+                <button class="box-invite-friend" hoverClass="clickStateClass" id="witchdraw_invite" openType="share">邀请好友，一起领红包</button>
+            </view>
+
+        </view>
+        <ad_task_banner adId="adunit-d087db4b93044424" bindadLoaded="onAdLoaded" scene="my_withdraw"></ad_task_banner>
+        <view class="explansion">
+            <view class="title">提现说明：</view>
+            <view class="content">
+                <view class="div1">
+                    <text class="text1" wx:for="{{description}}" wx:key="description">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="bgf dislog" wx:if="{{exshow}}">
+    <view class="distop">
+        <view class="distitle">填写提现账号</view>
+        <view class="c9 font24" style="color: #FE433F;">当前选择: {{result[withdrawtype].name}}
+        </view>
+        <input adjustPosition="true" bindinput="input_name" class="input" focus="true" placeholder="请输入提现姓名"></input>
+        <input adjustPosition="true" bindinput="input_number" class="input" focus="true" placeholder="请输入提现账号"></input>
+        <view class="select-box">
+            <view class="select-current" catchtap="openClose">
+                <text class="current-name">{{result[withdrawtype].name}}</text>
+            </view>
+            <view class="option-list" wx:if="{{iswithdrawShow}}" catchtap="optionTap">
+                <text class="option" wx:for="{{result}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}
+    </text>
+            </view>
+        </view>
+        <view style="font-size:20rpx;color: red;">提现比例:100{{config_base_list.user_information.unit}}=1元(100:1)</view>
+            <view class="c9" style="font-size:20rpx">温馨提示：账号和姓名请勿填写错误。有问题请联系客服</view>
+    </view>
+    <view class="fx-list disfun">
+        <view bindtap="exchange" class="fx-bd">取消</view>
+        <view bindtap="soumettre" class="fx-bd disbtn">提交</view>
+    </view>
+</view>

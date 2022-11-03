@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+    },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#00C8FD",
+  "navigationBarTitleText": "视频剪辑记录下载",
+  "navigationBarTextStyle": "black"
+}

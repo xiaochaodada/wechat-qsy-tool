@@ -1,0 +1,7 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "mp-halfScreenDialog": "../../dist/half-screen-dialog/half-screen-dialog",
+        "icon": "../../dist/icon/index"
+    }
+}

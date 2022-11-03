@@ -1,0 +1,164 @@
+<!-- <view class="__container" style="padding-top:{{statusBarHeight+30}}px;background:#00c8fd;"></view> -->
+<view class="center">
+	<view class="blue-top">
+		<view class="user-card">
+			<view class="card-top">
+				<view class="user-top">
+					<view class="user-vip" style="position:relative;">
+						<view class="user-pic">
+							<open-data type="userAvatarUrl"></open-data>
+							<block wx:if="{{mode == 1 && Vip || mode == 3 && Vip}}">
+								<icon style="position:absolute;color:#ffc500;z-index:10;bottom:-5rpx;right:-5rpx;" color="#FFD306" size="50" type="huiyuanvip"></icon>
+							</block>
+						</view>
+					</view>
+					<view class="user-board">
+						<text style="color:#999;">用户ID：{{user_id}}</text>
+					</view>
+					<view wx:if="{{mode == 1 || mode == 3}}" style="width: 100%;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;">
+						<text style="color:#999;" wx:if="{{system}}">{{!Vip ? 'VIP状态:未开通' : 'VIP到期时间:' + (config_base_list.user_information.maturity > '2025-06-02 20:37:37' ? '永久VIP' : config_base_list.user_information.maturity)}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="card-bottom">
+				<view class="left">
+					<view class="count">
+						<text class="num">{{down_count}} 次</text>
+					</view>
+					<text class="txt">总下载记录数</text>
+				</view>
+				<view wx:if="{{mode == 3 || mode == 2}}" bindtap="{{mode == 3 && config_base_list.Other_switches.switch_function != 1 ? 'view_rmb' : ''}}" class="center">
+					<view class="count">
+						<text class="num">{{mode == 3?config_base_list.user_information.Account:config_base_list.user_information.frequency}}</text>
+					</view>
+					<text class="txt" wx:if="{{config_base_list.Other_switches.switch_function != 1}}">{{mode == 3?'账户' + config_base_list.user_information.unit + '(查看)':'剩余解析次数'}}</text>
+					<text class="txt" wx:else>{{mode == 3?'账户' + config_base_list.user_information.unit:'剩余解析次数'}}</text>
+				</view>
+				<view class="right">
+					<view class="count">
+						<text class="num">{{days}} 天</text>
+					</view>
+					<text class="txt">已为您服务天数</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="index-bd" wx:if="{{mode != 0}}">
+		<view class="nav-container">
+			<button wx:if="{{config_base_list.user_information.qiandao == '1' || config_base_list.task[0] == '1'}}" bindtap="qiandao" class="nav-block" data-exec="earnIntegral" hoverClass="nav-block-hover">
+				<text class="iconfont iconqiandao"></text>
+				<text>{{config_base_list.user_information.qiandao != '1' && config_base_list.task[0] == '1'?'每日任务':'每日签到'}}</text>
+			</button>
+			<button wx:if="{{config_base_list.user_information.invite == '1'}}" bindtap="invite" class="nav-block" data-exec="earnIntegral" hoverClass="nav-block-hover">
+				<text class="iconfont iconyaoqing"></text>
+				<text>邀请好友</text>
+			</button>
+			<button wx:if="{{mode == 3 && system}}" bindtap="exchange" class="nav-block" data-exec="exchange" hoverClass="nav-block-hover">
+				<text class="iconfont iconduihuanma"></text>
+				<text>{{config_base_list.user_information.unit}}兑换</text>
+			</button>
+			<button bindtap="points_history" class="nav-block" data-exec="" hoverClass="nav-block-hover">
+				<text class="iconfont iconxiaofeimingxidan"></text>
+				<text>记录明细</text>
+			</button>
+		</view>
+	</view>
+
+
+	<view class="center-list">
+		<navigator bindtap="pingMenu" class="center-list-item" url="/pages/leader/leader" wx:if="{{config_base_list.advertisements.videoAD_ID && mode != 2 && mode != 0 && system && config_base_list.pay_config.switch == 1}}">
+			<icon class="icon1" color="#00c8fd" size="48" type="miansaishiguanggao"></icon>
+			<text class="list-text">购买VIP会员</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</navigator>
+		<navigator bindtap="pingMenu" class="center-list-item" url="/pages/history/history">
+			<icon class="icon1" color="#00c8fd" size="48" type="download"></icon>
+			<text class="list-text">下载记录查询</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</navigator>
+		<!-- <navigator bindtap="gomd5" class="center-list-item" url="/pages/md5/md5">
+			<icon class="icon1" color="#00c8fd" size="48" type="video"></icon>
+			<text class="list-text">视频MD5修改</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</navigator> -->
+		<navigator bindtap="pingMenu" class="center-list-item" url="/pages/question/question">
+			<icon class="icon1" color="#00c8fd" size="48" type="wenti"></icon>
+			<text class="list-text">常见问题</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</navigator>
+	</view>
+	<block wx:if="{{config_base_list.advertisements.videoAD_ID && mode != 2 && mode != 0 && system && config_base_list.pay_config.switch != 1}}">
+		<view style="padding:10rpx;"></view>
+		<view class="center-list">
+			<button bindtap="tapHandler" class="center-list-item">
+				<icon class="icon1" color="#00c8fd" size="48" type="miansaishiguanggao"></icon>
+				<text class="list-text">开通会员</text>
+				<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+			</button>
+		</view>
+	</block>
+	<view style="padding:10rpx;"></view>
+	<view wx:if="{{config_base_list.Other_switches.poster_switch == 1 && config_base_list.contact.poster || config_base_list.Other_switches.poster_switch == 2}}" class="center-list">
+		<button bindtap="sharePoster" class="center-list-item">
+			<icon class="icon1" color="#00c8fd" size="48" type="haibao-"></icon>
+			<text class="list-text">分享海报</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</button>
+	</view>
+	<view style="padding:10rpx;"></view>
+	<view class="center-list">
+		<button bindtap="checkUpdate" class="center-list-item">
+			<icon class="icon1" color="#00c8fd" size="48" type="jianchagengxin"></icon>
+			<text class="list-text">检测更新</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</button>
+	</view>
+	<view style="padding:10rpx;"></view>
+	<view class="center-list">
+		<button class="center-list-item" openType="contact">
+			<icon class="icon1" color="#00c8fd" size="48" type="computer-"></icon>
+			<text class="list-text">在线客服</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</button>
+		<button class="center-list-item" openType="feedback">
+			<icon class="icon1" color="#00c8fd" size="48" type="yijianfankui"></icon>
+			<text class="list-text">意见反馈</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</button>
+	</view>
+	<view style="padding:10rpx;"></view>
+	<view class="center-list">
+		<navigator bindtap="pingMenu" class="center-list-item" url="/pages/mine/setting/setting">
+			<icon class="icon1" color="#00c8fd" size="48" type="shezhi1"></icon>
+			<text class="list-text">设置</text>
+			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
+		</navigator>
+	</view>
+	<view class="relief">© 2020 {{config_base_list.app_name}} Ver {{Version}}</view>
+</view>
+<view catchtouchmove="noneTouchmove" class="poster  {{showPoster?'an-show-p':''}}" hidden="{{!showPoster}}">
+	<image showMenuByLongpress class="{{showPoster?'an-show':''}}" mode="widthFix" src="{{config_base_list.contact.poster ? config_base_list.poster : '/images/poster.jpg'}}"></image>
+	<label class="tips">（长按保存或识别程序码）</label>
+	<view>
+		<icon bindtap="sharePoster" class="icon-close" color="#000" size="32" type="guanbi"></icon>
+	</view>
+</view>
+<mp-dialog bindbuttontap="tapDialogButton" bindclose="closeDialog" buttons="{{dialogButtons}}" extClass="custom-dialog" show="{{dialogShow}}" title="{{dialogItem.title||'温馨提示'}}">
+	<view class="blurbg">
+		<image mode="aspectFill" src="/images/blurbg.png"></image>
+	</view>
+	<view class="custom-dialog__tips">
+		<text wx:for="{{Advertising}}" wx:key="Advertising">{{item}}</text>
+		<!-- <text>去广告功能:去掉程序上所有功能，无需看广告即可使用功能</text>
+        <text>需要一次性赞赏“{{config_base_list.appreciate}}”元以上</text>
+        <text>赞赏后需要备注您的用户ID:“{{user_id}}”</text>
+        <text>已赞赏用户请等待客服为开通去广告</text>
+        <text>如果长时间没开通去广告，请联系在线客服</text>
+        <text>去广告为永久有效</text>
+        <text>如果您有好的建议也可以向作者反馈。</text>
+        <text>作者微信：{{config_base_list.wxzhanghao}}</text>
+        <text>QQ群：{{config_base_list.qqqun}}</text> -->
+	</view>
+</mp-dialog>
+<wxs src="../../utils/utils.wxs" module="utils" />

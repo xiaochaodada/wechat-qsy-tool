@@ -1,0 +1,28 @@
+<view class="tbox">
+    <view class="v3">步数：{{step}} </view>
+    <view bindtap="choose" class="f_center game1">选择难度 {{nowDifficulty}}×{{nowDifficulty}}</view>
+    <view class="v3">耗时：{{m}}:{{s}}</view>
+</view>
+<view class="container" style="width:calc({{windowWidth}}px - 60rpx + {{(nowDifficulty-1)*2}}rpx);height:calc({{windowWidth}}px - 60rpx + {{(nowDifficulty-1)*2}}rpx);">
+    <block wx:for="{{numData}}" wx:key="{{index}}">
+        <block>
+            <block wx:if="{{!item.isEmpty}}">
+                <image catchtouchstart="goMove" class="v1" data-index="{{index}}" src="fangkuai.png" style="width:calc(({{windowWidth}}px - 60rpx) / {{nowDifficulty}});height:calc(({{windowWidth}}px - 60rpx) / {{nowDifficulty}})">
+                    <view class="f_center">{{item.num}}</view>
+                </image>
+            </block>
+        </block>
+        <block>
+            <block wx:if="{{item.isEmpty}}">
+                <view class="v2" style="width:calc(({{windowWidth}}px - 60rpx) / {{nowDifficulty}});height:calc(({{windowWidth}}px - 60rpx) / {{nowDifficulty}})"></view>
+            </block>
+        </block>
+    </block>
+</view>
+<view bindtap="goGame" class="f_center game">开始挑战</view>
+<view bindtap="reset" class="f_center reset">重置</view>
+<text></text>
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>
+

@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="top-banner-bg">
+        <view class="weui-text-bar">
+            <view class="weui-text-bar__form">
+                <view class="weui-text-bar__box">
+                    <input bindinput="bindKeyInput" class="weui-text-bar__input" placeholder="请输入要生成的昵称" type="search" value="{{inputVal}}"></input>
+                    <view bindtap="clearInput" class="weui-icon-clear" hidden="{{!inputShowed}}">
+                        <icon size="20" type="clear"></icon>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="" class="weui-text-bar__cancel-btn">{{textareaValue}}</view>
+            <view class="zhuyi001">
+          注意：输入完毕后，点击下面翅膀类型自动复制
+                </view>
+        </view>
+    </view>
+    <scroll-view scrollY style="height: calc(100% - 300rpx);position:fixed; bottom: 0;left: 0;">
+        <view class="bottom-change-list" wx:for="{{nickdata}}" wx:for-item="i" wx:key="i">
+            <view class="bottom-change-list__box">
+                <button bindtap="changeText" id="{{i}}" wx:for="{{i.datalist}}" wx:for-item="i" wx:key="i">{{i}}</button>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>

@@ -1,0 +1,347 @@
+@import "../../mine/icon/icon.wxss";
+
+/* 底部开始 */
+
+.row-div, .top-div, .sign-days-div, .banner-info-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+    margin-top: 20rpx;
+}
+.header {
+    width: 100%;
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+    color: #fff;
+    box-sizing: border-box;
+}
+.top-tip {
+    width: 200rpx;
+    font-size: 24rpx;
+    color: #fff;
+    text-align: right;
+    margin-top: 20rpx;
+}
+
+.top-switch-btn {
+    background: none;
+    height: 72rpx;
+    border: none;
+    
+}
+.top-switch-btn::after {
+    border: none;
+}
+.top-switch {
+    padding: 0 5rpx;
+    margin-top: 20rpx;
+    margin-left: -20rpx;
+    width: 80rpx;
+    height: 47rpx;
+}
+/* 结尾 */
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx 20rpx;
+    box-sizing: border-box;
+}
+
+page {
+    background-color: #f6f5f5;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 40rpx);
+}
+
+button:not([size='mini']) {
+    margin: 0;
+    width: auto;
+    min-height: auto;
+    font-weight: normal;
+}
+
+.core-panel {
+    color: #fff;
+    height: 320rpx;
+    width: 100%;
+    padding: 28rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10rpx;
+    margin-bottom: 22rpx;
+    box-sizing: border-box;
+    margin: 35rpx 50rpx 20rpx;
+    box-shadow: 0 16rpx 12rpx rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #6d3ff8, #8862fc);
+}
+
+.panelbgc {
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 230rpx;
+    position: fixed;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #313148, #3d3c5a);
+}
+
+
+.panel-title {
+    font-size: 28rpx;
+    color: #f1eefc;
+}
+
+button.checkin {
+    width: auto;
+    display: flex;
+    height: 100rpx;
+    min-height: auto;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 18rpx;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe52c;
+}
+
+.checkin::after {
+    border: none;
+}
+
+.tips {
+    font-size: 28rpx;
+    font-weight: bold;
+    padding: 12rpx 20rpx;
+    border-radius: 10rpx;
+    background-color: #5e34f4;
+}
+
+.tips>text {
+    color: #aa91fd;
+    font-size: 24rpx;
+    font-weight: normal;
+}
+
+.star {
+    margin: 0 10rpx;
+    color: #ffe52c;
+}
+
+.checkline {
+    flex: 1;
+    display: flex;
+    margin: 10rpx 0;
+    position: relative;
+    padding: 20rpx 10rpx;
+    border-radius: 10rpx;
+    justify-content: space-around;
+    z-index: 0;
+}
+
+.checkline .day {
+    flex-basis: 1;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    text-align: center;
+    position: relative;
+}
+
+.checkline .day:before {
+    display: block;
+    content: "";
+    font-family: "iconfont";
+    width: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    border-radius: 32rpx;
+    font-size: 22rpx;
+    color: #4d3f7a;
+    text-align: center;
+    background-color: rgb(212, 211, 211);
+    margin: 0 auto 8rpx auto;
+}
+
+.checkline .day.active:before {
+    content: "\e640";
+    /* 对勾 */
+    background-color: #ffe52c;
+}
+
+.checkline .day~.day:after {
+    content: '';
+    width: 200%;
+    height: 6rpx;
+    background-color: rgb(212, 211, 211);
+    position: absolute;
+    left: -150%;
+    top: 15rpx;
+    z-index: -1;
+}
+
+.checkline .day.active:before, .checkline .day.active:after {
+    background-color: #ffe52c;
+}
+
+.checkline .day:last-of-type:before {
+    font-size: 40rpx;
+    font-weight: bold;
+    content: '\e657' !important;
+    /* 礼物 */
+    color: rgb(212, 211, 211);
+    background-color: #8862fc !important;
+}
+
+.checkline .day:last-of-type.active:before {
+    color: #ffe839;
+}
+
+button.sharetips {
+    width: auto;
+    font-weight: normal;
+    display: flex;
+    padding: 20rpx;
+    line-height: 0;
+    font-size: 28rpx;
+    border-radius: 10rpx;
+    margin: 6rpx 0 22rpx;
+    background: linear-gradient(165deg, #eceefa, #f6c8f6);
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.sharetips::after {
+    border: none;
+}
+
+.hovered {
+    opacity: 0.81;
+    box-shadow: none;
+}
+
+.vii {
+    z-index: 0;
+    height: 90rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ca5656;
+    font-size: 30rpx;
+}
+
+.vii>text {
+    font-weight: bold;
+    line-height: 48rpx;
+    text-shadow: 0rpx 1rpx 2rpx #2b2b2b09;
+}
+
+.vii>text:last-of-type {
+    font-weight: normal;
+    font-size: 24rpx;
+    color: #d47777;
+    text-shadow: none;
+}
+
+.sharetips image {
+    width: 300rpx;
+    height: 300rpx;
+    margin-right: 14rpx;
+    position: absolute;
+    z-index: -1;
+    filter: opacity(40%) blur(5rpx);
+}
+
+.sharetips text.slink, .sharetips text.iconfont {
+    font-size: 26rpx;
+    color: #f85e8a;
+    font-weight: bold;
+    vertical-align: baseline;
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 14rpx 20rpx;
+    box-sizing: border-box;
+    box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.task>view {
+    overflow: hidden;
+    border-radius: 12rpx;
+    margin-bottom: 20rpx;
+}
+
+.task>view.cata-title {
+    height: 36px;
+    min-height: 36px;
+    line-height: 36px;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-top: 10rpx;
+    z-index: 0;
+    border: none;
+    position: relative;
+    background: transparent;
+}
+
+.task>view.cata-title::after {
+    height: 12px;
+    width: 170rpx;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 55%;
+    left: 0rpx;
+    z-index: -1;
+    border-radius: 12rpx;
+    background: #fabafa;
+    opacity: 0.5;
+}
+
+button.stview {
+    width: 100%;
+    display: flex;
+    color: #017efc;
+    font-size: 42rpx;
+    font-weight: bold;
+    min-height: 135rpx;
+    letter-spacing: 15rpx;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, #b2d9f81a 50%, #f3fbfe),
+                linear-gradient(70deg, #72ddff, #e6bef5);
+    box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 0;
+    line-height: auto;
+    margin-bottom: 20rpx;
+}
+
+.stview::after {
+    border: none;
+    line-height: 1;
+}
+
+.stview>image {
+    z-index: -1;
+    height: 100rpx;
+    position: absolute;
+    filter: opacity(40%);
+}
+
+
+
+/* 每日任务 */
+@import "../../mine/exchange/exchange.wxss";

@@ -1,0 +1,10 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1CB584",
+    "navigationBarTitleText": "图片转文字",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1CB584",
+    "backgroundColorTop": "#1CB584",
+    "backgroundColorBottom": "#FFFFFF",
+    "disableScroll": true
+}

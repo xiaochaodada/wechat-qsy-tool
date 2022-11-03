@@ -1,0 +1,10 @@
+<view bindtap="onClose" class="dialog-wrap" hidden="{{!show}}">
+    <view catchtap="onEmpty" class="dialog-content content-class">
+        <slot></slot>
+        <block>
+            <block wx:if="{{showClose}}">
+                <image bindtap="onClose" class="close-img" src="/assets/icon_close.png"></image>
+            </block>
+        </block>
+    </view>
+</view>

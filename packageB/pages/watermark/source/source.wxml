@@ -1,0 +1,16 @@
+<view class="main">
+    <view class="scroll-box">
+        <scroll-view class="tui-city-scroll" scrollIntoView="img{{img_tag}}" scrollWithAnimation="true" scrollX="true">
+            <view bindtap="getImageList" class="{{item.id==img_tag?'img-item-selected':'img-item'}}" data-sid="{{item}}" id="img{{item.id}}" wx:for="{{itemList}}">{{item.name}}</view>
+        </scroll-view>
+    </view>
+</view>
+<view style="width:100%;margin:100rpx auto 10rpx;">
+    <view bindtap="selectBefore" class="{{img_name}}" data-item="{{item}}" wx:for="{{imgList}}" wx:key="index">
+        <image lazyLoad="true" src="{{imgUrl+item.thumbnail_url}}" style="width:100%;height:100%;"></image>
+        <progress active activeColor="#F9182A" backgroundColor="#ddd" percent="100" style="width:100%;position:absolute;bottom:0;" wx:if="{{progress&&progressId==item.id}}"></progress>
+    </view>
+</view>
+<view style="width:100%;height:200rpx;margin:200rpx auto;text-align:center" wx:if="{{imgList.length<=0}}">加载中...
+</view>
+<!-- <myprogress bind:cancelEvent="_cancelPress" bind:confirmEvent="_confirmPress" id="myprogress" progress="{{progress}}"></myprogress> -->

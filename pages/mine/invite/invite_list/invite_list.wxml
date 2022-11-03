@@ -1,0 +1,16 @@
+<view class="container">
+    <scroll-view bindscrolltolower="loadMore" class="content" enableBackToTop="true" scrollY="true">
+        <view class="main" wx:for="{{invite_list}}" wx:key="key">
+            <view class="user">
+                <!-- <image class="touxiang" src="{{item.Invitee_id}}"></image> -->
+                <text class="fnleft">{{item.Invitee_id}}</text>
+            </view>
+            <view class="fnright">{{item.time}}</view>
+        </view>
+        <view class="weui-footer">
+            <view style="margin-top:20rpx;">
+                <text>暂时只显示最新邀请30名新用户ID</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

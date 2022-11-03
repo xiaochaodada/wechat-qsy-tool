@@ -1,0 +1,50 @@
+.container {
+    width: 100%;
+    position: relative;
+    border: 1rpx solid white;
+}
+
+.slider-body {
+    height: 10rpx;
+    margin-top: -7rpx;
+    background-color: rgb(223,65,65);
+    position: relative;
+}
+
+.body {
+    bottom: 60rpx;
+    background-color: #19896f;
+    z-index: 0.3;
+}
+
+.left {
+    bottom: 58rpx;
+    z-index: 0.1;
+}
+
+.right {
+    z-index: 0.2;
+    bottom: 62rpx;
+}
+
+.slider-item {
+    border-radius: 10rpx;
+    width: 25rpx;
+    height: 50rpx;
+    background-color: #6E80FB;
+    z-index: 2;
+}
+
+.min {
+    position: relative;
+    top: 18rpx;
+}
+
+.max {
+    position: relative;
+    bottom: 35rpx;
+}
+
+.hide {
+    display: none;
+}

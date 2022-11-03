@@ -1,0 +1,11 @@
+<view class="outter">
+    <image bindtap="preImg" class="img" mode="aspectFit" src="data:image/jpeg;base64,{{img_file}}" wx:if="{{img_file}}"></image>
+    <image bindtap="preImg" class="img" mode="aspectFit" src="{{img_path}}" wx:else></image>
+    <view class="text_box" style="display:{{arrayRes.length?'flex':'none'}}">
+        <text class="text_content" selectable="{{true}}" wx:for="{{arrayRes}}" wx:key="id">{{item}}</text>
+    </view>
+    <view class="inner" wx:for="{{data}}" wx:key="id">
+        <text class="item item_left" selectable="{{false}}">{{index}}</text>
+        <text class="item item_right" selectable="{{true}}">{{item}}</text>
+    </view>
+</view>

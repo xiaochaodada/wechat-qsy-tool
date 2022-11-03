@@ -1,0 +1,53 @@
+<view class="page_content">
+    <view bindtap="invite_list" class="float_class0">查看邀请</view>
+</view>
+<view class="page_content">
+    <view bindtap="rule" class="float_class" hoverClass="clickStateClass">规则说明</view>
+    <image class="banner" src="{{invite_banner != null || invite_banner != ''? invite_banner : '../images/top_banner.png'}}"></image>
+    <!-- <image bindtap="invite_list" class="view_friends_tip" src="../images/invite_list.png"></image> -->
+    <view class="friend_helped_coin_div_class">
+        <text class="total_coin_class">{{invite_count}}</text>
+        <text class="total_coin_des_class">已邀请好友</text>
+    </view>
+
+    <view class="friend_helped_invite_div_class">
+        <button class="invite_btn_root_class" hoverClass="clickStateClass" id="invite_on_friend_js" openType="share">
+            <image class="box_icon" src="../images/share_icon.png"></image>
+            <text class="invite_btn_text_class">邀请新好友得{{mode == 1 ? 'VIP' : ''}}{{mode == 2 ? '解析次数' : ''}}{{mode == 3 ? config_base_list.user_information.unit : ''}}</text>
+        </button>
+
+        <button class="share_friend_circle_text_class" bindtap="share_invite">
+            <image class="box_icon" src="../images/erweima.png"></image>
+            <text style="text-align: center;margin-left: 15rpx; line-height: 36rpx;">生成专属邀请二维码</text>
+        </button>
+
+        <button wx:if="{{mode == 3 && config_base_list.Other_switches.switch_function != 1}}" class="invite_btn_root_class" hoverClass="clickStateClass" id="invite_on_friend_js" bindtap="withdraw">
+            <image class="box_icon" src="../images/tixian.png"></image>
+            <text class="invite_btn_text_class">提现{{config_base_list.user_information.unit}}</text>
+        </button>
+        <view style="width:0px;height:0px;overflow:hidden;">
+            <canvas canvasId="canvas" class="canvas"></canvas>
+        </view>
+    </view>
+    <!-- banner广告 -->
+    <view class="ad" wx:if="{{mode != 0 && config_base_list.advertisements.BannerAD_ID && config_base_list.user_information.vip !='1'}}">
+        <ad unit-id="{{config_base_list.advertisements.BannerAD_ID}}"></ad>
+    </view>
+</view>
+
+
+<view bindtap="closeQcode" catchtouchmove="false" class="canvas_mask" hidden="{{hide_qcode}}"></view>
+<view catchtouchmove="false" class="canvas_box" hidden="{{hide_qcode}}">
+    <view class="q_canva">
+        <canvas canvasId="myCanvas"></canvas>
+        <view class="q_text" hidden="{{!openSettingBtnHidden}}">
+            <text>图片已保存到相册</text>
+            <text>可在相册中选取该图片分享到朋友圈</text>
+        </view>
+        <button bindtap="saveImage" class="q_text" hidden="{{openSettingBtnHidden}}">
+            <text>点击保存专属邀请二维码</text>
+        </button>
+    </view>
+    <image bindtap="closeQcode" src="../../../images/icon_close.png"></image>
+</view>
+

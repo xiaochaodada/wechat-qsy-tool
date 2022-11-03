@@ -1,0 +1,73 @@
+.bg {
+    background: linear-gradient(to bottom right,#ff567a,#ff2679);
+    height: 360rpx;
+    width: 100%;
+}
+.text-center {
+    text-align: center;
+}
+.padding-top {
+    padding-top: 30rpx;
+}
+.text-white,.line-white,.lines-white {
+    color: #fff;
+}
+.padding-top-xl {
+    padding-top: 50rpx;
+}
+.text-sm {
+    font-size: 24rpx;
+}
+
+.text-xsl {
+    font-size: 120rpx;
+}
+.text-sm {
+    font-size: 24rpx;
+}
+/* 明细样式 */
+.flex {
+    display: flex;
+}
+.bg-white {
+    background-color: #fff;
+    color: #666;
+}
+.padding-sm {
+    padding: 20rpx;
+}
+.solid-bottom::after {
+    border-bottom: 1rpx solid rgba(0,0,0,0.1);
+}
+
+.basis-xl {
+    flex-basis: 80%;
+}
+
+.text-black,.line-black,.lines-black {
+    color: var(--black);
+}
+.margin-bottom-xs {
+    margin-bottom: 10rpx;
+}
+.text-orange,.line-orange,.lines-orange {
+    color: var(--orange);
+}
+.text-grey,.line-grey,.lines-grey {
+    color: var(--grey);
+}
+
+.basis-xs {
+    flex-basis: 20%;
+}
+.text-right {
+    text-align: right;
+}
+.margin-xs {
+    margin: 10rpx;
+}
+.weui-footer {
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+}

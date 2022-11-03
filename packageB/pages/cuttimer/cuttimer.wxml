@@ -1,0 +1,41 @@
+<canvas canvasId="mycanvas" disableScroll="true" style="width:{{originVideoW}}px;height:{{originVideoH}}px;position:absolute;left:-999999px"></canvas>
+<canvas canvasId="itemCanvas" disableScroll="true" style="position:absolute;left:-9999999px;width:100px;height:50px;"></canvas>
+<view>
+    <view style="width:90%;margin:300rpx auto;height:30%;border:1rpx solid #ddd;font-size:35rpx;padding:15rpx;" wx:if="{{!video}}">
+        <text>
+      操作提示：
+      1.点击下面视频按钮选择视频
+      2.选择视频后，点击滑动时间按钮选择裁剪视频的时间范围
+      3.点击确定就可以裁剪了
+      视频下载方式:在首页"剪辑记录下载"
+    </text>
+    </view>
+    <video autoplay="{{true}}" customCache="{{false}}" enableProgressGesture="{{false}}" src="{{video}}" style="width:100%;height:730rpx;" wx:if="{{video}}"></video>
+    <view class="zy-slider" wx:if="{{video}}">
+        <sliders backgroundColor="#B0C4DE" bind:heighValueChange="heighValueChangeAction" bind:lowValueChange="lowValueChangeAction" id="zy-slider" max="{{duration}}" maxValue="{{heigh}}" min="0" minValue="{{low}}" selectedColor="#6E80FB"></sliders>
+    </view>
+    <view class="select-but"  wx:if="{{video}}">
+        <button bindtap="selectType" wx:if="{{cutout}}">
+            <image src="../images/delete.png" style="width:100%;height:100%;"></image>
+        </button>
+        <button bindtap="selectType1" wx:if="{{!cutout}}">
+            <image src="../images/hold.png" style="width:100%;height:100%;"></image>
+        </button>
+        <view style="width:500rpx;color:#747474" wx:if="{{cutout}}">删除视频{{low}}~{{heigh}}秒内容</view>
+        <view style="width:500rpx;color:#747474" wx:else>保留视频{{low}}~{{heigh}}秒内容</view>
+    </view>
+    <view class="bottom">
+        <button bindtap="chooseVideo">
+            <image src="../images/video.png"></image>
+      视频
+    </button>
+        <button bindtap="toSplic">
+            <image src="../images/comfirm.png"></image>
+      确定
+    </button>
+        <button bindtap="saveVideo" wx:if="{{save}}">
+            <image src="/image/save.png"></image>
+      保存
+      </button>
+    </view>
+</view>

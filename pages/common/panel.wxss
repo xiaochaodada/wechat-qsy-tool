@@ -1,0 +1,58 @@
+.panel {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  width: 686rpx;
+  padding: 20rpx 0;
+  border: 1px solid #d6d5d6;
+  border-radius: 40rpx;
+  margin: 0 auto;
+  margin-top: 23rpx;
+  margin-bottom: 30rpx;
+}
+
+.panel .jiao {
+  width: 49%;
+  margin-right: 2%;
+  height: 450rpx;
+  border-radius: 6px;
+}
+
+.panel .jiao2 {
+  width: 49%;
+  height: 450rpx;
+  border-radius: 6px;
+}
+
+.panel-view {
+  padding: 0 30rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.panel-view .title-view {
+  height: 80rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.panel-view .title-view .label {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333334;
+}
+
+.panel-view .title-view .line {
+  display: inline-block;
+  width: 6rpx;
+  height: 28rpx;
+  background-color: #4488f7;
+  margin-right: 20rpx;
+  overflow: hidden;
+}

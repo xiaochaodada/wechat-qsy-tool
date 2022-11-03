@@ -1,0 +1,10 @@
+<view class="bgwin" style="height:100%;display:flex;">
+    <view class="failout animated infinite rotatePositive"></view>
+    <view class="failin  animated infinite rotateNegtive"></view>
+    <view class="tiao">挑战成功</view>
+    <view class="choicebtns">
+        <view bindtap="btnagain" class="btnagain btn">再来一次</view>
+        <view bindtap="btnHome" class="btnHome btn">返回首页</view>
+        <button class="btnshare btn" openType="share">炫耀一下</button>
+    </view>
+</view>

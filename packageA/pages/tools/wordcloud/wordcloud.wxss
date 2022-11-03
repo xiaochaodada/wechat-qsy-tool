@@ -1,0 +1,65 @@
+.content {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: #F9F9F9;
+}
+
+.chart-container {
+    width: 750rpx;
+    height: 500rpx;
+    background-color: #FFFFFF;
+}
+
+.chart {
+    width: 750rpx;
+    height: 500rpx;
+    background-color: #FFFFFF;
+}
+
+.chart-title {
+    margin-top: 10rpx;
+    width: 96%;
+    padding: 10rpx 2%;
+    flex-wrap: nowrap;
+    border-left: 10rpx solid #5571cf;
+    padding-left: 10rpx;
+    font-size: 32rpx;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.save-btn {
+    margin: 20rpx;
+    background-color: #5571cf;
+    color: #FFFFFF;
+    border-radius: 50rpx;
+}
+
+.source-area {
+    width: 96%;
+    padding: 2%;
+    background: #FFFFFF;
+}
+
+.source-inputbox {
+    height: 400rpx;
+    font-size: 34rpx;
+    box-sizing: border-box;
+    line-height: 50rpx;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.generate-btn {
+    margin: 20rpx;
+    background-color: #5571cf;
+    color: #FFFFFF;
+    border-radius: 50rpx;
+}
+
+.btn-hover {
+    background-color: #FFFFFF;
+    color: #5571cf;
+    border: 4rpx solid #5571cf;
+}

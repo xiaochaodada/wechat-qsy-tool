@@ -1,0 +1,38 @@
+.float {
+  position: fixed;
+  bottom: 70rpx;
+  right: 40rpx;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+.float .main {
+  background-color: #249ffd;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 888;
+}
+
+.float .main1 {
+  background-color: #249ffd;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  position: fixed;
+  bottom: -10%;
+  right: 6.5%;
+  z-index: 888;
+  transition: transform 500ms ease-out 0ms, opacity;
+  transform-origin: 50% 50% 0px;
+  opacity: 0;
+}

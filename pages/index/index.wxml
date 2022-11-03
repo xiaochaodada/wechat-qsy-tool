@@ -1,0 +1,131 @@
+<import src="../common/loadings.wxml"></import>
+<template is="loading" data wx:if="{{isloading}}"></template>
+<view>
+	<index-attention show_name="{{show_name}}" showAddMeBtn="{{showAddMeBtn}}" countDownNum="{{countDownNum}}"></index-attention>
+
+	<block wx:if="{{!config_base_list.banner_imageUrl||config_base_list.banner_imageUrl.length<0}}">
+		<image class="banner-pic" src="/images/banner.jpg"></image>
+	</block>
+	<block wx:else>
+		<swiper circular="{{true}}" autoplay="{{true}}" indicatorDots="{{true}}">
+			<swiper-item wx:for="{{config_base_list.banner_imageUrl}}" wx:key="banner_imageUrl">
+				<navigator target="miniProgram" app-id="{{item.id}}" path="{{item.url}}" url="{{item.url}}">
+					<image class="banner-pic" mode="scaleToFill" src="{{item.img}}"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</block>
+
+
+	<view bindtap="tipKeFuMsg" class="gonggao" wx:if="{{config_base_list.home_notice}}">
+		<index-notice loop icon="tongzhi" speed="6000" backgroundcolor="#f1f1f1" color="#6A5ACD">
+			{{config_base_list.home_notice}}
+		</index-notice>
+	</view>
+
+
+<view class="indexTitle">
+		<view>输入视频或图集链接</view>
+    <view style="font-size:28rpx;color: #0081ff;" bindtap="pasteUrl">粘贴链接</view>
+</view>
+<view class="analysis">
+<view class="input-box">
+                <input maxlength="-1" bindinput="pageUrlInput" placeholder="点击此处输入视频分享链接" value="{{pageUrl}}"></input>
+                <icon wx:if="{{pageUrl.length > 0}}" class="clear-icon" bindtap="clearInput" color="#8a8a8a" size="32" type="guanbi1"></icon>
+            </view>
+            <view bindtap="clipboard_qsy2" class="analysis-btn" hover-class='analysis-btn-hover'>解析</view>
+        </view>
+
+	<view class="grid col-2 ">
+		<view class="pic-padding">
+			<view data-pages="1" class="radius  shadow-blur" bindtap="pages_button">
+				<view class="nowBody">
+					<view class="headImgWrap" style="background: #FCECD0;">
+						<image class="headImg _img" src="../../images/index_b/index_a.png" alt></image>
+					</view>
+					<view class="headWord">
+						<text class="firstHead">无水印视频</text>
+						<view>超多 超快 超清</view>
+						<view>无水印提取</view>
+					</view>
+				</view>
+				<view class="cu-tag badge" style="top:0px;right:0px;border-radius:0px;height:15px;">热门推荐</view>
+			</view>
+		</view>
+		<view class="pic-padding">
+			<view data-pages="2" class="radius  shadow-blur" bindtap="pages_button">
+				<view class="nowBody">
+					<view class="headImgWrap" style="background: #F7A7BA;">
+						<image class="headImg _img" src="../../images/index_b/index_b.png" alt></image>
+					</view>
+					<view class="headWord">
+						<text class="firstHead">视频去水印</text>
+						<view>选中区域</view>
+						<view>去除视频水印</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="pic-padding">
+			<view data-pages="3" class="radius  shadow-blur" bindtap="pages_button">
+				<view class="nowBody">
+					<view class="headImgWrap" style="background: #BECBFA;">
+						<image class="headImg _img" src="../../images/index_b/index_c.png" alt></image>
+					</view>
+					<view class="headWord">
+						<text class="firstHead">批量去水印</text>
+						<view>简单操作</view>
+						<view>轻松去除</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="pic-padding">
+			<view data-pages="4" class="radius  shadow-blur" bindtap="pages_button">
+				<view class="nowBody">
+					<view class="headImgWrap" style="background: #84F1B5;">
+						<image class="headImg _img" src="../../images/index_b/index_d.png" alt></image>
+					</view>
+					<view class="headWord">
+						<text class="firstHead">视频去声音</text>
+						<view>删除视频背景声音</view>
+						<view>MD5修改利器</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="indexTitle">
+		<view>视频剪辑工具</view>
+		<!-- <image class="setIcon" src="../../images/index_b/download.png" alt></image> -->
+		<button data-video="0" bindtap="video_button" class="mini-btn" size="mini" type="default">剪辑记录下载</button>
+	</view>
+
+	<view class="cu-list grid  col-4 no-border">
+		<view wx:for="{{video_name_item}}" wx:key="video_name_item" class="cu-item" data-video="{{index+1}}" bindtap="video_button">
+			<view>
+				<image src="../../images/index_b/{{item.icon}}" class="img_h"></image>
+			</view>
+			<text>{{item.name}}</text>
+		</view>
+
+		<ad-custom wx:if="{{mode != 0 && config_base_list.advertisements.primordialVideo && vip !='1'}}" unit-id="{{config_base_list.advertisements.primordialVideo}}" bindload="adLoad" binderror="adError"></ad-custom>
+	</view>
+
+	<view class="Pop-ups {{modalName=='clipboardUrlDetected'?'show':''}} ">
+		<view class="dialog">
+			<view class="bar">
+				<view class="content">检测到视频分享链接</view>
+			</view>
+			<view style="padding:50rpx;">
+				{{tempClipboardData}}
+			</view>
+			<view class="bar">
+				<view bindtap="hideModal" class="action" style="color:#39b54a;">我不</view>
+				<view bindtap="clipboard_qsy" class="action" style="color:#0081ff;">解析</view>
+			</view>
+		</view>
+	</view>
+
+
+</view>

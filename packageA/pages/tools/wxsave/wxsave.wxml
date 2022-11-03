@@ -1,0 +1,50 @@
+<view class="container">
+    <ad adTheme="white" adType="grid" gridCount="5" gridOpacity="0.8" unitId="adunit-7220592740911d99"></ad>
+    <view class="myimg {{name?'hide':''}}">
+        <view class="bcwj">快速保存微信聊天文件</view>
+        <view class="each">
+            <view class="left">
+                <image src="img/flash.png"></image>
+            </view>
+            <view class="right">
+                <view class="r_title">速度最快</view>
+                <view class="r_subtitle">保存大量图片和文件仅需几步操作</view>
+            </view>
+        </view>
+        <view class="each">
+            <view class="left">
+                <image src="img/up.png"></image>
+            </view>
+            <view class="right">
+                <view class="r_title">数量最多</view>
+                <view class="r_subtitle">每次最多保存100张图片或文件</view>
+            </view>
+        </view>
+        <view class="each">
+            <view class="left">
+                <image src="img/geshi.png"></image>
+            </view>
+            <view class="right">
+                <view class="r_title">格式最多</view>
+                <view class="r_subtitle">支持保存图片、视频、文档等文件格式，还支持保存原图</view>
+            </view>
+        </view>
+    </view>
+    <button bindtap="upimg" class="btn1 {{name?'hide':''}}" hidden="{{saveImgBtnHidden}}" type="primary">去保存</button>
+    <button bindopensetting="handleSetting" class="openSetting" hidden="{{openSettingBtnHidden}}" openType="openSetting" type="primary">去授权</button>
+    <view class="{{savename?'hide':''}}">
+        <image class="boximg" mode="widthFix" src="img/1.png"></image>
+        <text class="{{boxname?'boxtext':'boxtext1'}}">{{text}}</text>
+        <progress class="pro" percent="{{number|Int}}">
+            <image class="cuo {{cuoname?'hide':''}}" mode="widthFix" src="img/3.png" style="left:{{number|Int}}%"></image>
+        </progress>
+        <view class="thisnum">{{number|Int}}%</view>
+        <button loading class="btn2 {{backname?'':'hide'}}" type="primary"> 保存中</button>
+        <button bindtap="backup" class="btn3 {{backname?'hide':''}}" type="primary">返回</button>
+    </view>
+</view>
+
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>
+

@@ -1,0 +1,125 @@
+var utils = ({
+    tranNumber: (function(num, point) {
+        var numStr = num + '';
+        if (numStr.length < 6) {
+            return (numStr)
+        } else if (numStr.length > 5) {
+            var decimal = numStr.substring(numStr.length - 4, numStr.length - 4 + point);
+            return (parseFloat(parseInt(num / 10000) + '.' + decimal) + 'w')
+        }
+    }),
+    formatSeconds: (function(value) {
+        var theTime = parseInt(value / 1000);
+        var middle = 0;
+        var hour = 0;
+        if (theTime > 60) {
+            middle = parseInt(theTime / 60);
+            theTime = parseInt(theTime % 60);
+            if (middle > 60) {
+                hour = parseInt(middle / 60);
+                middle = parseInt(middle % 60)
+            }
+        };
+        var result = '';
+        if (parseInt(theTime) >= 10) {
+            result = "0" + ":" + parseInt(theTime)
+        } else {
+            result = "0" + ":" + "0" + parseInt(theTime)
+        };
+        if (middle >= 0 && parseInt(theTime) >= 10) {
+            result = parseInt(middle) + ":" + parseInt(theTime)
+        } else {
+            result = parseInt(middle) + ":" + "0" + parseInt(theTime)
+        };
+        return (result)
+    }),
+    num_array: (function(num, nums) {
+        var result = 0;
+        if (num == 0 || num == '' || num == null) {
+            result = 0;
+        } else {
+            result = num.split('|');
+            result = result[nums];
+        }
+        return (result)
+    }),
+    task_1: (function(num) {
+        var result = 0;
+        if (num == 0 || num == '' || num == null) {
+            result = 0;
+        } else {
+            result = num.split(',');
+            result = result.length - 1;
+        }
+        return (result)
+    }),
+    replace: (function(str, oldchar, newchar) {
+        if (str.indexOf(oldchar) >= 0) {
+            return (str.replace(oldchar, newchar))
+        } else {
+            return (str)
+        }
+    }),
+    speed: (function(int, int2) {
+        var str = "";
+        if (int < "1.0") {
+            str = "减速";
+        } else if (int == "1.0") {
+            str = "正常速度";
+        } else {
+            str = "加速";
+        }
+        return int2 != 1 ? str : int == "1.0" ? str + ":" : str + "倍速:";
+    }),
+    video_type_name: (function(type) {
+        var str = "";
+        switch (type) {
+            case 0:
+                str = '提取视频声音';
+                break;
+            case 1:
+                str = '删除视频声音';
+                break;
+            case 2:
+                str = '去掉视频水印';
+                break;
+            case 3:
+                str = '添加视频水印';
+                break;
+            case 4:
+                str = '裁剪视频大小';
+                break;
+            case 5:
+                str = '添加片头尾';
+                break;
+            case 6:
+                str = '视频倒放';
+                break;
+            case 7:
+                str = '视频变速';
+                break;
+            case 8:
+                str = '裁剪时间';
+                break;
+            case 9:
+                str = '视频转GIF';
+                break;
+            case 10:
+                str = "视频压缩";
+                break;
+            default:
+                str = "未知类型";
+        }
+        return str;
+    })
+
+});
+module.exports = ({
+    tranNumber: utils.tranNumber,
+    formatSeconds: utils.formatSeconds,
+    num_array: utils.num_array,
+    task_1: utils.task_1,
+    replace: utils.replace,
+    speed: utils.speed,
+    video_type_name: utils.video_type_name
+});

@@ -1,0 +1,161 @@
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bgimg {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+}
+
+.but {
+    width: 100%;
+    height: 75rpx;
+    position: fixed;
+    top: 26.4%;
+}
+
+.but_select {
+    width: 48%;
+    float: left;
+    height: 75rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.but_select button {
+    width: 75rpx;
+    height: 75rpx;
+    padding: 0rpx;
+    background: none;
+}
+
+.but_re {
+    width: 48%;
+    float: left;
+    height: 75rpx;
+}
+
+.but_re button {
+    width: 73rpx;
+    height: 73rpx;
+    padding: 0;
+    background: none;
+}
+
+.videobox {
+    position: fixed;
+    top: 10%;
+    width: 100%;
+    height: 76%;
+}
+
+.main_video {
+    width: 94%;
+    height: 59%;
+    margin-left: 3%;
+    background: rgba(191,174,253,0.4);
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save_video {
+    width: 94%;
+    height: 100%;
+    margin-left: 3%;
+    background: rgba(191,174,253,0.4);
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video1 {
+    width: 46%;
+    height: 40%;
+    float: left;
+    margin-left: 3%;
+    border-bottom: 1rpx solid #edebff;
+    background: rgba(191,174,253,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video2 {
+    width: 46%;
+    height: 40%;
+    float: left;
+    border-bottom: 1rpx solid #edebff;
+    background: rgba(191,174,253,0.4);
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    color: #aaa;
+}
+
+.usermotto {
+    margin-top: 200px;
+}
+
+.top {
+    padding: 0;
+    background: none;
+    width: 90rpx;
+    height: 90rpx;
+    position: fixed;
+    top: 30rpx;
+    right: 20rpx;
+}
+
+.top::after {
+    border: none;
+}
+
+.bottom {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    bottom: 0rpx;
+    border-top: 1rpx solid #fcdfd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background: none;
+    font-size: 30rpx;
+    line-height: 32rpx;
+}
+
+.bottom button::after {
+    border: none;
+}
+
+.bottom button image {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 10rpx;
+}

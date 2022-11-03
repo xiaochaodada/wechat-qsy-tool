@@ -1,0 +1,44 @@
+.banner {
+    width: 750rpx;
+    height: 172rpx;
+    position: relative;
+}
+
+.qa {
+    margin-left: 64rpx;
+    margin-right: 64rpx;
+    position: relative;
+    margin-top: 48rpx;
+}
+
+.question {
+    line-height: 42rpx;
+    font-weight: bold;
+    position: relative;
+    font-size: 32rpx;
+    color: #D82F35;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.border_bottom {
+    margin-top: 10rpx;
+    width: 60rpx;
+    border-bottom: 6rpx solid #D82F35;
+}
+
+.answer {
+    font-size: 26rpx;
+    color: #333;
+    line-height: 42rpx;
+    position: relative;
+    margin-top: 22rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    color: #999;
+}

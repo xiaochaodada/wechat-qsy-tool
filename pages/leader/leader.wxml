@@ -1,0 +1,70 @@
+<view class="banner">
+    <view class="header">
+        <text>成为会员</text>
+    </view>
+    <view class="desc">解析助手小程序</view>
+    <image class="image" mode="aspectFit" src="../../images/wepay.png"></image>
+</view>
+<view class="container">
+    <view class="package" wx:if="{{platform!=='ios'}}">
+        <view bindtap="choosePackage" class="{{month===1?'selected':''}}" data-count="1">7天体验</view>
+        <view bindtap="choosePackage" class="{{month===2? 'selected': ''}}" data-count="2">1个月</view>
+        <view bindtap="choosePackage" class="{{month===3?'selected':''}}" data-count="3">6个月
+            <view class="weui-badge ">限时特价</view>
+        </view>
+        <view bindtap="choosePackage" class="{{month===4? 'selected': ''}}" data-count="4">永久会员<view class="weui-badge">限时特价</view>
+        </view>
+    </view>
+    <view class="platform">安卓用户专享功能</view>
+    <button bindtap="pay" class="btn" hoverClass="button-hover" wx:if="{{platform!=='ios'}}">支付
+        <text>¥{{price}}</text>{{config_base_list.user_information.vip == '1'?'续费':'成为'}}会员</button>
+
+        <button bindtap="fan" class="btn" hoverClass="button-hover" wx:if="{{platform!=='ios'}}">你敢邀 我敢返(点击查看)</button>
+
+    <view class="emphasis">
+        <view class="point">提升每日解析上限，不受广告限制困扰</view>
+        <view class="point">更优的解析线路，确保解析稳定可靠</view>
+        <view class="point">下载加速，多节点智能选择就近的网络节点，提升下载速度和成功率</view>
+        <view class="point">全面去广告，体验更加清爽优美的界面交互</view>
+        <view class="point">版本迭代享有优先体验新特权</view>
+            <view class="point">专属客服为你护驾。</view>
+    </view>
+</view>
+<view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links" wx:if="{{platform!=='ios'}}">
+        <button bindtap="showHalfScreen" class="weui-footer__link linkbutton">服务规则声明</button>
+    </view>
+    <view class="weui-footer__text">© 2020 {{config_base_list.app_name}}</view>
+</view>
+<mp-halfScreenDialog extClass="halfScreen-dialog" show="{{halfScreenShow}}">
+    <view slot="title">
+        <view class="weui-half-screen-dialog__title">服务规则声明</view>
+        <view class="weui-half-screen-dialog__subtitle">阅读并同意以下服务声明</view>
+    </view>
+    <view slot="desc">
+        <scroll-view class="weui-half-screen-dialog__tips" scrollY="{{true}}">
+            <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__section">
+                        <view class="weui-article__p">当您使用并购买会员，即表示您同意此则声明，且您将受本服务的声明和条件约束。</view>
+                    </view>
+                    <view class="weui-article__section">
+                        <view class="weui-article__h3">1.1 会员权益</view>
+                        <view class="weui-article__p">完成购买后即会生效，如遇其他异常情况请重新进入小程序或联系在线客服协助处理。</view>
+                        <view class="weui-article__p">月权益按自然月计算，如2月1日购买1个月会员会截止到3月1日，可重复购买累计时长。</view>
+                        <view class="weui-article__p">如遇程序维护或升级导致解析服务长时间不能正常使用，会员有效期不会顺延。</view>
+                    </view>
+                    <view class="weui-article__section">
+                        <view class="weui-article__h3">1.2 使用权限</view>
+                        <view class="weui-article__p">为您提供的会员权益仅供您个人用于非商业性目的，不得用于二次倒卖或销售。</view>
+                        <view class="weui-article__p">如果您想将我们服务用于商业目的，产生的任何法律纠纷都将与本平台无关。</view>
+                        <view class="weui-article__p">服务中的任何信息或资源的删除、存储失败、错误提供或未及时提供不承担任何责任。</view>
+                        <view class="weui-article__p">若平台检测到账号恶意使用会员权益进行资源强占、伪造攻击等滥用行为，平台有权收回账号的服务特权或封禁账号。</view>
+                        <view class="weui-article__p">服务最终解释权归本平台所有。</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+</mp-halfScreenDialog>

@@ -1,0 +1,26 @@
+<view class="after-navber">
+    <view class="container">
+        <block>
+            <block wx:if="{{showToast}}">
+                <view class="toast-box">
+                    <text>{{toastText}}</text>
+                </view>
+            </block>
+        </block>
+        <view class="guide-box">
+            <image mode="scaleToFill" src="../images/imgToText.png"></image>
+            <text>最好用的图片转文字工具</text>
+        </view>
+        <view class="entrance-box">
+            <view class="entrance-inner-box">
+                <image bindtap="openAlbum" mode="aspectFill" src="../images/album.png"></image>
+                <text>相册</text>
+            </view>
+            <view class="entrance-inner-box">
+                <image bindtap="openCamera" mode="scaleToFill" src="../images/photo.png"></image>
+                <text>拍照</text>
+            </view>
+            <text class="bottom-text {{isIpx?'bottom-text-x':''}}">识别准确度达99%</text>
+        </view>
+    </view>
+</view>

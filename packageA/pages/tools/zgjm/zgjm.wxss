@@ -1,0 +1,22 @@
+@import "../../../../components/0.wxss";
+
+.seachButtom-y {
+    width: 60pt;
+    height: 25pt;
+    line-height: 25pt;
+    font-size: 13pt;
+    color: #fff;
+    border-radius: 3pt;
+    background-color: #1AAD19;
+    float: none;
+}
+.paragraph-center {
+     margin-left: 33%; 
+    line-height: 25px;
+}
+.paragraph-zhishi {
+        color: red;
+    margin-left: 5px;
+    line-height: 10px;
+      font-size: 10pt;
+}

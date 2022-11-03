@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "sliders": "/components/sliders/sliders"
+    },
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00C8FD",
+    "navigationBarTitleText": "裁剪时间",
+    "navigationBarTextStyle": "black",
+    "disableScroll": true
+}

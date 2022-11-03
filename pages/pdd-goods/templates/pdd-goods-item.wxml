@@ -1,0 +1,23 @@
+<template name="pdd-goods-item">
+    <view bind:tap="onPddGoodsItemClicked" class="pdd-goods-item-container insert1" data-index="{{goods_id}}" data-pdd-goods="{{goods_detail}}" wx:if="{{goods_detail}}">
+        <image class="pdd-goods-item-container-goods-image" src="{{goods_detail.goods_image_url}}"></image>
+        <view class="pdd-goods-item-container-right-container">
+            <view class="pdd-r-t">
+                <text class="pdd-goods-item-container-goods-name">{{goods_detail.goods_name}}</text>
+                <view class="pdd-goods-item-container-discounts-container">
+                    <text class="pdd-goods-item-container-original-prize">原价￥{{goods_detail.min_group_price/100}}</text>
+                    <text class="pdd-goods-item-container-sold-quantity">已售{{goods_detail.sales_tip}}单</text>
+                </view>
+            </view>
+            <view class="pdd-goods-item-container-bottom-container">
+                <view class="pdd-goods-item-container-ticket-prize">
+                    <text class="price-sympol">￥</text>
+                    <text class="pdd-goods-item-container-ticket-prize-number">{{(goods_detail.min_group_price-goods_detail.coupon_discount)/100}}</text>
+                </view>
+                <button catchtap="onPddGoodsBtnClicked" class="pdd-goods-item-container-go-shopping-button" data-index="{{index}}" data-pdd-goods="{{goods_detail}}">领{{goods_detail.coupon_discount/100}}元劵购买</button>
+            </view>
+               </view>
+    
+        </view>
+</template>
+

@@ -1,0 +1,74 @@
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.cancel {
+    z-index: 1000;
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: -15rpx;
+    left: -15rpx;
+    background: white;
+    border-radius: 100%;
+    background: greenyellow;
+}
+
+.kuoda {
+    z-index: 100;
+    width: 40rpx;
+    height: 40rpx;
+    padding: 0;
+    position: absolute;
+    bottom: -15rpx;
+    right: -15rpx;
+    background: greenyellow;
+    border-radius: 100%;
+}
+
+.userinfo-nickname {
+    color: rgb(167,209,243);
+}
+
+.usermotto {
+    margin-top: 200px;
+}
+
+button {
+    font-size: 28rpx;
+    line-height: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+}
+
+button image {
+    width: 65rpx;
+    height: 65rpx;
+    margin: 10rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.bottom {
+    width: 100%;
+    height: 11%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1rpx solid #ddd;
+}

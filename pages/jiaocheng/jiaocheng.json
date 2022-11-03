@@ -1,0 +1,10 @@
+
+{
+  "usingComponents": {
+    "icon": "../../dist/icon/index"
+  },
+  "enablePullDownRefresh":false,
+  "navigationBarTitleText": "技术教程",
+  "navigationBarBackgroundColor": "#00C8FD",
+  "navigationBarTextStyle": "white"
+}

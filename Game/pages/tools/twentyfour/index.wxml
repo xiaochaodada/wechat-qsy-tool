@@ -1,0 +1,73 @@
+<view class="container">
+    <view class="progress">
+        <block wx:for="{{[1,2,3,4,5]}}" wx:for-index="indx" wx:key="nouse">
+            <block>
+                <block wx:if="{{indx<currentProgress}}">
+                    <view class="proitem" style="background-image:url(https://www.lxl66.cn/tu/24_pro_active.jpg)"></view>
+                </block>
+            </block>
+        </block>
+        <block wx:for="{{[1,2,3,4,5]}}" wx:for-index="indx" wx:key="nouse">
+            <block>
+                <block wx:if="{{indx<5-currentProgress}}">
+                    <view class="proitem" style="background-image:url(https://www.lxl66.cn/tu/24_pro.jpg)"></view>
+                </block>
+            </block>
+        </block>
+    </view>
+    <view style="display:flex;flex-direction:column;height:100%;padding-top:{{numbersTop}}%;">
+        <view class="numbers">
+            <view bindtap="btnNum" class="btn {{currentTimuPageObject[0].selected}} btn1" data-index="0" data-value="{{currentTimuPageObject[0].value}}" style="visibility:{{currentTimuPageObject[0].visibility}};height:{{btnHeight}}rpx;line-height:{{btnHeight-15}}rpx;font-size:{{currentTimuPageObject[0].fontsize}}rem">{{currentTimuPageObject[0].disp}}
+        </view>
+            <view bindtap="btnNum" class="btn {{currentTimuPageObject[1].selected}} btn2" data-index="1" data-value="{{currentTimuPageObject[1].value}}" style="visibility:{{currentTimuPageObject[1].visibility}};height:{{btnHeight}}rpx;line-height:{{btnHeight-15}}rpx;font-size:{{currentTimuPageObject[1].fontsize}}rem">{{currentTimuPageObject[1].disp}}
+        </view>
+            <view bindtap="btnNum" class="btn {{currentTimuPageObject[2].selected}} btn3" data-index="2" data-value="{{currentTimuPageObject[2].value}}" style="visibility:{{currentTimuPageObject[2].visibility}};height:{{btnHeight}}rpx;line-height:{{btnHeight-15}}rpx;font-size:{{currentTimuPageObject[2].fontsize}}rem">{{currentTimuPageObject[2].disp}}
+        </view>
+            <view bindtap="btnNum" class="btn {{currentTimuPageObject[3].selected}} btn4" data-index="3" data-value="{{currentTimuPageObject[3].value}}" style="visibility:{{currentTimuPageObject[3].visibility}};height:{{btnHeight}}rpx;line-height:{{btnHeight-15}}rpx;font-size:{{currentTimuPageObject[3].fontsize}}rem">{{currentTimuPageObject[3].disp}}
+        </view>
+        </view>
+        <view class="operators">
+            <view bindtap="btnplus" class="btn {{operatorStatus[0]}} btnplus">+</view>
+            <view bindtap="btnminus" class="btn {{operatorStatus[1]}} btnminus">-</view>
+            <view bindtap="btnmulti" class="btn {{operatorStatus[2]}} btnmulti">×</view>
+            <view bindtap="btndivide" class="btn {{operatorStatus[3]}} btndivide">÷</view>
+        </view>
+        <view class="btnGroup">
+            <view bindtap="btnjump" class="btn btnjump" style="height:{{btnHeight*0.5}}rpx">跳过</view>
+            <view bindtap="btndaan" class="btn btndaan" style="height:{{btnHeight*0.5}}rpx">答案</view>
+            <view bindtap="btnmode" class="btn btnmode" style="height:{{btnHeight*0.5}}rpx">模式</view>
+            <view bindtap="btnreplay" class="btn btnshare" style="height:{{btnHeight*0.5}}rpx">重置</view>
+        </view>
+    </view>
+    <modal cancelText="" class="mask" confirmText="" style="display:{{maskStatus}};">
+        <view style="font-size:1rem;height:100px;margin-top:10%;text-align:center;color:black;">
+            <view>前{{currentProgress}}题，您共用时<text style="color:#3abccc;font-weight:bold;">{{stageCost}}</text>秒,比<text style="color:#3abccc;font-weight:bold;">{{stagePercent}}%</text>的用户算得快！</view>
+        </view>
+    </modal>
+    <modal bindtap="radiotap" cancelText="" class="mask" confirmText="" style="display:{{modeMaskStatus}};">
+        <view style="font-size:1rem;height:100px;padding:5% 0;text-align:left;z-index:999;">
+            <radio-group bindchange="radioChange" class="radio-group">
+                <view style="margin:15px 10px;">
+                    <label class="radio">
+                        <radio checked="{{normalCheck}}" data-value="0" id="r1" value="0"></radio>
+                  正常模式  <text style="font-size:12px;">4个数字均小于10</text>
+                    </label>
+                </view>
+                <view style="margin:15px 10px;">
+                    <label class="radio">
+                        <radio checked="{{hardCheck}}" data-value="1" id="r2" value="1"></radio>
+                  挑战模式  <text style="font-size:12px;">至少有一个数字不小于10</text>
+                    </label>
+                </view>
+            </radio-group>
+        </view>
+    </modal>
+    <view class="videomask" style="display:{{videomaskStatus}};">
+        <video autoplay="true" bindended="" customCache="false" src="{{helpvideoUrl}}"></video>
+    </view>
+</view>
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>
+
+

@@ -1,0 +1,30 @@
+<view class="after-navber">
+    <view class="container">
+        <view class="itemTitle">手机号码归属地查询</view>
+        <form bindsubmit="formSubmit">
+            <input class="seachInput" name="date" placeholder="请输入完整的手机号码"></input>
+            <view class="itemButtom">
+                <button class="seachButtom" formType="submit">查询</button>
+                <button class="resetButtom" formType="reset">清空</button>
+            </view>
+        </form>
+        <block>
+            <block wx:if="{{flag==1}}">
+                <view class="paragraphs">
+                    <view class="paragraph">运营商：{{dateInfo.company}}</view>
+                    <view class="paragraph">归属省份：{{dateInfo.province}}</view>
+                    <view class="paragraph" wx:if="{{dateInfo.city}}">归属城市：{{dateInfo.city}}</view>
+                    <view class="paragraph" wx:if="{{dateInfo.areacode}}">区号：{{dateInfo.areacode}}</view>
+                    <view class="paragraph" wx:if="{{dateInfo.zip}}">邮政编码：{{dateInfo.zip}}</view>
+                </view>
+            </block>
+        </block>
+        <view class=" tool-info ">
+            <text class="title ">相关知识</text>
+            <text class="info ">
+        在中国的手机号码（中国移动、中国联通和中国电信）都有固定的区域分布，这个区域就是归属地。当你用智能手机接听电话时，基本都会显示手机号码来自哪个地方，而这个地方也就是号码归属地。归属地的单位是市，即你的号码离开你号码所在的那个市，准确地说是离开电信公司在各个市所划分的网络区域时，这就形成漫游。
+
+        一个手机电话号码，它的归属地是不变的，不管这个号码被多少人注册和注销过。就如中国的城市的区号，它是不变的。但是手机号码归属的运营商归属却是可变的，自2009年开始，在工业和信息化部（原信息产业部）的规划指导下，我国在天津、海南两地开始筹备实施携号转网试点，2014年9月20日，第二批携号转网试点新增江西、湖北、云南三个省份。迄今为止，已获批携号转网的试点城市共包括海南、天津、湖北、云南、江西5个省市。这5个省份的用户可在移动、电信、联通三大运营商之间实现自由转网，且无需更换手机号码。</text>
+        </view>
+    </view>
+</view>

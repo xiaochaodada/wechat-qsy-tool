@@ -1,0 +1,10 @@
+<view class="edit-text-container">
+    <view class="edit-text-box" style="height:{{scrollViewHeight}}px;">
+        <textarea bindconfirm="saveContent" bindfocus="focusEvent" cursorSpacing="25" maxlength="{{0-1}}" showConfirmBar="true" value="{{contents}}"></textarea>
+    </view>
+    <view class="bottom-bar-box {{isIpx?'fix-iphonex-button':''}}">
+        <button bindtap="sendFriends" hoverClass="btn-active" openType="share" plain="true}">转发好友</button>
+        <div class="line"></div>
+        <button bindtap="copyContent" hoverClass="btn-active" plain="true}">复制全文</button>
+    </view>
+</view>

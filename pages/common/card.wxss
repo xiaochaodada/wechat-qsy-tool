@@ -1,0 +1,43 @@
+.card {
+  margin: 32rpx;
+  background-color: #fff;
+  border: none;
+  border-radius: 40rpx;
+  transition: 0.3s;
+}
+
+.card .card-header {
+  display: flex;
+  align-items: center;
+  min-height: 100rpx;
+  padding: 0 30rpx;
+  background-color: rgba(155, 172, 189, 0.06);
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  border-bottom: none;
+}
+
+.card .card-body {
+  line-height: 1.6em;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+}
+
+.card .down-video {
+  line-height: 88rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 44rpx;
+  margin-top: 15rpx;
+}
+
+.card .down-video:active {
+  transform: translate(1rpx, 1rpx);
+}
+
+.card .down-tips {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 20rpx;
+}

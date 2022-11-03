@@ -1,0 +1,12 @@
+<cover-view class="collect-container" wx:if="{{showAddMeBtn}}">
+    <cover-image class="guide-img" src="../../images/collect-window2.png"></cover-image>
+    <cover-view class="step-1">
+        <cover-view class="float-text">1、点击右上角的</cover-view>
+        <cover-image class="top-img" src="../../images/collect-window1.png"></cover-image>
+    </cover-view>
+    <cover-view class="step-2 float-text">2、点击“添加到我的小程序”和“添加到桌面”</cover-view>
+    <cover-image class="middle-img" src="../../images/collect-window3.jpg"></cover-image>
+    <cover-view class="step-3 float-text">3、微信聊天页下拉，即可进入“{{show_name}}”</cover-view>
+    <cover-view catchtap="onClickAddToMinProgramCloseBtn" class="define-btn">我知道了({{countDownNum}}s)</cover-view>
+    <cover-view catchtap="Close_the_window" class="beout-btn">关闭自动弹出</cover-view>
+</cover-view>

@@ -1,0 +1,162 @@
+button::after {
+    border: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125rpx;
+    background-color: #fff;
+    text-align: center;
+    z-index: 99999;
+}
+
+.title {
+    font-family: 'Bitstream Vera Serif Bold';
+    font-size: 34rpx;
+    color: #333;
+    line-height: 60rpx;
+    display: block;
+    margin-top: 52rpx;
+    position: absolute;
+    text-align: center;
+    max-width: 400rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+}
+
+.headermargin {
+    margin-top: 125rpx;
+}
+
+.navigator-hover {
+    background-color: transparent;
+}
+
+.search {
+    width: 460rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    background: #f6f5fa;
+    border-radius: 64rpx;
+    margin-left: 25rpx;
+    font-size: 30rpx;
+    color: #b0b3bf;
+    padding-left: 15px;
+    text-align: left;
+    transform: translateY(-50%);
+}
+
+.soimg {
+    width: 26rpx;
+    height: 26rpx;
+    margin-top: 19rpx;
+    margin-right: 15rpx;
+    float: left;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.goTop {
+    width: 90rpx;
+    height: 90rpx;
+    position: fixed;
+    right: 24rpx;
+    bottom: 24rpx;
+    z-index: 9;
+}
+
+.goTop image {
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.loading {
+    padding: 10rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.loading image {
+    display: inline-block;
+    margin-right: 10rpx;
+    vertical-align: middle;
+    width: 30rpx;
+    height: 30rpx;
+    animation: rotate 1s linear infinite;
+}
+
+.loading text {
+    display: inline-block;
+    height: 30rpx;
+    line-height: 30rpx;
+    vertical-align: middle;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loadshow {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,0.6);
+}
+
+.inpup {
+    width: 306rpx;
+    height: 306rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -153rpx;
+    text-align: center;
+    line-height: 75rpx;
+    font-size: 30rpx;
+    color: #080226;
+    box-shadow: 0 0 30rpx rgba(0,0,0,0.4);
+}
+
+.inpup image {
+    width: 205rpx;
+    height: 205rpx;
+}
+
+scroll-view,view {
+}

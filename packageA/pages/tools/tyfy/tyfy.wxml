@@ -1,0 +1,40 @@
+<view class="after-navber">
+    <view class="container">
+        <view class="itemTitle">同义反义词查询</view>
+        <form bindsubmit="formSubmit">
+            <picker class="seachInput" bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+                <view class="picker">
+                    选择查询类型: {{casArray[casIndex]}}
+                </view>
+            </picker>
+            <view class="itemButtom"></view>
+            <input class="seachInput" name="date" placeholder="请输入查询的词语(二字词)"></input>
+            <view class="itemButtom">
+                <button class="seachButtom" formType="submit">查询</button>
+                <button class="resetButtom" formType="reset">清空</button>
+
+            </view>
+        </form>
+        <block>
+            <block wx:if="{{flag==1}}">
+                <view class="paragraphs" wx:if="{{dateInfo.words != null}}">
+                    <text class="paragraph" selectable="true">{{dateInfo.type == 1 ? '同义词如下:' : '反义词如下:'}}
+</text>
+                    <text class="paragraph" selectable="true" wx:for="{{dateInfo.words}}" wx:for-index="index" wx:key="item">{{index + 1}}：{{item}}
+</text>
+                </view>
+                <view class="paragraphs" wx:else>
+                    <text class="paragraph" selectable="true"> 此词语数据库未收录,请更换个词语(二字词)再进行查询。
+</text>
+                </view>
+            </block>
+        </block>
+        <view class="tool-info">
+            <text class="title">相关知识</text>
+            <text class="info">
+       同义词是指意义相同的一组词语，可以分为等义词和近义词两种。近义词是指意思相近，但不完全相同；而等义词的意思完全相同。
+
+       反义词就是两个意思相反的词，包括：绝对反义词和相对反义词。分为成对的意义相反、互相对立的词。如：真——假，动——静，拥护——反对。这类反义词所表达的概念意义互相排斥。或成对的经常处于并举、对立位置的词。如：黑——白，高山——平地。这类反义词没有矛盾对立关系，但对比鲜明。</text>
+        </view>
+    </view>
+</view>

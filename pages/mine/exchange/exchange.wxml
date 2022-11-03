@@ -1,0 +1,61 @@
+<view>
+    <scroll-view scrollY class="bg-gray overflow" style="height:calc(100vh - {{navH}}px)">
+        <!-- banner广告 -->
+        <view class="card ad-card overflow" wx:if="{{mode != 0 && config_base_list.advertisements.BannerAD_ID && config_base_list.user_information.vip !='1'}}">
+            <ad unit-id="{{config_base_list.advertisements.BannerAD_ID}}"></ad>
+        </view>
+        <view class="hidden">
+            <view class="mine">
+                <view class="card ad-card overflow">
+                    <view bindtap="showDialogBtn" class="mine-header need-hover" hoverClass="hover" hoverStartTime="20" hoverStayTime="70">
+                        <view class="user-avatar">
+                            <image class="default-avatar show" src="../images/score.png"></image>
+                        </view>
+                        <view class="header-content">
+                            <view class="header-title text-overflow" wx:if="{{hasInit}}">
+                                <view class="spinner">
+                                    <view class="bounce1"></view>
+                                    <view class="bounce2"></view>
+                                    <view class="bounce3"></view>
+                                </view>
+                            </view>
+                            <block wx:else>
+                                <view class="header-desc text-overflow">我的{{config_base_list.user_information.unit}}</view>
+                                <view class="header-title text-overflow">{{config_base_list.user_information.Account}}</view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <view class="info-card">
+                    <view class="card-header">
+                        <view class="card-title">{{config_base_list.user_information.unit}}兑换VIP</view>
+                    </view>
+                    <view class="card-body">
+                        <view class="resource-row">
+                            <view bindtap="duihuan" data-id="1" class="row-item need-hover overflow" hoverClass="hover" hoverStartTime="20" hoverStayTime="70">
+                                <image class="item-bg" src="{{exchange.add_picture[0]}}"></image>
+                                <view class="item-title">{{exchange.price1}}{{config_base_list.user_information.unit}}</view>
+                            </view>
+                            <view bindtap="duihuan" data-id="2" class="row-item need-hover overflow" hoverClass="hover" hoverStartTime="20" hoverStayTime="70">
+                                <image class="item-bg" src="{{exchange.add_picture[1]}}"></image>
+                                <view class="item-title">{{exchange.price2}}{{config_base_list.user_information.unit}}</view>
+                            </view>
+                        </view>
+                        <view class="resource-row">
+                            <view bindtap="duihuan" data-id="3" class="row-item need-hover overflow" hoverClass="hover" hoverStartTime="20" hoverStayTime="70">
+                                <image class="item-bg" src="{{exchange.add_picture[2]}}"></image>
+                                <view class="item-title">{{exchange.price3}}{{config_base_list.user_information.unit}}</view>
+                            </view>
+                            <view bindtap="duihuan" data-id="4" class="row-item need-hover overflow" hoverClass="hover" hoverStartTime="20" hoverStayTime="70">
+                                <image class="item-bg" src="{{exchange.add_picture[3]}}"></image>
+                                <view class="item-title">{{exchange.price4}}{{config_base_list.user_information.unit}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,30 @@
+<view>
+    <view class="page_content">
+        <image class="banner" src="https://res-ydz.cmcm.com/mini_sports/images/cdn_banner_friend_rule.png"></image>
+        <view class="qa">
+            <view class="question">
+                <text>邀请初衷</text>
+                <view class="border_bottom"></view>
+            </view>
+            <view>
+                <view class="answer">
+                    <text class="answer">{{original_intention}}</text>
+                    <!-- <text class=".info" >水水水水水水水水水水</text> -->
+                </view>
+            </view>
+        </view>
+        <view class="qa">
+            <view class="question">
+                <text>规则说明</text>
+                <view class="border_bottom"></view>
+            </view>
+            <view>
+                <view class="answer">
+                    <text class="answer" wx:for="{{rules}}" wx:key="rules">{{item}}</text>
+               <text class=".info">注：若发现异常刷单行为(包括非正常邀请)非正常手段获取积分的运营，官方有权取消积分奖励。 </text>
+                </view>
+                     
+            </view>
+        </view>
+    </view>
+</view>

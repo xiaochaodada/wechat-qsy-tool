@@ -1,0 +1,30 @@
+.outter {
+    background-color: #fff;
+    margin: 12rpx;
+    padding: 5rpx;
+    border-radius: 12rpx;
+}
+
+.class_title {
+    color: #5c5c5c;
+    font-size: 30rpx;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30rpx 0;
+}
+
+module {
+    flex: 1;
+}
+
+.tips {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #b3b3b3;
+}

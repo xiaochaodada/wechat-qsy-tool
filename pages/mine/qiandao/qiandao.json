@@ -1,0 +1,10 @@
+{
+    "usingComponents": {},
+    "navigationBarTitleText": "每日签到",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f6f5f5",
+    "backgroundColorTop": "#f6f5f5",
+    "backgroundColorBottom": "#f6f5f5",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#313148"
+}

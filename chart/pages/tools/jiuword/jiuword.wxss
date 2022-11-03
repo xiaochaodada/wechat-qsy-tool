@@ -1,0 +1,292 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+
+page {
+    font-family: "Microsoft YaHei";
+}
+
+.flex_start {
+    display: flex;
+    align-items: center;
+}
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.canvas {
+    width: 600px;
+    height: 500px;
+    position: fixed;
+    left: 500px;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hide_scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.page_ft {
+    width: 750rpx;
+    height: 608rpx;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    overflow-x: scroll;
+}
+
+.page_temp>view {
+    width: 170rpx;
+    height: 170rpx;
+    font-size: 28rpx;
+    color: #afafaf;
+    margin-top: 48rpx;
+    margin-left: 24rpx;
+}
+
+.page_temp>view:first-child {
+    margin-left: 44rpx;
+}
+
+.btn_change_image,.btn_share {
+    width: 60rpx;
+    height: 90rpx;
+    position: fixed;
+    bottom: 32rpx;
+}
+
+.btn_change_image {
+    left: 86rpx;
+}
+
+.btn_share {
+    right: 86rpx;
+}
+
+.ft_def {
+    background-color: #ebebeb;
+}
+
+.ft_sel {
+    background-color: #e0ebff;
+}
+
+.to_top_index {
+    width: 188rpx;
+    height: 36rpx;
+    position: fixed;
+    left: 10rpx;
+    top: 6%;
+    padding: 10rpx;
+}
+
+.btn_save {
+    width: 320rpx;
+    height: 100rpx;
+    position: fixed;
+    bottom: 32rpx;
+    left: 216rpx;
+}
+
+.temp_small {
+    width: 170rpx;
+    height: 170rpx;
+}
+
+.bg_nine {
+    width: 750rpx;
+    height: 866rpx;
+}
+
+.btn_share_wrap {
+    width: 70rpx;
+    height: 100rpx;
+    position: fixed;
+    bottom: 30rpx;
+    right: 80rpx;
+    background-color: rgba(0,0,0,0);
+}
+
+.btn_share_wrap::after {
+    border: none;
+}
+
+.bg_image {
+    width: 750rpx;
+    height: 1334rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+
+.word_item {
+    font-size: 72rpx;
+    width: 156rpx;
+    height: 156rpx;
+}
+
+.word_item_2 {
+    position: relative;
+    top: -700rpx;
+}
+
+.word_box {
+    width: 484rpx;
+    height: 484rpx;
+    position: fixed;
+    left: 133rpx;
+    top: 5%;
+    flex-wrap: wrap;
+}
+
+.input_box {
+    width: 750rpx;
+    height: 88rpx;
+    background-color: #fff;
+    border-bottom: 1px solid #dedede;
+}
+
+.icon_edit {
+    width: 48rpx;
+    height: 48rpx;
+    margin-left: 46rpx;
+}
+
+.input_word {
+    font-size: 34rpx;
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.word_place {
+    font-size: 34rpx;
+    color: #838383;
+}
+
+.btn_change {
+    font-size: 24rpx;
+    color: #42bcff;
+    padding: 10rpx;
+    margin-right: 30rpx;
+    width: 100rpx;
+    text-align: right;
+}
+
+.bd {
+    width: 750rpx;
+    height: 644rpx;
+    background-color: #d9d9d9;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.icon_canvas {
+    width: 68rpx;
+    height: 68rpx;
+    margin-left: 20rpx;
+}
+
+.icon_canvas_2 {
+    visibility: hidden;
+}
+
+.bd_bg {
+    margin-top: 40rpx;
+}
+
+.bd_bg_2 {
+    margin-top: 6rpx;
+}
+
+.move_area {
+    height: 76rpx;
+    width: 630rpx;
+    margin-left: 26rpx;
+    overflow: hidden;
+}
+
+.move_view {
+    width: 100rpx;
+    height: 70rpx;
+}
+
+.move_item {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 8rpx;
+    box-sizing: border-box;
+    border-radius: 4rpx;
+}
+
+.move_item_white {
+    border: 1rpx solid #e1e1e1;
+}
+
+.move_item_sel {
+    border: 4rpx solid rgba(255,90,90,0.3);
+}
+
+.bd_text {
+    margin-top: 50rpx;
+}
+
+.btn_ft {
+    background-image: linear-gradient(-180deg,#ffe35a 0%,#ffde70 100%);
+    box-shadow: inset 0 -6rpx 0 0 #ffbb27;
+    border-radius: 80rpx;
+    font-size: 32rpx;
+    color: #8e5aff;
+    width: 304rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    margin-right: 30rpx;
+    border: none;
+}
+
+.btn_ft::after {
+    border: none;
+}
+
+.btn_ft_wrap {
+    position: fixed;
+    bottom: 32rpx;
+    left: 55rpx;
+}
+
+.xf {
+    bottom: 75%;
+}

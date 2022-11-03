@@ -1,0 +1,457 @@
+page {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+}
+
+.template_index {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock {
+    width: 288rpx;
+    height: 288rpx;
+    position: relative;
+    margin-top: 100rpx;
+}
+
+.clock_hour {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotate 192s linear infinite;
+}
+
+.clock_minute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotate 16s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.lifeclock {
+    width: 45rpx;
+    height: 224rpx;
+    margin-top: 62rpx;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tips {
+    color: rgba(255,255,255,0.32);
+    font-size: 30rpx;
+    margin-bottom: 8rpx;
+    font-weight: lighter;
+}
+
+.btn_test {
+    height: 80rpx;
+    margin-bottom: 64rpx;
+    color: white;
+    background-color: rgba(255,255,255,0.08);
+    border-radius: 80rpx;
+    line-height: 80rpx;
+    margin-top: 24rpx;
+    font-size: 28rpx;
+    padding: 0 70rpx;
+    font-weight: 300;
+    box-shadow: 0 8rpx 0 0 rgba(0,0,0,0.08);
+}
+
+.container_input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculateBtn {
+    width: 494rpx;
+    height: 80rpx;
+    background-image: linear-gradient(-180deg,rgba(255,255,255,0.08) 2%,rgba(255,255,255,0.12) 99%);
+    box-shadow: 0 8rpx 0 0 rgba(0,0,0,0.08);
+    border-radius: 200rpx;
+    position: fixed;
+    bottom: 64rpx;
+    display: flex;
+    justify-content: center;
+    margin-left: 128rpx;
+}
+
+.calculateTxt {
+    width: 334rpx;
+    font-size: 28rpx;
+    color: #fff;
+    font-weight: 300;
+    line-height: 28rpx;
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.calculateArrow {
+    width: 32rpx;
+    height: 32rpx;
+    margin-top: 28rpx;
+}
+
+.mList {
+    width: 100%;
+    padding-top: 156rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputCell {
+    width: 312rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputQuestions {
+    font-size: 34rpx;
+    color: #fff;
+    letter-spacing: 1.6rpx;
+    line-height: 34rpx;
+    text-shadow: -4rpx 4rpx 0 rgba(0,0,0,0.12);
+    margin-bottom: 16rpx;
+}
+
+.inputAnswers {
+    width: 100%;
+    height: 62rpx;
+    font-size: 30rpx;
+    color: rgba(255,255,255,0.48);
+    line-height: 30rpx;
+}
+
+.inputLine {
+    width: 100%;
+    height: 2rpx;
+    background-color: white;
+    margin-bottom: 114rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0.32),rgba(255,255,255,0.08));
+    border-radius: 2rpx;
+}
+
+.inputDate {
+    width: 100%;
+    height: 62rpx;
+    font-size: 30rpx;
+    color: rgba(255,255,255,0.48);
+    line-height: 30rpx;
+    display: flex;
+    align-items: center;
+}
+
+.mBack {
+    width: 164rpx;
+    color: white;
+    position: absolute;
+    top: 20rpx;
+    right: 30rpx;
+    background-color: rgba(255,255,255,0.12);
+    font-size: 28rpx;
+    height: 60rpx;
+    line-height: 64rpx;
+    border-radius: 64rpx;
+    text-align: center;
+}
+
+.container_result {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mView {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mClock {
+    width: 288rpx;
+    height: 288rpx;
+    margin-top: 16rpx;
+    margin-bottom: 30rpx;
+}
+
+.mClock .mClockResult {
+    width: 288rpx;
+    height: 288rpx;
+    position: relative;
+}
+
+.mClock .mClockHour {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mClock .mClockMinute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mTxt {
+    font-size: 26rpx;
+    color: white;
+    letter-spacing: 1.2rpx;
+    line-height: 26rpx;
+    opacity: 0.64;
+    margin-left: 16rpx;
+    margin-right: 16rpx;
+}
+
+.mTime {
+    width: 100%;
+    height: 56rpx;
+    margin-top: 24rpx;
+    margin-bottom: 64rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.mDoubleQuotations {
+    width: 32rpx;
+    height: 29.2rpx;
+    flex-direction: row;
+}
+
+.mNowTime {
+    font-weight: bold;
+    font-size: 56rpx;
+    color: #fff;
+    letter-spacing: 2.54rpx;
+    line-height: 56rpx;
+    text-shadow: -4rpx 4rpx 0 rgba(0,0,0,0.12);
+    margin-left: 24rpx;
+    margin-right: 24rpx;
+}
+
+.mExist {
+    width: 590rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mExistDetail {
+    background-image: linear-gradient(-180deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.00) 100%);
+    border-radius: 16px;
+    width: 654rpx;
+    height: 184rpx;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    margin-top: -12rpx;
+    padding-top: 10rpx;
+}
+
+.mExistDetailCell {
+    box-sizing: border-box;
+    flex: 0 0 33.3333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 34rpx;
+}
+
+.mExistDetailNumb {
+    font-weight: bold;
+    font-size: 32rpx;
+    color: #fff;
+    letter-spacing: 0;
+    line-height: 32rpx;
+    text-shadow: -4rpx 4rpx 0 rgba(0,0,0,0.12);
+}
+
+.mExistDetailType {
+    font-size: 24rpx;
+    color: rgba(255,255,255,0.64);
+    letter-spacing: 0;
+    line-height: 24rpx;
+    margin-left: 16rpx;
+}
+
+.mSurplus {
+    width: 590rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mSurplusDetail {
+    background-image: linear-gradient(-180deg,rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.00) 100%);
+    border-radius: 16px;
+    width: 654rpx;
+    height: 64rpx;
+    margin-bottom: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 42rpx;
+    margin-top: -12rpx;
+}
+
+.mSurplusDetailView {
+    height: 100%;
+}
+
+.mSurplusDetailCell {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32rpx;
+}
+
+.mShare {
+    width: 654rpx;
+    height: 264rpx;
+    margin-bottom: 48rpx;
+    position: relative;
+}
+
+.mbg {
+    width: 100%;
+    height: 100%;
+}
+
+.mShareDetail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mSentenceTxt {
+    width: 532rpx;
+    height: 58.2rpx;
+    margin-top: 48rpx;
+}
+
+.mShareBtns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30rpx;
+}
+
+.mShareImg {
+    width: 208rpx;
+    height: 64rpx;
+    box-shadow: 0 8rpx 0 0 rgba(0,0,0,0.08);
+    border-radius: 200rpx;
+    background-color: rgba(255,255,255,0.1);
+    font-size: 26rpx;
+    color: rgba(255,255,255,0.64);
+    letter-spacing: 1.4rpx;
+    line-height: 26rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mShareToFr {
+    width: 208rpx;
+    height: 64rpx;
+    box-shadow: 0 8rpx 0 0 rgba(0,0,0,0.08);
+    border-radius: 200rpx;
+    background-color: rgba(255,255,255,0.1);
+    font-size: 26rpx;
+    color: rgba(255,255,255,0.64);
+    letter-spacing: 1.4rpx;
+    line-height: 26rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 48rpx;
+}
+
+.mExistLeftLine {
+    width: 102rpx;
+    height: 2rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,0.48));
+}
+
+.mExistRightLine {
+    width: 102rpx;
+    height: 2rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0.48),rgba(255,255,255,0));
+}
+
+.mSurplusLeftLine {
+    width: 184rpx;
+    height: 2rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,0.48));
+}
+
+.mSurplusRightLine {
+    width: 184rpx;
+    height: 2rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0.48),rgba(255,255,255,0));
+}
+
+.container {
+    position: relative;
+}
+
+.img_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

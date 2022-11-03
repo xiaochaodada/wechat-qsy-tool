@@ -1,0 +1,34 @@
+<view class="container">
+    <view class="main">
+        <view class="preview-head has-margin-lr">
+            <text class="long-text">视频类型:{{utils.video_type_name(video_type)}}</text>
+        </view>
+        <view class="preview has-margin-tb">
+            <!-- <image class="" mode="aspectFit" src="{{orderInfo.url}}" wx:if="{{tools.isImageUrl(orderInfo.url)}}"></image>
+            <block wx:else> -->
+                <video customCache="{{false}}" src="{{video_url}}"></video>
+                <!-- <video customCache="{{false}}" poster="{{orderInfo.poster_path}}" src="{{orderInfo.url}}" wx:else></video> -->
+            <!-- </block> -->
+        </view>
+        <view class="preview-middle has-margin-lr">
+         
+                <view class="md-btn-area">
+                    <button bindtap="openVideoAd" type="">下载视频</button>
+                    <button bindtap="downloadWXCode" loading="{{isGettingWxaCode}}" type="">{{isGettingWxaCode?'下载中...':'下载小程序码'}}</button>
+                </view>
+                <view class="tips has-margin-tb">
+                    <view class="mute" style="margin-top:20px;">提示：点击右上角菜单"转发"可分享本视频，或下载分享 <text catchtap="previewWXACode" class="highlight">小程序码图片</text>。如果视频播放不流畅，建议下载后再播放。</view>
+                </view>
+         
+         
+        </view>
+    </view>
+    <myad adid="adunit-b9263ed747a093aa" style="width:100%;min-height: 100px;"></myad>
+    <official-account style="width: 100%;"></official-account>
+    <view class="wrapper-footer btn-area is-hide">
+        <navigator hoverClass="navigator-hover" openType="switchTab" url="/pages/index/index">
+            <button>回到首页</button>
+        </navigator>
+    </view>
+</view>
+    <wxs src="../../../utils/utils.wxs" module="utils" />

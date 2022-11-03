@@ -1,0 +1,133 @@
+.wimg {
+    width: 600rpx;
+    height: 600rpx;
+    margin-top: 130rpx;
+}
+
+.share-btn {
+    position: absolute;
+    top: 100rpx;
+    right: 65rpx;
+    width: 210rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: right;
+    font-size: 30rpx;
+    background: #057794;
+    z-index: 999;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wview {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100rpx;
+}
+
+.img1 {
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: 350rpx;
+}
+
+.share-friend {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 10;
+}
+
+.share-friend image {
+    width: 100%;
+    height: 100%;
+}
+
+.img2 {
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: 380rpx;
+    right: 240rpx;
+}
+
+.img3 {
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: 430rpx;
+    right: 430rpx;
+}
+
+.img4 {
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: 470rpx;
+    right: 470rpx;
+}
+
+.img5 {
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: 460rpx;
+    right: 240rpx;
+}
+
+.nextview {
+    margin-top: 180rpx;
+    padding-right: 30rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    padding-left: 30rpx;
+    margin-bottom: 60rpx;
+    background: #FFAD0B;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.share {
+    width: 180px;
+    background-color: transparent!important;
+    color: #FFAD0B!important;
+    border: solid 1px #FFAD0B;
+}
+
+.next {
+    color: white;
+    font-size: 40rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.setting-item {
+    position: absolute;
+    width: 280rpx;
+    height: 100rpx;
+    left: 50%;
+    margin-left: -140rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top: 65%;
+}
+
+.btn-triangle {
+    width: 54rpx;
+    height: 54rpx;
+}

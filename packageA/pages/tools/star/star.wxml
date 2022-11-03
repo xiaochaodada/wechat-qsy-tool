@@ -1,0 +1,45 @@
+<view class="container {{isIpx?'ipx':''}}">
+    <image class="bg" mode="widthFix" src="https://www.lxl66.cn/tu/{{isIpx?'bg_new_ipx':'bg_new.jpg'}}" style="height: 100vh !important;"></image>
+    <image class="star {{splash?'splash':''}}" mode="widthFix" src="https://www.lxl66.cn/tu/star_left.png"></image>
+    <image class="star {{splash?'splash':''}}" mode="widthFix" src="https://www.lxl66.cn/tu/star_right.png"></image>
+    <image class="star {{splash?'splash':''}}" mode="widthFix" src="https://www.lxl66.cn/tu/star_right2.png"></image>
+    <image class="star {{splash?'splash':''}}" mode="widthFix" src="https://www.lxl66.cn/tu/star_right3.png"></image>
+    <image animation="{{animationData4}}" class="img-first-layer" mode="widthFix" src="https://www.lxl66.cn/tu/first_layer.png"></image>
+    <image animation="{{animationData1}}" class="img-second-layer" mode="widthFix" src="{{imageUrl}}second_layer.png"></image>
+    <image animation="{{animationData2}}" class="img-third-layer" mode="widthFix" src="https://www.lxl66.cn/tu/third_layer.png"></image>
+    <image animation="{{animationData4}}" class="img-fourth-layer" mode="widthFix" src="https://www.lxl66.cn/tu/fourth_layer.png"></image>
+    <view animation="{{animationData3}}" class="guide">
+        <image class="img-border-left" src="https://www.lxl66.cn/tu/border_left.png"></image>
+        <view class="text-content">
+            <view class="txt-guide">请在心中默念你的问题，</view>
+            <view class="txt-guide">然后点亮六芒星阵，</view>
+            <view class="txt-guide">在浩瀚的宇宙星空之中，</view>
+            <view class="txt-guide">寻找属于你的答案。</view>
+        </view>
+        <image class="img-border-right" src="{{imageUrl}}border_right.png"></image>
+    </view>
+    <block>
+        <block wx:if="{{!show}}">
+            <button plain animation="{{animationData3}}" bindtap="lightUp" class="light-up" hoverClass="hover" style="border:none;"></button>
+        </block>
+    </block>
+    <view animation="{{animationData5}}" class="answer">
+        <image class="img-border-left" src="{{imageUrl}}border_left.png"></image>
+        <text class="txt-guide">{{answer}}</text>
+        <image class="img-border-right" src="{{imageUrl}}border_right.png"></image>
+    </view>
+    <block>
+        <block wx:if="{{show}}">
+            <view animation="{{animationData5}}" class="ask-and-share">
+                <button plain bindtap="ask" class="ask" hoverClass="hover" style="border:none;"></button>
+            </view>
+        </block>
+    </block>
+</view>
+<button bindtap='returns'>
+      <image class="add-wrap-return" src="/images/returns.png"></image>
+  </button>
+<button open-type='share'>
+    <image class="add-wrap" src="/images/shares.jpg"></image>
+</button>
+

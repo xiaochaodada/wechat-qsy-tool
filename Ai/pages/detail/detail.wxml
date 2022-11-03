@@ -1,0 +1,2 @@
+<beautify data="{{data}}" img_file="{{img_file}}" img_path="{{img_path}}" wx:if="{{type==='beautify'}}"></beautify>
+<general arrayRes="{{arrayRes}}" data="{{data}}" img_file="{{img_file}}" img_path="{{img_path}}" wx:else></general>

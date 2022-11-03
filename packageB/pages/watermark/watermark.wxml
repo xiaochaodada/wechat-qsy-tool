@@ -1,0 +1,53 @@
+<canvas canvasId="mycanvas" disableScroll="true" style="width:{{originVideoW}}px;height:{{originVideoH}}px;position:absolute;left:-999999px"></canvas>
+<canvas canvasId="itemCanvas" disableScroll="true" style="position:absolute;left:-999999px"></canvas>
+<view class="box">
+    <view class="remind" wx:if="{{!video}}">
+        <text>操作提示：
+      1.点击视频按钮选择视频。视频大小不能超过50M;
+      2.选择图片或者文字，添加图片水印或者文字水印;
+      3.最后点击确定，视频上传加水印，完成操作。
+      视频下载方式:在首页"剪辑记录下载"
+    </text>
+    </view>
+    <video autoplay="{{true}}" bindtap="hiddSilder" enableProgressGesture="{{false}}" src="{{video}}" style="width:100vw;height:90vh;position:absolute;" wx:if="{{video}}"></video>
+</view>
+<view class="contentWarp">
+    <view class="touchWrap" style="transform: scale({{item.scale}});top:{{item.top}}px;left:{{item.left}}px; " wx:for="{{itemList}}" wx:key="id">
+        <view class="imgWrap {{item.active?'touchActive':''}}" style="transform: rotate({{item.angle}}deg); border: {{item.active?4*item.oScale:0}}rpx #328de7 dashed;">
+            <image bindtouchend="WraptouchEnd" bindtouchmove="WraptouchMove" bindtouchstart="WraptouchStart" data-id="{{item.id}}" src="{{item.image}}" style="width:{{item.width}}px;height:{{item.height}}px;opacity:{{item.opacity}};filter:alpha(opacity=item.opacity*10);"></image>
+            <image bindtap="deleteItem" class="x" data-id="{{item.id}}" src="../images/cha1.png" style="transform: scale({{item.oScale}});transform-origin:center;"></image>
+            <image bindtouchmove="oTouchMove" bindtouchstart="oTouchStart" class="o" data-id="{{item.id}}" src="../images/shua1.png" style="transform: scale({{item.oScale}});transform-origin:center;"></image>
+        </view>
+    </view>
+</view>
+<view class="bottom">
+    <button bindtap="getVideo">
+        <image src="../images/video.png"></image>
+    视频
+  </button>
+    <button bindtap="getImage" wx:if="{{!save}}">
+        <image src="../images/img.png"></image>
+    图片
+  </button>
+    <button bindtap="showDialog" wx:if="{{!save}}">
+        <image src="../images/text.png"></image>
+    文字
+  </button>
+    <button bindtap="setOpacity" wx:if="{{!save&&itemList.length>0}}">
+        <image src="../images/tou.png"></image>
+        <view>透明度</view>
+    </button>
+    <button bindtap="saveVideo" wx:if="{{save}}">
+        <image src="../images/save.png"></image>
+    保存
+  </button>
+    <button bindtap="addMark" wx:if="{{!save}}">
+        <image src="../images/comfirm.png"></image>
+    确定
+  </button>
+</view>
+<view class="slider" wx:if="{{slider}}">
+    <slider activeColor="#fac249" bindchanging="getOpacity" blockSize="12" max="1" min="0" step="0.01" value="1"></slider>
+</view>
+<addText bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent" bind:myevent="get_emit" id="addText" item="{{tempItems}}" someText="请输入文字" windowHeight="{{windowHeight}}"></addText>
+

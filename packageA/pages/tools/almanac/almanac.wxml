@@ -1,0 +1,50 @@
+<view class="after-navber">
+    <view class="container">
+        <view class="itemTitle">老黄历查询</view>
+        <form bindsubmit="formSubmit">
+            <picker bindchange="bindDateChange" class="seachInput" end="2100-12-31" mode="date" name="date" start="1900-01-01" value="{{date}}">
+                <view class="picker">
+                    选择日期: {{date}}
+                </view>
+            </picker>
+            <view class="itemButtom">
+                <button class="seachButtom" formType="submit">查询</button>
+            </view>
+        </form>
+        <block>
+            <block wx:if="{{flag==1}}">
+                <view class="paragraphs">
+                    <text class="paragraph" selectable="true">公历(阳历)：{{dateInfo.yangli}}
+</text>
+                    <text class="paragraph" selectable="true">农历(阴历)：{{dateInfo.yinli}}
+</text>
+
+                    <text class="paragraph" selectable="true">五行：{{dateInfo.wuxing}}
+</text>
+
+                    <text class="paragraph" selectable="true">冲煞：{{dateInfo.chongsha}}
+</text>
+
+                    <text class="paragraph" selectable="true">彭祖百忌
+：{{dateInfo.baiji}}
+</text>
+
+                    <text class="paragraph" selectable="true">吉神宜趋：{{dateInfo.jishen}}
+</text>
+                    <text class="paragraph" selectable="true">吉神宜趋：{{dateInfo.xiongshen}}
+</text>
+                    <text class="paragraph" selectable="true">宜：{{dateInfo.yi}}
+</text>
+                    <text class="paragraph" selectable="true">忌：{{dateInfo.ji}}</text>
+                </view>
+            </block>
+        </block>
+        <view class="tool-info">
+            <text class="title">相关知识</text>
+            <text class="info">
+        黄历，又称老黄历、皇历，是在中国农历基础上产生出来的，带有每日吉凶宜忌的一种万年历。黄历相传是由轩辕黄帝创制，故称为黄历。黄历主要内容为二十四节气，每天的宜忌、干支、值神、星宿、月相、吉神凶煞等。
+
+        黄历是古时帝王遵循的一个行为规范的书籍，并由钦天监计算颁订，因此也称皇历；这里面不但包括了天文气象、时令季节而且还包含了人民在日常生活中要遵守的一些禁忌，其内容指导中国劳动农民耕种时机，故又称农民历；中国民间俗称为通书；但因通书的“书”字跟“输”字同音，因避忌故又名通胜。</text>
+        </view>
+    </view>
+</view>

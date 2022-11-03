@@ -1,0 +1,19 @@
+
+<view class="after-navber">
+    <view class="backgroundpic">
+        <view class="customservice">
+            <button openType="contact" plain="true"></button>
+            <image mode="scaleToFill" src="./images/customservice.png"></image>
+        </view>
+        <image class="backgroundimage" mode="aspectFit" src="./images/background.png"></image>
+        <view animation="{{imageShake}}" class="liteGameCard">
+            <view class="gameName">{{showGame.name}}</view>
+            <view class="gameNameicon"></view>
+            <scroll-view class="gameDetail" scrollY="true">{{showGame.detail}}</scroll-view>
+            <view class="gameProperty">道具：{{showGame.property}}</view>
+        </view>
+        <view class="bottomView" hoverClass="bottomViewhover" hoverStartTime="0" hoverStayTime="40">
+            <image bindtap="goChangeImage" class="changebutton" mode="aspectFit" src="./images/button.png"></image>
+        </view>
+    </view>
+</view>

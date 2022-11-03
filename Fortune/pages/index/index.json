@@ -1,0 +1,7 @@
+{
+    "disableScroll": true,
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#9570d7",
+        "navigationBarTitleText": "星座匹配",
+    "navigationBarTextStyle": "white"
+}

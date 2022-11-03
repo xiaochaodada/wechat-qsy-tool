@@ -1,0 +1,137 @@
+.box {
+  display: flex;
+  padding-bottom: 20rpx;
+}
+
+.box .panle1 {
+  width: 50%;
+  overflow: hidden;
+  background: linear-gradient(60deg, #05a057 0%, #0dcb71 100%);
+  animation: gradient 7.5s ease-in-out infinite;
+  background-position: 0% 100%;
+  border-radius: 20rpx;
+  height: 170rpx;
+}
+
+.box .panle2 {
+  width: 50%;
+  overflow: hidden;
+  margin-left: 10px;
+  background: linear-gradient(60deg, #32bbfb 0%, #24e3ff 100%);
+  animation: gradient 7.5s ease-in-out infinite;
+  background-position: 0% 100%;
+  border-radius: 20rpx;
+  height: 170rpx;
+}
+
+.box .panle3 {
+  width: 50%;
+  overflow: hidden;
+  background: linear-gradient(60deg, #f35546 0%, #ff7462 100%);
+  animation: gradient 7.5s ease-in-out infinite;
+  background-position: 0% 100%;
+  border-radius: 20rpx;
+  height: 170rpx;
+}
+
+.box .panle4 {
+  width: 50%;
+  overflow: hidden;
+  margin-left: 20rpx;
+  background: linear-gradient(60deg, #3271ea 0%, #6797fd 100%);
+  animation: gradient 7.5s ease-in-out infinite;
+  background-position: 0% 100%;
+  border-radius: 20rpx;
+  height: 170rpx;
+}
+
+.box .panle5 {
+  width: 50%;
+  overflow: hidden;
+  background: linear-gradient(60deg, rgb(157, 64, 197) 0%, rgb(195, 59, 219) 100%);
+  animation: gradient 7.5s ease-in-out infinite;
+  background-position: 0% 100%;
+  border-radius: 20rpx;
+  height: 170rpx;
+}
+
+.box .panle6 {
+  width: 50%;
+  overflow: hidden;
+  margin-left: 20rpx;
+  background: linear-gradient(60deg, #f4700f 0%, #fd8024 100%);
+  animation: gradient 7.5s ease-in-out infinite;
+  background-position: 0% 100%;
+  border-radius: 20rpx;
+  height: 170rpx;
+}
+
+@-webkit-keyframes gradient {
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes gradient {
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+.box .nav {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+}
+
+.box .header {
+  width: 65%;
+  overflow: hidden;
+  padding-left: 26rpx;
+}
+
+.box .title {
+  line-height: 36rpx;
+  padding-top: 26rpx;
+  padding-bottom: 10rpx;
+}
+
+.box .text {
+  font-size: 36rpx;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 600;
+}
+
+.box .tip {
+  overflow: hidden;
+  color: #fff;
+  font-size: 22rpx;
+}
+
+.box .link {
+  overflow: hidden;
+  padding-top: 15rpx;
+}
+
+.box .link wx-em {
+  float: left;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 26rpx;
+  border-radius: 50rpx;
+  padding: 2rpx 20rpx;
+  height: 38rpx;
+  line-height: 36rpx;
+  margin: 0px 0px 0px 0px;
+  color: #fff;
+}
+
+.box .img {
+  width: 35%;
+  margin-left: -20rpx;
+}
+
+.box .img .icon {
+  display: block;
+  padding-top: 45%;
+}

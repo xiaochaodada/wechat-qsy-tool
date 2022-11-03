@@ -1,0 +1,12 @@
+@import "../../../../components/0.wxss";
+
+.seachButtom-y {
+    width: 60pt;
+    height: 25pt;
+    line-height: 25pt;
+    font-size: 13pt;
+    color: #fff;
+    border-radius: 3pt;
+    background-color: #1AAD19;
+    float: none;
+}

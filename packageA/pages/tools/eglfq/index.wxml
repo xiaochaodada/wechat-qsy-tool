@@ -1,0 +1,12 @@
+<view class="page__bd">
+    <image catchtap="start" src="./images/{{bgimg}}.jpg"></image>
+    <image catchtap="start" src="./images/1.jpg" style="display:none"></image>
+    <image catchtap="start" src="./images/2.jpg" style="display:none"></image>
+    <image catchtap="start" src="./images/3.jpg" style="display:none"></image>
+</view>
+<view class="adgongju" wx:if="{{mode != 0 && config.advertisements.box_ad && config.user_information.vip !='1'}}">
+    <ad adTheme="white" adType="grid" gridCount="5" gridOpacity="0.8" unitId="{{config.advertisements.box_ad}}"></ad>
+</view>
+<button open-type='share'>
+    <image class="add-wrap1" src="/images/shares.jpg"></image>
+</button>

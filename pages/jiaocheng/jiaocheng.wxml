@@ -1,0 +1,67 @@
+<import src="../common/loadings.wxml"></import>
+<template is="loading" data wx:if="{{is_load}}"></template>
+
+
+<scroll-view class="swiper-nav" scrollLeft="{{navScrollLeft}}" scrollWithAnimation="{{true}}" scrollX="true">
+	<view bindtap="switchClass" class="item-nav {{currentIndex==idx?'active':''}}" data-current="{{idx}}" data-cid="{{item.cid}}" style="width:{{100/5}}%" wx:for="{{CourseClassList}}" wx:for-index="idx" wx:key="idx">{{item.name}}</view>
+	<view class="tab-line" style="width:{{100/5}}%;transform:translateX({{100*currentIndex}}%);">
+		<view></view>
+	</view>
+</scroll-view>
+
+
+<swiper bindchange="switchTab" class="tab-box" current="{{currentIndex}}" duration="300" style="padding-top: 47px;">
+	<swiper-item class="tab-content" wx:for="{{CourseClassList}}" wx:for-index="idx" wx:for-item="tabItem" wx:key="idx">
+		<scroll-view bindscrolltolower="onLoadMore" class="scrollView" lowerThreshold="50" scrollY="{{true}}" style="height:100%">
+			<view class="icon-list" wx:if="{{CourseList}}">
+				<view class="nolist" wx:if="{{CourseList.length==0 && !listLoading}}">
+					<image src="../../images/kong.png"></image>
+					<view class="tishi">该分类暂无教程</view>
+				</view>
+				<ad-custom wx:if="{{mode != 0 && config_base_list.advertisements.primordialVideo && vip !='1'}}" unit-id="{{config_base_list.advertisements.primordialVideo}}" bindload="adLoad" binderror="adError"></ad-custom>
+
+				<block wx:if="{{CourseList.length>0}}" wx:for="{{CourseList}}" wx:for-index="ide" wx:key="CourseList">
+
+					<view class="containers">
+						<view class="post-list">
+							<block>
+								<!-- <view class="list-item-ad"> -->
+									<!-- <ad adIntervals="30" binderror="listAdbinderror" unitId="{{item.listAdId}}"></ad> -->
+								<!-- </view> -->
+								<view bindtap="loadCourse" class="post-item" id="{{item.id}}" data-display="{{item.display}}">
+									<image class="post-img" mode="aspectFill" src="{{item.img}}"></image>
+									<view class="post-desc">
+										<view class="post-title">
+											<text>{{item.name}}</text>
+										</view>
+										<view class="post-data">
+											<image src="../../images/calendar.png"></image>
+											<text>{{item.addtime}}</text>
+											<!-- <image src="../../images/comments.png"></image>
+											<text class="">{{item.count}}</text>
+											<image src="../../images/home-like.png"></image>
+											<text class="">{{item.id}}</text> -->
+											<image src="../../images/pageviews.png"></image>
+											<text class="">{{item.count}}</text>
+										</view>
+									</view>
+								</view>
+							</block>
+						</view>
+					</view>
+
+					<view wx:if="{{(ide+1)%adPage==0}}">
+						<ad-custom wx:if="{{mode != 0 && config_base_list.advertisements.primordialVideo && vip !='1'}}" unit-id="{{config_base_list.advertisements.primordialVideo}}" bindload="adLoad" binderror="adError"></ad-custom>
+
+					</view>
+				</block>
+			</view>
+			<view class="loading" hidden="{{!listLoading}}">
+				<image src="../../images/icon12.png"></image>
+				<text>加载中...</text>
+			</view>
+			<!-- <view class="loading complete" hidden="{{!tabItem.listLoadingLoser}}">加载出错，请重试</view> -->
+			<view wx:if="{{loadingDottom == 1 && CourseList.length !=0}}" class="loading complete" hidden="{{!loadingDottom}}">到底了~</view>
+		</scroll-view>
+	</swiper-item>
+</swiper>

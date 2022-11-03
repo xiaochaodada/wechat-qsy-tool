@@ -1,0 +1,26 @@
+<canvas canvasId="mycanvas" disableScroll="true" style="width:{{originVideoW}}px;height:{{originVideoH}}px;position:absolute;left:-999999px"></canvas>
+<canvas canvasId="itemCanvas" disableScroll="true" style="position:absolute;left:-9999999px;width:100px;height:50px;"></canvas>
+<view>
+    <view style="width:90%;margin:300rpx auto;height:30%;border:1rpx solid #ddd;font-size:35rpx;padding:15rpx;" wx:if="{{!video}}">
+        <text>
+      操作提示：
+  {{content}}
+    </text>
+    </view>
+    <video autoplay="{{true}}" customCache="{{false}}" enableProgressGesture="{{false}}" src="{{video}}" style="width:100%;height:730rpx;" wx:if="{{video}}"></video>
+
+    <view class="bottom">
+        <button bindtap="chooseVideo">
+            <image src="../images/video.png"></image>
+      视频
+    </button>
+        <button bindtap="toSplic">
+            <image src="../images/comfirm.png"></image>
+      确定
+    </button>
+        <button bindtap="saveVideo" wx:if="{{save}}">
+            <image src="/image/save.png"></image>
+      保存
+      </button>
+    </view>
+</view>

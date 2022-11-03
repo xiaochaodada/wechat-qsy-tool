@@ -1,0 +1,23 @@
+<image class="background" src="./bg.jpg"></image>
+<view class="container">
+    <view class="share">
+        <image class="pk-img" src="./pk.png"></image>
+        <button class="share-btn" openType="share">多人模式</button>
+    </view>
+    <view class="select-box">
+        <view class="select-cont">
+            <view class="select-bg" wx:if="{{isReal}}"></view>
+            <image bindgetuserinfo="getUserInfo" bindtap="selectType" class="select-btn" id="btn-l" openType="getUserInfo" src="zxh.png"> 真心话 </image>
+        </view>
+        <view class="select-cont">
+            <view class="select-bg" wx:if="{{!isReal}}"></view>
+            <image bindgetuserinfo="getUserInfo" bindtap="selectType" class="select-btn" id="btn-r" openType="getUserInfo" src="./damaoxian.png"> 真心话 </image>
+        </view>
+    </view>
+    <view class="main-box">
+        <text>{{textData}}</text>
+    </view>
+    <view class="usermotto">
+        <image bindgetuserinfo="getUserInfo" bindtap="changeData" class="usermotto-btn" openType="getUserInfo" src="./xia.png"></image>
+    </view>
+</view>

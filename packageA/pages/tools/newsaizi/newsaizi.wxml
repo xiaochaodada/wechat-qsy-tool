@@ -1,0 +1,20 @@
+<image class="background" src="./images/bg.jpg"></image>
+<view class="wview">
+    <image class="wimg" src="./images/w.png"></image>
+    <image animation="{{animation1}}" class="img1" src="{{img1}}"></image>
+    <image animation="{{animation2}}" class="img2" src="{{img2}}"></image>
+    <image animation="{{animation3}}" class="img3" src="{{img3}}"></image>
+    <image animation="{{animation4}}" class="img4" src="{{img4}}"></image>
+    <image animation="{{animation5}}" class="img5" src="{{img5}}"></image>
+    <view class="setting-item">
+        <image catchtap="reduceDice" class="btn-triangle" src="./images/btn_minus.png" style="opacity:{{minDiceOpacity}}"></image>
+        <text id="dice-num" style="color:#FFAD0B;">{{diceNum}}个骰子</text>
+        <image catchtap="addDice" class="btn-triangle" src="./images/btn_add.png" style="opacity:{{addDiceOpacity}}"></image>
+    </view>
+    <view bindtap="next" class="nextview">
+        <text class="next">摇一摇</text>
+    </view>
+</view>
+<button class="share-friend" openType="share" plain="true" style="padding:0;border:0;top:82%;right: 75rpx;">
+    <image src="./images/pk.png"></image>
+</button>

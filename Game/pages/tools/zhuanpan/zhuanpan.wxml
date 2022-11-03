@@ -1,0 +1,37 @@
+<view class="container">
+    <view class="roulette-wrap page flex column">
+        <view class="circle-wrap">
+            <image class="selected-image {{isEnd?'end':''}}" src="roulette_selected.png">
+                <text class="selected-text">{{selectedTxt}}</text>
+            </image>
+            <image class="circle-image {{entering?'scale':''}}" src="roulette_circle.png" style="transform: rotate({{degree}}deg)">
+                <block wx:for="{{punishments}}" wx:key="{{index}}">
+                    <view bindtap="onModify" class="punishment punishment-{{index}}" data-idx="{{index}}" id="punishment-{{index}}">{{item}}</view>
+                </block>
+            </image>
+            <image bindtap="onPlay" class="play-image" src="roulette_play.png"></image>
+        </view>
+        <view class="bottom">
+            <view class="hint">自定义内容请直接点击修改
+            </view>
+            <block>
+                <block wx:if="{{showReset}}">
+                    <text bindtap="onReset" class="reset">重置</text>
+                </block>
+            </block>
+        </view>
+    </view>
+    <dialog bindOnClose="onCloseEdit" contentClass="edit-wrap" show="{{editIdx!==-1}}">
+        <image bindtap="onCloseEdit" class="edit-close" src="roulette_close.png"></image>
+        <view class="edit-title">修改内容</view>
+        <input bindinput="onTitleInput" class="title-input" maxlength="5" placeholder="最多五个字" value="{{titleInitial}}"></input>
+        <view bindtap="onConfirmTitle" class="confirm-btn">确定</view>
+    </dialog>
+    <view class="adgongju" wx:if="{{mode != 0 && config.advertisements.box_ad && config.user_information.vip !='1'}}" >
+        <ad adTheme="white" adType="grid" gridCount="5" gridOpacity="0.8" unitId="{{config.advertisements.box_ad}}"></ad>
+    </view>
+</view>
+<button open-type='share'>
+    <image class="add-wrap1" src="/images/shares.jpg"></image>
+</button>
+
