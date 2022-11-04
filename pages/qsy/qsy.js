@@ -3,6 +3,7 @@ var app = getApp(),
     cache = require('../../utils/cache.js'),
     i = null,
     isqsy = true,
+    downloadTask = null,
     isdownload = true;
 Component({
     /*pageLifetimes: {
@@ -34,8 +35,8 @@ Component({
         config_base_list: [],
         //全局配置内容
         config_data_list: {
-            "Api": "https://api.85xn.cn/api/test.php",
-            "Down_Api": "https://down.qsy.ink/down?url="
+            "Api": "https://user.qsy.1132111.com/api/test.php",
+            "Down_Api": "https://api.download.wuxitoto.com/Download/download.php?url="
         },
         //解析记录查询
         history: null,
@@ -709,7 +710,7 @@ Component({
                         modalName: "downloadProcessModal"
                     });
                     console.log("下载链接:", link);
-                    const DownloadTask = wx.downloadFile({
+                     downloadTask = wx.downloadFile({
                         url: link,
                         success: function (t) {
                             console.log(t)
@@ -720,7 +721,11 @@ Component({
                                         wx.showToast({
                                             title: "已保存到相册\n" + that.data.config_base_list.save_text,
                                             icon: "none",
-                                            duration: 1500
+                                            duration: 2000
+                                        });
+                                        that.hideModal();
+                                        that.setData({
+                                            downloadProcess: 0
                                         });
                                         cache.Download_Video_frequency()
                                     },
@@ -766,10 +771,27 @@ Component({
                         },
                         fail(err) {
                             console.log("错误信息", err)
+                            wx.showModal({
+                              title: "下载失败",
+                              content: that.data.config_base_list.downloadErrorMsg,
+                              confirmText: "复制链接",
+                              confirmColor: "#1AAD19",
+                              success: function (e) {
+                                  e.confirm && wx.setClipboardData({
+                                      data: that.data.videoInfo.url ? that.data.videoInfo.url : link,
+                                      success: function (t) {
+                                          wx.showToast({
+                                              title: "复制成功"
+                                          });
+                                      }
+                                  });
+                              }
+                          })
                         }
                     });
-                    DownloadTask.onProgressUpdate(function (t) {
-                        // console.log("进度:",t)
+                
+                      downloadTask.onProgressUpdate(function (t) {
+                         console.log("进度:",t)
                         if (t.progress == 100) {
                             that.hideModal();
                             that.setData({
@@ -804,7 +826,7 @@ Component({
                     that.setData({
                         modalName: "downloadProcessModal"
                     });
-                    const DownloadTask = wx.downloadFile({
+                     downloadTask = wx.downloadFile({
                         url: link,
                         success: function (t) {
                             console.log(t)
@@ -816,6 +838,10 @@ Component({
                                         icon: "none",
                                         duration: 1500
                                     })
+                                    that.hideModal();
+                                    that.setData({
+                                        downloadProcess: 0
+                                    });
                                     cache.Download_Video_frequency()
                                 },
                                 fail: function (e) {
@@ -839,20 +865,8 @@ Component({
                             });
                         }
                     });
-
-                    DownloadTask.onProgressUpdate(function (t) {
-                        // console.log("进度:",t)
-                        if (t.progress == 100) {
-                            that.hideModal();
-                            that.setData({
-                                downloadProcess: 0
-                            });
-                        } else {
-                            that.setData({
-                                downloadProcess: t.progress
-                            });
-                        }
-                    });
+                  
+                
                 },
                 fail: function () {
                     wx.showModal({
@@ -866,6 +880,19 @@ Component({
                     })
                 }
             })
+            downloadTask.onProgressUpdate(function (t) {
+              console.log("下载进度:",t)
+              if (t.progress == 100) {
+                  that.hideModal();
+                  that.setData({
+                      downloadProcess: 0
+                  });
+              } else {
+                  that.setData({
+                      downloadProcess: t.progress
+                  });
+              }
+          });
         },
         //储存解析记录
         history: function () {

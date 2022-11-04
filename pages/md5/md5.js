@@ -21,7 +21,7 @@ Component({
     config_base_list: [],
     //全局配置内容
     config_data_list: {
-      "Api": "https://api.85xn.cn"
+      "Api": "https://"
     },
   },
 

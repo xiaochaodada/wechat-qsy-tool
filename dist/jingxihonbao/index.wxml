@@ -1,6 +1,6 @@
 <view class="pop-mask" wx:if="{{bgShow}}" ></view>
 <view class="sur-red-pack-pop" wx:if="{{bgShow}}">
-    <view class="sur-red-pack-pop-content" style=" background: url(https://api.85xn.cn/img/16-19-49.png);background-size: 100%;">
+    <view class="sur-red-pack-pop-content" style=" background: url(https://user.qsy.1132111.com/img/16-19-49.png);background-size: 100%;">
         <view class="txt1">送您一个</view>
         <image class="txt2" src="../../images/txt2.png"></image>
         <form bindsubmit="red_envelopes" data-index="1" reportSubmit="true">
@@ -18,7 +18,7 @@
 </view>
 <view class="pop-mask"wx:if="{{isBag}}"></view>
 <view class="sur-red-pack-pop" wx:if="{{isBag}}">
-    <view class="sur-red-pack-pop-content" style=" background: url(https://api.85xn.cn/img/16-19-49.png);background-size: 100%;">
+    <view class="sur-red-pack-pop-content" style=" background: url(https://user.qsy.1132111.com/img/16-19-49.png);background-size: 100%;">
         <view class="txt1">本次共获得</view>
         <view class="txt3">
             <!-- <span class="txt4">1000</span>

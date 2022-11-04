@@ -388,7 +388,7 @@
                     <button bindtap="hideModal" class="Pop-btn" style="background-color:#0081FF;color:#fff;">隐藏下载进度</button>
                 </view>
             </view>
-            <view style="white-space:pre-wrap;font-size: 28rpx;color: #000;line-height: 48rpx;">长时间进度为0%请更换稳定线路下载。 {{config_base_list.contact.reservation_msg}}
+            <view style="white-space:pre-wrap;font-size: 28rpx;color: #000;line-height: 48rpx;">苹果手机进度条不显示是正常的，如长时间进度0%也等等 {{config_base_list.contact.reservation_msg}}
             </view>
             <!-- 格子广告 -->
             <!-- <view class="ad" wx:if="{{config_base_list.advertisements.chaping}}">
