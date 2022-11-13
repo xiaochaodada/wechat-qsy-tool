@@ -553,24 +553,24 @@ Component({
                     apiDownloads = that.data.config_base_list.apiDownloads,
                     apiDownloadsPic = that.data.config_base_list.apiDownloadsPic,
                     type = e.currentTarget.dataset.type,
-                    line = e.currentTarget.dataset.line+'',
+                    line = e.currentTarget.dataset.line,
                     link = e.currentTarget.dataset.link;
                 if (that.data.config_base_list.advertisements.videoAD_ID) {
                     if (that.AdvertisementAppear(true) == true || that.data.vip == '1') {
                         if (type == 'video') {
-                            if (line == '0') {
+                            if (line == 0) {
                                 that.download_video(down_api + func.base64encode(link));
                             } else {
                                 that.download_video(link);
                             }
                         } else if (type == 'image') {
-                            if (line == '0') {
+                            if (line == 0) {
                                 that.download_image(that.downloadPicUrl(that.data.videoInfo.cover, apiDownloads, apiDownloadsPic));
-                            } else if (line == '1') {
+                            } else if (line == 1) {
                                 for (var o = that.data.videoInfo.atlas, i = 0; i < o.length; i++) {
                                     that.download_image(that.downloadPicUrl(o[i], apiDownloads, apiDownloadsPic));
                                 }
-                            } else if (line == '2') {
+                            } else if (line == 2) {
                                 for (var t = 0, a = 0, o = this.data.photoList, i = 0; i < o.length; i++) 1 == o[i].status && a++;
                                 if (a < 1) {
                                     wx.showToast({
@@ -600,19 +600,19 @@ Component({
                     }
                 } else {
                     if (type == 'video') {
-                        if (line == '0') {
+                        if (line == 0) {
                             that.download_video(down_api + func.base64encode(link));
                         } else {
                             that.download_video(link);
                         }
                     } else if (type == 'image') {
-                        if (line == '0') {
+                        if (line == 0) {
                             that.download_image(that.downloadPicUrl(that.data.videoInfo.cover, apiDownloads, apiDownloadsPic));
-                        } else if (line == '1') {
+                        } else if (line == 1) {
                             for (var o = that.data.videoInfo.atlas, i = 0; i < o.length; i++) {
                                 that.download_image(that.downloadPicUrl(o[i], apiDownloads, apiDownloadsPic));
                             }
-                        } else if (line == '2') {
+                        } else if (line == 2) {
                             for (var t = 0, a = 0, o = this.data.photoList, i = 0; i < o.length; i++) 1 == o[i].status && a++;
                             if (a < 1) {
                                 wx.showToast({
@@ -636,19 +636,19 @@ Component({
                 items = that.data.config_base_list.api_downloads,
                 down_api = items[Math.floor(Math.random() * items.length)];
             if (type == 'video') {
-                if (line == '0') {
+                if (line == 0) {
                     that.download_video(down_api + func.base64encode(link));
                 } else {
                     that.download_video(link);
                 }
             } else if (type == 'image') {
-                if (line == '0') {
+                if (line == 0) {
                     that.download_image(that.downloadPicUrl(that.data.videoInfo.cover, apiDownloads, apiDownloadsPic));
-                } else if (line == '1') {
+                } else if (line == 1) {
                     for (var o = that.data.videoInfo.atlas, i = 0; i < o.length; i++) {
                         that.download_image(that.downloadPicUrl(o[i], apiDownloads, apiDownloadsPic));
                     }
-                } else if (line == '2') {
+                } else if (line == 2) {
                     for (var t = 0, a = 0, o = that.data.photoList, i = 0; i < o.length; i++) 1 == o[i].status && a++;
                     if (a < 1) {
                         wx.showToast({
@@ -764,20 +764,20 @@ Component({
                           })
                         }
                     });
-                
-                      downloadTask.onProgressUpdate(function (t) {
-                         console.log("进度:",t)
-                        if (t.progress == 100) {
-                            that.hideModal();
-                            that.setData({
-                                downloadProcess: 0
-                            });
-                        } else {
-                            that.setData({
-                                downloadProcess: t.progress
-                            });
-                        }
-                    });
+                    downloadTask.onProgressUpdate(function (t) {
+                      console.log("进度:",t)
+                     if (t.progress == 100) {
+                         that.hideModal();
+                         that.setData({
+                             downloadProcess: 0
+                         });
+                     } else {
+                         that.setData({
+                             downloadProcess: t.progress
+                         });
+                     }
+                 });
+                      
                 },
                 fail: function () {
                     wx.showModal({
@@ -840,7 +840,19 @@ Component({
                             });
                         }
                     });
-                  
+                    downloadTask.onProgressUpdate(function (t) {
+                      console.log("下载进度:",t)
+                      if (t.progress == 100) {
+                          that.hideModal();
+                          that.setData({
+                              downloadProcess: 0
+                          });
+                      } else {
+                          that.setData({
+                              downloadProcess: t.progress
+                          });
+                      }
+                  });
                 
                 },
                 fail: function () {
@@ -855,19 +867,7 @@ Component({
                     })
                 }
             })
-            downloadTask.onProgressUpdate(function (t) {
-              console.log("下载进度:",t)
-              if (t.progress == 100) {
-                  that.hideModal();
-                  that.setData({
-                      downloadProcess: 0
-                  });
-              } else {
-                  that.setData({
-                      downloadProcess: t.progress
-                  });
-              }
-          });
+           
         },
         //储存解析记录
         history: function () {
