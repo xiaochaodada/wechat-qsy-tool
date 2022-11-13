@@ -446,9 +446,10 @@ Page({
               var e = t.fetchUrl(a.data)
               if (t.isUrl(e)) {
                   t.setData({
-                      tempClipboardData: e,
-                      modalName: "clipboardUrlDetected",
-                      clipboardUrl: e
+                      // tempClipboardData: e,
+                      // modalName: "clipboardUrlDetected",
+                      // clipboardUrl: e,
+                      pageUrl: e
                   });
               }else{
                 wx.showModal({

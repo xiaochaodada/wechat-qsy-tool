@@ -8,7 +8,7 @@ t.obeyMuteSwitch = !1, t.autoplay = !0, t.onPlay(function() {
     data: {
         ad: !1,
         bgimg: "3",
-        src: "https://www.lxl66.cn/mp3/2.mp3"
+        src: "https://user.qsy.1132111.com/titou.mp3"
     },
     onLoad: function(t) {
         var n = this;

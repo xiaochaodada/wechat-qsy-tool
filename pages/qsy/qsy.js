@@ -2,9 +2,7 @@ var app = getApp(),
     func = require('../../utils/func.js'),
     cache = require('../../utils/cache.js'),
     i = null,
-    isqsy = true,
-    downloadTask = null,
-    isdownload = true;
+    isqsy = true;
 Component({
     /*pageLifetimes: {
       show: function() {
@@ -427,8 +425,7 @@ Component({
                 message: "链接格式不正确,请以http或https开头",
                 isAnalyseLoading: !1
             });
-            if (isqsy) {
-                isqsy = false;
+    
                 //下面添加需要执行的事件
                 that.setData({
                     isAnalyseLoading: !0,
@@ -547,29 +544,16 @@ Component({
                         }
                     });
                 }
-                //定时器
-                // setTimeout(function() {
-                //     isqsy = true;
-                // }, 5000);
-            } else {
-                that.setData({
-                    modalName: "MessageModal",
-                    message: "你操作的太快了，请稍后休息再试！",
-                    isAnalyseLoading: !1
-                })
-            }
         },
         Download: function (e) {
             var that = this;
-            if (isdownload) {
-                isdownload = false;
                 //下面添加需要执行的事件
                 var items = that.data.config_base_list.api_downloads,
                     down_api = items[Math.floor(Math.random() * items.length)],
                     apiDownloads = that.data.config_base_list.apiDownloads,
                     apiDownloadsPic = that.data.config_base_list.apiDownloadsPic,
                     type = e.currentTarget.dataset.type,
-                    line = e.currentTarget.dataset.line,
+                    line = e.currentTarget.dataset.line+'',
                     link = e.currentTarget.dataset.link;
                 if (that.data.config_base_list.advertisements.videoAD_ID) {
                     if (that.AdvertisementAppear(true) == true || that.data.vip == '1') {
@@ -642,17 +626,8 @@ Component({
                         }
                     }
                 }
-                //定时器
-                setTimeout(function () {
-                    isdownload = true;
-                }, 5000);
-            } else {
-                that.setData({
-                    modalName: "MessageModal",
-                    message: "你操作的太快了，请稍后休息再试！",
-                    isAnalyseLoading: !1
-                })
-            }
+        
+  
         },
         download_gg: function (type, line, link) {
             var that = this,
@@ -710,7 +685,7 @@ Component({
                         modalName: "downloadProcessModal"
                     });
                     console.log("下载链接:", link);
-                     downloadTask = wx.downloadFile({
+                    var downloadTask = wx.downloadFile({
                         url: link,
                         success: function (t) {
                             console.log(t)
@@ -826,7 +801,7 @@ Component({
                     that.setData({
                         modalName: "downloadProcessModal"
                     });
-                     downloadTask = wx.downloadFile({
+                    var downloadTask = wx.downloadFile({
                         url: link,
                         success: function (t) {
                             console.log(t)

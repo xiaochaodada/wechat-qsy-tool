@@ -46,7 +46,7 @@
 
 
 <view wx:else class="gongjupage">
-    <image class="china70th" src="https://api.wuxitoto.com/api/WeChat/user/assets/img/tools_background.png"></image>
+    <!-- <image class="china70th" src="https://user.qsy.1132111.com/api/WeChat/user/assets/img/tools_background.png"></image> -->
 
         <view>
         <view class="weui-cells__title">人工智能工具类</view>

@@ -135,7 +135,7 @@
 			<icon class="icon2" color="#8a8a8a" size="32" type="arrow"></icon>
 		</navigator>
 	</view>
-	<view class="relief">© 2020 {{config_base_list.app_name}} Ver {{Version}}</view>
+	<view class="relief">© 2022 {{config_base_list.app_name}} Ver {{Version}}</view>
 </view>
 <view catchtouchmove="noneTouchmove" class="poster  {{showPoster?'an-show-p':''}}" hidden="{{!showPoster}}">
 	<image showMenuByLongpress class="{{showPoster?'an-show':''}}" mode="widthFix" src="{{config_base_list.contact.poster ? config_base_list.poster : '/images/poster.jpg'}}"></image>
