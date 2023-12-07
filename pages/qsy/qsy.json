@@ -2,10 +2,11 @@
     "component": true,
     "usingComponents": {
         "icon": "../../dist/icon/index",
-        "index-attention": "../../dist/index-attention/index",
         "index-menu": "../../dist/index-menu/menu",
         "index-notice": "../../dist/index-notice/index",
-        "jingxihonbao": "../../dist/jingxihonbao/index"
+        "jingxihonbao": "../../dist/jingxihonbao/index",
+        "download": "../../components/download/download"
+
     },
     "navigationBarTitleText": "无水印视频",
     "backgroundTextStyle": "light",

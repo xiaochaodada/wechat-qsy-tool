@@ -9,8 +9,7 @@
     "pages/history/history",
     "pages/jiaocheng/jiaocheng",
     "pages/xiugai/xiugai",
-    "pages/pdd-goods/pdd-goods",
-    "pages/pdd-goods/details/details",
+    "pages/tools/tools",
     "pages/batch/batch",
     "pages/mine/qiandao/qiandao",
     "pages/mine/invite/invite",
@@ -118,7 +117,7 @@
     }
   ],
   "preloadRule": {
-    "pages/pdd-goods/pdd-goods": {
+    "pages/tools/tools": {
       "network": "all",
       "packages": [
         "packageA"
@@ -156,7 +155,7 @@
         "selectedIconPath": "images/index_active.png"
       },
       {
-        "pagePath": "pages/pdd-goods/pdd-goods",
+        "pagePath": "pages/tools/tools",
         "text": "更多工具",
         "iconPath": "images/tool.png",
         "selectedIconPath": "images/tool_active.png"

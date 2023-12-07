@@ -24,7 +24,7 @@
 
         </view>
     </scroll-view>
-    <import src="./templates/pdd-goods-list.wxml"></import>
+    <!-- <import src="./templates/pdd-goods-list.wxml"></import> -->
     <view class="page-loading square-page-loading" wx:if="{{showPageLoading}}">
         <template is="loading" data="{{loadingtext:true}}"></template>
     </view>

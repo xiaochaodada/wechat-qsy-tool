@@ -1,4 +1,3 @@
-@import "templates/pdd-goods-list.wxss";
 @import "tools/gongju.wxss";
 .pdd-goods-container {
     display: flex;

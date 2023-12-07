@@ -111,9 +111,10 @@ var utils = ({
                 str = "未知类型";
         }
         return str;
-    })
+    }),
 
 });
+
 module.exports = ({
     tranNumber: utils.tranNumber,
     formatSeconds: utils.formatSeconds,
@@ -121,5 +122,5 @@ module.exports = ({
     task_1: utils.task_1,
     replace: utils.replace,
     speed: utils.speed,
-    video_type_name: utils.video_type_name
+    video_type_name: utils.video_type_name,
 });

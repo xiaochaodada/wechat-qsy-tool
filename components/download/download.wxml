@@ -1,0 +1,26 @@
+<view>
+  <view class="down-modal {{isDownloadDialog ? 'show' : ''}}">
+    <view class="gjdkle" style="--percent: {{downloadPercentage}}">
+      <view class="iowenkw">
+        <text class="lkwehjiq">{{downloadStatus}} — <text style="color: #99a3ba; font-size: 24rpx;">{{downloadBytesWritten}}/{{downloadBytesExpectedToWrite}}</text></text>
+        <view class="qwtgfqy">
+          <text class="mwkaui">%</text>
+          <view class="ykyfdwa">
+            <text class="qkjogewse">{{downloadSpeed}} 还有 {{downloadSecond}}秒</text>
+          </view>
+        </view>
+        <view class="wkjotwe">
+          <text bindtap="cancalDownload" class="chawklwag">x</text>
+        </view>
+      </view>
+      <view class="zljkwhja">
+        <view class="hkwlajio">
+          <view class="nkojhoqqw"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isSaveRoute}}" bindtap="hideSaveRoute" class="lwptyuos">
+    <text class="pwaioeghvbs">已保存文件路径：{{saveRoute}}</text>
+  </view>
+</view>

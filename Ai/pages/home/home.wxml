@@ -1,24 +1,24 @@
 <view class="face outter">
     <text class="class_title">人脸识别</text>
     <view class="inner">
-        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{face}}" wx:key="id"></module>
+        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{face}}" wx:key="title"></module>
     </view>
 </view>
 <view class="body outter">
     <text class="class_title">人体识别</text>
     <view class="inner">
-        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{body}}" wx:key="id"></module>
+        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{body}}" wx:key="title"></module>
     </view>
 </view>
 <view class="card outter">
     <text class="class_title">证件识别</text>
     <view class="inner">
-        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{card}}" wx:key="id"></module>
+        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{card}}" wx:key="title"></module>
     </view>
 </view>
 <view class="other outter">
     <text class="class_title">图像识别</text>
     <view class="inner">
-        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{other}}" wx:key="id"></module>
+        <module bind:click="{{item.func}}" category="{{item}}" wx:for="{{other}}" wx:key="title"></module>
     </view>
 </view>

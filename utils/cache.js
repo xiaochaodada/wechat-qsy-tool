@@ -1,5 +1,46 @@
 var dtime = '_deadtime';
 
+
+var dayCacheKey = 'playVideoCache';
+
+function getDayTime() {
+  var currentDate = new Date();
+  const {
+    year,
+    month,
+    day
+  } = {
+    year: currentDate.getFullYear(),
+    month: currentDate.getMonth() + 1,
+    day: currentDate.getDate()
+  };
+  // 输出年月日
+  console.log(`当前日期：${year}年${month}月${day}日`);
+  return `${year}${month}${day}`
+}
+
+function checkDayCache() {
+  return new Promise((resolve, reject) => {
+    const dayTime = getDayTime()
+    const cachedDateString = wx.getStorageSync(dayCacheKey);
+    if (cachedDateString === dayTime) {
+      // 如果缓存中的日期与今天相同，说明已经缓存过了
+      console.log('今天已经缓存过了，删除缓存...');
+      resolve()
+    } else {
+      //删除之前的缓存
+      wx.removeStorageSync(dayCacheKey)
+      console.log('未缓存');
+      reject()
+    }
+  })
+}
+function setDayCache(){
+  const dayTime = getDayTime()
+  wx.setStorageSync('playVideoCache', dayTime)
+}
+
+
 function set(k, v, t) {
     wx.setStorageSync(k, v)
     var seconds = parseInt(t);
@@ -146,6 +187,8 @@ module.exports = {
     remove: remove,
     clear: clear,
     getDateStr: getDateStr,
+    checkDayCache: checkDayCache,
+    setDayCache: setDayCache,
     Download_Video_frequency: Download_Video_frequency,
     showModal: function(msg) {
         wx.hideLoading()
