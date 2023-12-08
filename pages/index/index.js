@@ -146,7 +146,7 @@ Page({
         wx.login({
             success: function (res) {
                 wx.request({
-                    url: that.data.invite ? (app.globalData.tonyon + "/api/WeChat/user/api/invite.php") : (app.globalData.tonyon + "/api/WeChat/user/user_api.php"),
+                    url: that.data.invite ? (app.globalData.tonyon + "/api/WeChat/user/api/invite.php") : (app.globalData.tonyon + "/api/WeChat/user/new_user_api.php"),
                     method: "POST",
                     data: {
                         code: res.code,

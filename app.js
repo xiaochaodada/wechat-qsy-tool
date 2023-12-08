@@ -95,7 +95,7 @@ App({
     return "";
   },
   globalData: {
-    Version: "4.3.0",
+    Version: "5.0.0",
     tonyon: "https://user.qsy.1132111.com", //用户
     video_api: "https://video.qsy.1132111.com", //视频
     jiexi_api: 'https://user.qsy.1132111.com/api/new_api.php', //解析

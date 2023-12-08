@@ -26,7 +26,7 @@ Component({
   },
   methods: {
     base64encode(value) {
-      return func.base64encode(value)
+      return encodeURIComponent(value)
     },
     load: function (url, type, back_url) {
       config_base_list = app.globalData.config_base_list
@@ -52,29 +52,42 @@ Component({
         that.download(url, type, back_url);
       }
     },
-    download (url, type, back_url) {
-      console.log('下载链接url',url)
+    download(url, type, back_url) {
+      console.log('下载链接url', url)
       var that = this;
       var i = 0,
         a = 0,
         d = 0,
         c = 0,
-        w = !1;
+        w = false;
       that.authorize(function () {
         that.setData({
           isDownloadDialog: true
-        }), (saveFun = that.sava(url, type, back_url)).onProgressUpdate(function (t) {
-          w || (that.setData({
+        })
+        saveFun = that.sava(url, type, back_url)
+        saveFun.onHeadersReceived(function(res){
+          console.log('监听头部',res)
+        })
+        saveFun.onProgressUpdate(function (t) {
+          // console.log('监听下载进度',t)
+          if (t.totalBytesExpectedToWrite) {
+            that.setData({
               downloadBytesExpectedToWrite: that.filesize(t
                 .totalBytesExpectedToWrite)
-            }), w = !0), 100 === t.progress ? (clearInterval(
-              timing)) : i = t.totalBytesWritten / 1024, d = t
-            .totalBytesExpectedToWrite - t.totalBytesWritten,
+            })
+          }
+          if (t.progress >= 100) {
+            clearInterval(
+              timing)
+          } else {
+            i = t.totalBytesWritten / 1024
+            d = t.totalBytesExpectedToWrite - t.totalBytesWritten
             that.setData({
               downloadStatus: "下载中",
               downloadBytesWritten: that.filesize(t.totalBytesWritten),
               downloadPercentage: t.progress
             });
+          }
         });
       }, function () {
         wx.showModal({
@@ -112,7 +125,8 @@ Component({
               t && t();
             },
             fail: function (o) {
-              wx.hideLoading(), wx.showModal({
+              wx.hideLoading()
+              wx.showModal({
                 title: "提示",
                 content: "小程序需要您的授权保存，是否重新授权？",
                 showCancel: !0,
@@ -200,6 +214,7 @@ Component({
               });
             },
             fail: function (e) {
+              that.cancalDownload()
               return -1 != e.errMsg.indexOf("max file size") ? (that.resetData(), wx
                   .showModal({
                     title: "温馨提示",
@@ -294,10 +309,10 @@ Component({
           });
         default:
           console.log('替换图片下载接口',
-          download_url.replace(/\.php/, ".jpg"))
+            download_url.replace(/\.php/, ".jpg"))
           console.log('替换图片下载接口：',
-          url)
-          
+            url)
+
           var suffix = url.substring(url.lastIndexOf('.') + 1),
             filePath = null,
             fileName = null;
@@ -314,16 +329,21 @@ Component({
               wx.saveImageToPhotosAlbum({
                 filePath: fileName == null ? res.tempFilePath : res.filePath,
                 success: function (t) {
-                  that.resetData(), that.setDownloadNum(), wx.showToast({
+                  that.resetData()
+                  that.setDownloadNum()
+                  wx.showToast({
                     title: "已保存到相册",
                     icon: "none",
                     duration: 1500
                   });
                 },
                 fail: function (e) {
-                  e.errMsg.indexOf("abort") ? (console.log("停止下载", e), that
-                      .resetData()) : that.resetData(), wx
-                    .showModal({
+                  if (e.errMsg.indexOf("abort")) {
+                    console.log("停止下载", e)
+                    that.resetData()
+                  } else {
+                    that.resetData()
+                    wx.showModal({
                       title: "保存失败",
                       content: "出现此问题的一般原因为：1、图片损坏，2、图片格式错误；请复制链接到浏览器保存。如有疑问请联系客服。",
                       confirmText: "复制链接",
@@ -339,12 +359,16 @@ Component({
                         });
                       }
                     });
+                  }
+
                 }
               });
             },
             fail: function (e) {
-              return e.errMsg.indexOf("max file size") != -1 ? (that.resetData(), wx
-                .showModal({
+              that.cancalDownload()
+              if (e.errMsg.indexOf("max file size") != -1) {
+                that.resetData()
+                wx.showModal({
                   title: "温馨提示",
                   content: "当前图片比较大，超出小程序保存大小，请复制图片链接到浏览器或APP进行下载",
                   cancelText: "我知道了",
@@ -354,28 +378,33 @@ Component({
                       url: "/pages/question/question"
                     });
                   }
-                })) : -1 != e.errMsg.indexOf("url not in domain list") ? (that
-                .resetData(), that.download((url.indexOf(download_url) != -1 ? url : (download_url.replace(/\.php/, ".jpg")) +
-                  that.base64encode(url)), type, back_url)) : void(-1 != e.errMsg
-                .indexOf(
-                  "abort") ? that.resetData() : (
-                  that.resetData(), wx.showModal({
-                    title: "下载失败",
-                    content: "出现此问题的一般原因为：1、图片损坏，2、图片格式错误；请复制链接到浏览器保存。如有疑问请联系客服。错误代码：" +
-                      e.errMsg,
-                    confirmText: "复制链接",
-                    confirmColor: "#1AAD19",
-                    success: function (e) {
-                      e.confirm && wx.setClipboardData({
-                        data: back_url,
-                        success: function (t) {
-                          wx.showToast({
-                            title: "复制成功"
-                          });
-                        }
-                      });
-                    }
-                  })));
+                })
+              } else if (-1 != e.errMsg.indexOf("url not in domain list")) {
+                that.resetData()
+                that.download((url.indexOf(download_url) != -1 ? url : (download_url.replace(/\.php/, ".jpg")) +
+                  that.base64encode(url)), type, back_url)
+              } else if (-1 != e.errMsg.indexOf("abort")) {
+                that.resetData()
+              } else {
+                that.resetData()
+                wx.showModal({
+                  title: "下载失败",
+                  content: "出现此问题的一般原因为：1、图片损坏，2、图片格式错误；请复制链接到浏览器保存。如有疑问请联系客服。错误代码：" +
+                    e.errMsg,
+                  confirmText: "复制链接",
+                  confirmColor: "#1AAD19",
+                  success: function (e) {
+                    e.confirm && wx.setClipboardData({
+                      data: back_url,
+                      success: function (t) {
+                        wx.showToast({
+                          title: "复制成功"
+                        });
+                      }
+                    });
+                  }
+                });
+              }
             }
           });
       }
@@ -388,7 +417,10 @@ Component({
     },
     cancalDownload() {
       //中断下载
-      saveFun.abort();
+      if (saveFun) {
+        saveFun.abort();
+      }
+
       //关闭定时器
       clearInterval(timing);
       this.resetData();

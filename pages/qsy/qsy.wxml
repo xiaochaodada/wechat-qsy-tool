@@ -179,7 +179,7 @@
           <view class="line"></view>
           <view class="">常见问题 ● 更多功能</view>
         </view>
-        <view class="box">
+        <!-- <view class="box">
           <view class="panle3">
             <navigator class="nav" url="/pages/batch/batch">
               <view class="header">
@@ -216,7 +216,7 @@
               </view>
             </button>
           </view>
-        </view>
+        </view> -->
         <view class="box">
           <view class="panle1">
             <navigator bindtap="goxiugai" class="nav">

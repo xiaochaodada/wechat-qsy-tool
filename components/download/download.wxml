@@ -4,7 +4,7 @@
       <view class="iowenkw">
         <text class="lkwehjiq">{{downloadStatus}} — <text style="color: #99a3ba; font-size: 24rpx;">{{downloadBytesWritten}}/{{downloadBytesExpectedToWrite}}</text></text>
         <view class="qwtgfqy">
-          <text class="mwkaui">%</text>
+          <text class="mwkaui">{{downloadPercentage}}%</text>
           <view class="ykyfdwa">
             <text class="qkjogewse">{{downloadSpeed}} 还有 {{downloadSecond}}秒</text>
           </view>

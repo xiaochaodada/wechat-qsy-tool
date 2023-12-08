@@ -455,7 +455,7 @@
 }
 
  .mwkaui::before {
-  content: counter(percent);
+  /* content: counter(percent); */
 }
 
 .down-modal .gjdkle .iowenkw .qwtgfqy .ykyfdwa {
